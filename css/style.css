@@ -413,43 +413,73 @@ h1, h2, h3, h4, h5, h6 {
   bottom: 0;
   left: 0;
   right: 0;
-  height: 64px;
-  background: rgba(255, 255, 255, 0.96);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  height: calc(64px + env(safe-area-inset-bottom, 0px));
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   border-top: 1px solid var(--border);
-  z-index: 100;
-  box-shadow: 0 -4px 16px rgba(41, 45, 41, 0.05);
+  z-index: 1000;
+  box-shadow: 0 -4px 20px rgba(41, 45, 41, 0.08);
 }
 
 .mobile-nav-items {
   display: flex;
-  height: 100%;
+  height: 64px;
   align-items: center;
   justify-content: space-around;
   list-style: none;
+  padding: 0 4px;
+  margin: 0;
+}
+
+.mobile-nav-item {
+  flex: 1;
+  text-align: center;
 }
 
 .mobile-nav-item a {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   gap: 3px;
   color: var(--text-secondary);
-  font-size: 0.72rem;
+  font-size: 0.7rem;
   font-weight: 500;
-  padding: 6px 12px;
+  padding: 8px 2px;
   position: relative;
+  text-decoration: none;
+  min-height: 52px;
+  border-radius: var(--radius-sm);
+  transition: color 0.15s ease, background 0.15s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.mobile-nav-item a:active {
+  background: var(--primary-light);
 }
 
 .mobile-nav-item a.active {
   color: var(--deep-green);
-  font-weight: 600;
+  font-weight: 700;
+}
+
+.mobile-nav-item a.active::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 20%;
+  right: 20%;
+  height: 3px;
+  background: var(--deep-green);
+  border-radius: 0 0 3px 3px;
 }
 
 .mobile-nav-item svg {
   width: 22px;
   height: 22px;
+  stroke-width: 2.2;
 }
 
 /* Offline Banner */
@@ -704,7 +734,83 @@ main {
   background-color: var(--badge-vegan);
 }
 
-/* Responsive Media Queries */
+/* Layout Grids & Structural Classes */
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.feature-teaser-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.budget-teaser-card {
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-xl);
+  padding: 44px;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 40px;
+  align-items: center;
+  box-shadow: var(--shadow-sm);
+}
+
+.recipe-hero-card {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 40px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  padding: 36px;
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 40px;
+}
+
+.recipe-layout-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.35fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.recipe-metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  padding: 18px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  margin-bottom: 28px;
+  text-align: center;
+}
+
+.recipe-cta-bar {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.philosophy-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-top: 40px;
+}
+
+/* ==========================================================================
+   RESPONSIVE MEDIA QUERIES (DESKTOP -> TABLET -> MOBILE)
+   ========================================================================== */
+
+/* Tablet Breakpoint (max-width: 992px) */
 @media (max-width: 992px) {
   .nav-links {
     display: none;
@@ -713,7 +819,28 @@ main {
     display: block;
   }
   body {
-    padding-bottom: 64px; /* clearance for bottom app bar */
+    padding-bottom: calc(72px + env(safe-area-inset-bottom, 0px));
+  }
+  .hero-grid,
+  .feature-teaser-grid,
+  .budget-teaser-card,
+  .recipe-hero-card,
+  .recipe-layout-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .hero-image-wrap {
+    order: -1;
+    max-width: 520px;
+    margin: 0 auto;
+  }
+  .recipe-hero-card .recipe-hero-media {
+    order: -1;
+    max-height: 380px;
+  }
+  .philosophy-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
   }
   .footer-top {
     grid-template-columns: 1fr 1fr;
@@ -721,15 +848,189 @@ main {
   }
 }
 
+/* Mobile Breakpoint (max-width: 640px) */
 @media (max-width: 640px) {
+  /* Fluid Containers */
+  .container,
+  .container-narrow {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  /* Compact Site Header */
+  .nav-container {
+    height: 60px;
+  }
+  .brand-logo {
+    gap: 8px;
+  }
+  .brand-icon-wrap {
+    width: 36px;
+    height: 36px;
+    font-size: 1.15rem;
+    border-radius: 10px;
+  }
+  .brand-name {
+    font-size: 1.15rem;
+  }
+  .brand-tagline {
+    font-size: 0.62rem;
+  }
+  .header-actions {
+    gap: 8px;
+  }
+  .lang-btn {
+    padding: 4px 8px;
+    font-size: 0.72rem;
+  }
+  .btn-icon {
+    width: 38px;
+    height: 38px;
+  }
+
+  /* Typography Scaling */
   .section-title {
-    font-size: 1.7rem;
+    font-size: 1.6rem;
+    line-height: 1.25;
+  }
+  .section-subtitle {
+    font-size: 0.92rem;
+    margin-bottom: 24px;
   }
   .section-header-flex {
     flex-direction: column;
     align-items: flex-start;
     gap: 12px;
   }
+
+  /* Hero Section Mobile */
+  .hero-section {
+    padding: 32px 0 28px !important;
+  }
+  .hero-grid {
+    gap: 20px;
+  }
+  .hero-content h1 {
+    font-size: 1.85rem !important;
+    line-height: 1.2 !important;
+    margin-bottom: 12px !important;
+  }
+  .hero-content p {
+    font-size: 0.95rem !important;
+    line-height: 1.55 !important;
+    margin-bottom: 20px !important;
+  }
+  .hero-search-form {
+    margin-bottom: 18px !important;
+    width: 100%;
+  }
+  .hero-search-form .search-input {
+    padding-right: 86px !important;
+    font-size: 0.9rem;
+  }
+  .hero-search-form .btn-primary {
+    padding: 0 16px !important;
+    font-size: 0.85rem;
+  }
+  .hero-image-wrap img {
+    height: 240px !important;
+  }
+  .hero-image-wrap > div:last-child {
+    bottom: -12px !important;
+    left: 8px !important;
+    padding: 8px 14px !important;
+  }
+
+  /* Feature Teasers */
+  .feature-teaser-grid {
+    gap: 24px;
+  }
+  .feature-teaser-grid h2 {
+    font-size: 1.7rem !important;
+  }
+  .budget-teaser-card {
+    padding: 24px 16px;
+    border-radius: var(--radius-lg);
+    gap: 24px;
+  }
+
+  /* Recipe Details Mobile */
+  .recipe-hero-card {
+    padding: 20px 16px;
+    border-radius: var(--radius-lg);
+    margin-bottom: 24px;
+    gap: 20px;
+  }
+  .recipe-metrics-grid {
+    padding: 12px 6px;
+    gap: 6px;
+  }
+  .recipe-metrics-grid > div > div:first-child {
+    font-size: 0.68rem !important;
+  }
+  .recipe-metrics-grid > div > div:last-child {
+    font-size: 1rem !important;
+  }
+  .recipe-cta-bar {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+  .recipe-cta-bar .btn {
+    width: 100%;
+    min-width: 100% !important;
+    justify-content: center;
+    padding: 14px 20px;
+    font-size: 0.95rem;
+  }
+  .recipe-cta-bar .btn-icon {
+    width: 100%;
+    border-radius: var(--radius-full);
+    height: 44px;
+  }
+
+  /* Cards Grids on Mobile */
+  .recipe-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+  .category-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 12px !important;
+  }
+  .category-card {
+    aspect-ratio: 1 / 1 !important;
+    padding: 14px 12px !important;
+    border-radius: var(--radius-md) !important;
+  }
+  .category-card-title {
+    font-size: 1.05rem !important;
+    line-height: 1.2 !important;
+  }
+  .category-card-count {
+    font-size: 0.65rem !important;
+    padding: 2px 7px !important;
+    margin-bottom: 4px !important;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: inline-block;
+  }
+  .category-card-desc {
+    display: none !important;
+  }
+
+  /* Philosophy Step Grid */
+  .philosophy-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  .philosophy-grid > div {
+    padding: 22px 18px !important;
+  }
+
+  /* Footer */
   .footer-top {
     grid-template-columns: 1fr;
     gap: 28px;
@@ -737,15 +1038,37 @@ main {
   .footer-bottom {
     flex-direction: column;
     align-items: flex-start;
-    gap: 12px;
+    gap: 10px;
   }
+
+  /* Toasts */
   .toast-container {
     left: 16px;
     right: 16px;
-    bottom: 74px;
+    bottom: calc(76px + env(safe-area-inset-bottom, 0px));
   }
   .toast {
     min-width: auto;
     max-width: 100%;
+  }
+}
+
+/* Ultra-compact phones (max-width: 380px) */
+@media (max-width: 380px) {
+  .brand-tagline {
+    display: none;
+  }
+  .brand-name {
+    font-size: 1.05rem;
+  }
+  .category-grid {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+  .category-card {
+    aspect-ratio: 16 / 10 !important;
+  }
+  .category-card-desc {
+    display: -webkit-box !important;
   }
 }

@@ -108,7 +108,16 @@ const APIManager = (() => {
   return {
     async getCategories() {
       if (!cache.categories) {
-        cache.categories = await fetchJSON('data/categories.json');
+        const raw = await fetchJSON('data/categories.json');
+        cache.categories = (raw || []).map(c => ({
+          ...c,
+          id: c.id || c.slug,
+          name: typeof c.name === 'object' ? (c.name.en || '') : (c.name || ''),
+          nameTe: typeof c.name === 'object' ? (c.name.te || '') : (c.nameTe || ''),
+          description: typeof c.description === 'object' ? (c.description.en || '') : (c.description || ''),
+          descriptionTe: typeof c.description === 'object' ? (c.description.te || '') : (c.descriptionTe || ''),
+          image: c.image || c.imageUrl || 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=600&q=80'
+        }));
       }
       return cache.categories;
     },

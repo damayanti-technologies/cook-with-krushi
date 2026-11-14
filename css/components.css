@@ -915,25 +915,305 @@
   transform: scale(1.15);
 }
 
-/* Responsive tweaks */
+/* ==========================================================================
+   COMPONENTS RESPONSIVE STYLES (TABLET & MOBILE)
+   ========================================================================== */
+
 @media (max-width: 768px) {
   .cooking-step-card {
     padding: 24px;
-    margin: 20px auto;
+    margin: 16px auto;
     border-radius: var(--radius-lg);
   }
   .cooking-step-title {
     font-size: 1.5rem;
   }
   .cooking-step-instruction {
-    font-size: 1.05rem;
+    font-size: 1.1rem;
+    line-height: 1.6;
   }
   .timer-widget {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: stretch;
+    gap: 16px;
+    padding: 18px;
+  }
+  .timer-left {
+    justify-content: center;
+  }
+  .timer-controls {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
   }
   .filter-row {
     flex-direction: column;
     align-items: stretch;
+    gap: 14px;
+  }
+  .filter-group {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 4px;
+    scrollbar-width: none;
+  }
+  .filter-group::-webkit-scrollbar {
+    display: none;
+  }
+  .filter-pill {
+    flex-shrink: 0;
+  }
+}
+
+@media (max-width: 640px) {
+  /* Cooking Mode & Cook With Me Screens */
+  .cooking-step-card {
+    padding: 18px 14px !important;
+    margin: 8px auto !important;
+    border-radius: var(--radius-lg) !important;
+    box-shadow: var(--shadow-md) !important;
+  }
+  .cooking-step-number {
+    font-size: 0.72rem !important;
+    padding: 3px 10px !important;
+    margin-bottom: 10px !important;
+  }
+  .cooking-step-title {
+    font-size: 1.35rem !important;
+    margin-bottom: 12px !important;
+  }
+  .cooking-step-instruction {
+    font-size: 1.05rem !important;
+    line-height: 1.55 !important;
+    margin-bottom: 18px !important;
+  }
+  .cooking-step-media img {
+    max-height: 200px !important;
+  }
+  .cooking-step-alert {
+    padding: 12px 14px !important;
+    gap: 10px !important;
+    margin: 14px 0 !important;
+  }
+  .cooking-step-alert-text {
+    font-size: 0.88rem !important;
+  }
+
+  /* Timers */
+  .timer-widget {
+    padding: 14px !important;
+    margin: 16px 0 !important;
+    border-radius: var(--radius-md) !important;
+  }
+  .timer-display {
+    font-size: 1.85rem !important;
+  }
+  .timer-controls {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 8px !important;
+    width: 100% !important;
+  }
+  .timer-controls .btn {
+    width: 100% !important;
+    padding: 9px 8px !important;
+    font-size: 0.82rem !important;
+    justify-content: center;
+  }
+
+  /* Cooking Mode Sticky Footer */
+  .cooking-mode-footer {
+    padding: 10px 14px !important;
+    gap: 8px !important;
+    background: rgba(255, 255, 255, 0.98) !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+  }
+  .cooking-mode-footer .btn {
+    padding: 11px 12px !important;
+    font-size: 0.85rem !important;
+  }
+  #btn-cwm-prev,
+  #btn-prev-step {
+    flex: 0.8 !important;
+  }
+  #btn-cwm-repeat-footer {
+    padding: 10px 8px !important;
+    font-size: 0.78rem !important;
+  }
+  #btn-cwm-next,
+  #btn-next-step {
+    flex: 1.25 !important;
+    font-weight: 700 !important;
+  }
+
+  /* Cooking Mode Header */
+  .cooking-mode-header {
+    padding: 8px 12px !important;
+    height: 56px !important;
+  }
+  .cooking-progress-tracker {
+    max-width: 120px !important;
+  }
+  #cwm-step-counter,
+  #step-counter-text {
+    font-size: 0.78rem !important;
+  }
+
+  /* Filters & Inputs */
+  .filter-bar {
+    padding: 16px 14px !important;
+    margin-bottom: 24px !important;
+    border-radius: var(--radius-md) !important;
+  }
+  .search-input-wrap {
+    margin-bottom: 14px !important;
+  }
+  .search-input {
+    padding: 11px 36px 11px 40px !important;
+    font-size: 0.92rem !important;
+  }
+  .search-icon {
+    left: 14px !important;
+    width: 17px !important;
+    height: 17px !important;
+  }
+  .search-clear-btn {
+    right: 12px !important;
+  }
+  .filter-pill {
+    padding: 6px 12px !important;
+    font-size: 0.8rem !important;
+  }
+  .filter-select {
+    font-size: 0.82rem !important;
+    padding: 7px 12px !important;
+  }
+
+  /* Pantry Card on Mobile */
+  .pantry-card {
+    padding: 18px 14px !important;
+    border-radius: var(--radius-lg) !important;
+    margin-bottom: 24px !important;
+  }
+  .pantry-chips-wrap {
+    gap: 8px !important;
+    margin: 14px 0 !important;
+  }
+  .pantry-chip {
+    padding: 6px 12px !important;
+    font-size: 0.82rem !important;
+    gap: 6px !important;
+  }
+
+  /* Checklist Container */
+  .checklist-container {
+    padding: 20px 16px !important;
+    border-radius: var(--radius-lg) !important;
+  }
+  .checklist-item {
+    min-height: 48px !important;
+    padding: 12px 14px !important;
+    gap: 12px !important;
+  }
+  .checklist-checkbox {
+    width: 22px !important;
+    height: 22px !important;
+  }
+  .checklist-item-name {
+    font-size: 0.95rem !important;
+  }
+  .checklist-item-amount {
+    font-size: 0.85rem !important;
+  }
+
+  /* Scaler Controls */
+  .serving-scaler {
+    padding: 3px 6px !important;
+  }
+  .scaler-btn {
+    width: 32px !important;
+    height: 32px !important;
+    font-size: 1.1rem !important;
+  }
+  .scaler-count {
+    min-width: 30px !important;
+    font-size: 1rem !important;
+  }
+
+  /* Voice Toolbar Mobile */
+  .cwm-voice-toolbar {
+    padding: 12px 14px !important;
+    gap: 10px !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+  .cwm-voice-toolbar > div:first-child {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 8px !important;
+    width: 100% !important;
+  }
+  .cwm-voice-toolbar > div:first-child .btn {
+    flex: 1 !important;
+    min-width: 80px !important;
+    justify-content: center !important;
+    padding: 8px 10px !important;
+  }
+  .cwm-voice-toolbar > div:first-child span {
+    width: 100% !important;
+    margin-bottom: 2px !important;
+  }
+  .cwm-voice-toolbar label {
+    margin-top: 4px !important;
+    justify-content: center !important;
+  }
+
+  /* Compact header buttons in cooking mode */
+  #btn-cwm-exit span,
+  #btn-toggle-ingredients-drawer span {
+    display: none !important;
+  }
+  #btn-cwm-exit,
+  #btn-toggle-ingredients-drawer {
+    padding: 7px 10px !important;
+  }
+
+  /* Completion Container */
+  .completion-container {
+    padding: 24px 16px !important;
+  }
+  .completion-title {
+    font-size: 1.75rem !important;
+  }
+  .completion-dish-card {
+    flex-direction: column !important;
+    text-align: center !important;
+    padding: 16px !important;
+  }
+  .completion-dish-img {
+    width: 90px !important;
+    height: 90px !important;
+    margin: 0 auto !important;
+  }
+
+  /* Modals as Native Mobile Bottom Sheets */
+  #shopping-list-modal,
+  #cwm-ingredients-drawer {
+    align-items: flex-end !important;
+    padding: 0 !important;
+  }
+  #shopping-list-modal > div,
+  #cwm-ingredients-drawer > div {
+    max-height: 88vh !important;
+    border-radius: 20px 20px 0 0 !important;
+    width: 100% !important;
+    animation: slideUpModal 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  @keyframes slideUpModal {
+    from { transform: translateY(100%); }
+    to { transform: translateY(0); }
   }
 }
