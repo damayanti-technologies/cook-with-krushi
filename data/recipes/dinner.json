@@ -1,0 +1,131 @@
+[
+  {
+    "id": "rec_paneer_butter_masala",
+    "slug": "paneer-butter-masala",
+    "title": {
+      "en": "Paneer Butter Masala",
+      "te": "పనీర్ బటర్ మసాలా"
+    },
+    "description": {
+      "en": "Velvety, rich restaurant-style tomato butter gravy with succulent cottage cheese cubes and fragrant kasuri methi.",
+      "te": "రుచికరమైన రెస్టారెంట్ స్టైల్ పనీర్ బటర్ మసాలా కర్రీ. రోటీలు మరియు నాన్‌లతో అద్భుతంగా ఉంటుంది."
+    },
+    "categoryId": "cat_dinner",
+    "subcategoryId": "Paneer Special",
+    "cuisine": "North Indian",
+    "dietaryType": "vegetarian",
+    "difficulty": "medium",
+    "preparationTime": 15,
+    "cookingTime": 25,
+    "totalTime": 40,
+    "defaultServings": 2,
+    "coverImage": "https://images.unsplash.com/photo-1631452180519-c014fe946bc7?w=1000&auto=format&fit=crop&q=80",
+    "caloriesPerServing": 380,
+    "beginnerFriendly": true,
+    "featured": true,
+    "rating": 4.9,
+    "reviewsCount": 142,
+    "published": true,
+    "createdAt": "2026-01-15T10:00:00.000Z",
+    "tags": ["paneer", "gravy", "restaurant-style", "dinner", "comfort food"],
+    "equipment": ["Heavy-bottom pan or Kadai", "Blender", "Spatula", "Measuring spoons", "Chef knife"],
+    "ingredients": [
+      { "id": "ing_1", "name": { "en": "Paneer (Cottage Cheese)", "te": "పనీర్" }, "quantity": 200, "unit": "g", "notes": "Cut into bite-sized 1-inch cubes" },
+      { "id": "ing_2", "name": { "en": "Ripe Tomatoes", "te": "టమాటాలు" }, "quantity": 4, "unit": "medium", "notes": "Roughly chopped for puree" },
+      { "id": "ing_3", "name": { "en": "Onion", "te": "ఉల్లిపాయ" }, "quantity": 1, "unit": "large", "notes": "Finely sliced" },
+      { "id": "ing_4", "name": { "en": "Butter", "te": "వెన్న" }, "quantity": 2, "unit": "tbsp", "notes": "Salted or unsalted" },
+      { "id": "ing_5", "name": { "en": "Cooking Oil", "te": "వంట నూనె" }, "quantity": 1, "unit": "tbsp" },
+      { "id": "ing_6", "name": { "en": "Ginger-Garlic Paste", "te": "అల్లం-వెల్లుల్లి పేస్ట్" }, "quantity": 1, "unit": "tbsp", "notes": "Freshly ground preferred" },
+      { "id": "ing_7", "name": { "en": "Cashews", "te": "జీడిపప్పు" }, "quantity": 12, "unit": "whole", "notes": "Soaked in warm water for 10 mins" },
+      { "id": "ing_8", "name": { "en": "Kashmiri Red Chilli Powder", "te": "కశ్మీరీ కారం" }, "quantity": 1.5, "unit": "tsp", "notes": "Rich red color without high heat" },
+      { "id": "ing_9", "name": { "en": "Garam Masala", "te": "గరం మసాలా" }, "quantity": 0.5, "unit": "tsp" },
+      { "id": "ing_10", "name": { "en": "Kasuri Methi (Dried Fenugreek)", "te": "కసూరి మేథి" }, "quantity": 1, "unit": "tsp", "notes": "Crushed between palms" },
+      { "id": "ing_11", "name": { "en": "Fresh Cream", "te": "ఫ్రెష్ క్రీమ్" }, "quantity": 2, "unit": "tbsp" },
+      { "id": "ing_12", "name": { "en": "Salt", "te": "ఉప్పు" }, "quantity": 1, "unit": "tsp", "notes": "Adjust to taste" }
+    ],
+    "alternatives": [
+      { "original": "Paneer", "substitute": "Firm Tofu", "note": "Makes the dish 100% vegan. Press tofu before cubing." },
+      { "original": "Cashews", "substitute": "Watermelon seeds (Magaz) or Almonds", "note": "Provides similar rich creaminess for nut-sensitive diets." },
+      { "original": "Fresh Cream", "substitute": "Coconut milk", "note": "Lends a subtle sweet undertone and dairy-free velvet finish." }
+    ],
+    "tips": [
+      "Do not fry paneer cubes hard; soaking them in warm salted water for 5 minutes keeps them pillowy soft.",
+      "Blend the tomato and cashew paste into an ultra-smooth silk puree for authentic restaurant mouthfeel.",
+      "Always rub Kasuri Methi between your palms right before sprinkling to awaken its aromatic oils."
+    ],
+    "steps": [
+      {
+        "order": 1,
+        "title": { "en": "Prepare Aromatics & Puree", "te": "టమాటా మరియు జీడిపప్పు పేస్ట్ సిద్ధం చేసుకోండి" },
+        "instructions": [
+          "Soak 12 cashews in 1/4 cup warm water for 10 minutes.",
+          "In a blender jar, combine roughly chopped tomatoes and soaked cashews.",
+          "Blend on high until silky smooth without any grainy bits.",
+          "Cut paneer into neat 1-inch cubes and keep aside."
+        ],
+        "imageUrl": "https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=800&auto=format&fit=crop&q=80",
+        "estimatedMinutes": 5,
+        "timerSeconds": null,
+        "tips": ["If your blender is warm, wait 2 minutes before blending hot aromatics to prevent steam splatter."],
+        "warnings": ["Hold down blender lid securely with a kitchen towel while operating."]
+      },
+      {
+        "order": 2,
+        "title": { "en": "Saute Aromatics & Onion Base", "te": "ఉల్లిపాయలు మరియు మసాలాలు వేయించండి" },
+        "instructions": [
+          "Place your heavy-bottom pan over medium heat.",
+          "Add 1 tablespoon of butter and 1 tablespoon of cooking oil (oil prevents butter from scorching).",
+          "Add finely sliced onions and sauté for 4-5 minutes until golden and translucent.",
+          "Add 1 tablespoon ginger-garlic paste and sauté for 1 minute until raw aroma dissipates."
+        ],
+        "imageUrl": "https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=800&auto=format&fit=crop&q=80",
+        "estimatedMinutes": 6,
+        "timerSeconds": 300,
+        "tips": ["A pinch of salt over onions draws out moisture and browns them evenly."],
+        "warnings": ["Keep heat on medium. Burnt ginger-garlic paste will turn the gravy bitter."]
+      },
+      {
+        "order": 3,
+        "title": { "en": "Cook Tomato-Cashew Gravy", "te": "టమాటా గ్రేవీని ఉడికించండి" },
+        "instructions": [
+          "Pour the prepared tomato-cashew puree into the pan.",
+          "Stir in Kashmiri red chilli powder, turmeric powder, and 1 tsp salt.",
+          "Cover with a lid and simmer over medium-low heat for 8 minutes until oil leaves the sides."
+        ],
+        "imageUrl": "https://images.unsplash.com/photo-1631452180519-c014fe946bc7?w=800&auto=format&fit=crop&q=80",
+        "estimatedMinutes": 8,
+        "timerSeconds": 480,
+        "tips": ["Covering the pan is essential as bubbling cashew gravy spatters easily."],
+        "warnings": ["Hot steam will release when removing the lid; open tilting away from your face."]
+      },
+      {
+        "order": 4,
+        "title": { "en": "Add Paneer & Seasonings", "te": "పనీర్ మరియు మసాలా కలపండి" },
+        "instructions": [
+          "Stir in 1/2 cup of warm water to adjust gravy consistency to your liking.",
+          "Gently slide in 200g paneer cubes so they do not break.",
+          "Add garam masala and 1/2 teaspoon sugar (optional, balances tomato acidity).",
+          "Simmer on gentle heat for 3-4 minutes to let the paneer absorb flavours."
+        ],
+        "imageUrl": "https://images.unsplash.com/photo-1631452180519-c014fe946bc7?w=800&auto=format&fit=crop&q=80",
+        "estimatedMinutes": 4,
+        "timerSeconds": 240,
+        "tips": ["Use a gentle folding motion with your spatula rather than vigorous stirring."]
+      },
+      {
+        "order": 5,
+        "title": { "en": "Finish with Cream & Kasuri Methi", "te": "క్రీమ్ మరియు కసూరి మేథితో పూర్తి చేయండి" },
+        "instructions": [
+          "Turn off the flame.",
+          "Crush 1 teaspoon Kasuri Methi between your palms and scatter over the curry.",
+          "Drizzle 2 tablespoons of fresh cream and add the remaining 1 tablespoon of butter.",
+          "Gently swirl through and let it rest for 2 minutes before serving."
+        ],
+        "imageUrl": "https://images.unsplash.com/photo-1631452180519-c014fe946bc7?w=800&auto=format&fit=crop&q=80",
+        "estimatedMinutes": 2,
+        "timerSeconds": 120,
+        "tips": ["Always turn off the stove before adding cream to prevent curdling."]
+      }
+    ]
+  }
+]

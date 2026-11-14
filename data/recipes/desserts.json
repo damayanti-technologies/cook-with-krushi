@@ -1,0 +1,97 @@
+[
+  {
+    "id": "rec_gulab_jamun",
+    "slug": "gulab-jamun",
+    "title": {
+      "en": "Melt-in-Mouth Gulab Jamun",
+      "te": "నోరూరించే గులాబ్ జామున్"
+    },
+    "description": {
+      "en": "Traditional golden fried milk solids dumplings soaked in fragrant cardamom and rose scented warm sugar syrup.",
+      "te": "నోట్లో వేస్తే కరిగిపోయే మృదువైన గులాబ్ జామున్. పండుగలకు మరియు వేడుకలకు ఎంతో ప్రత్యేకం."
+    },
+    "categoryId": "cat_desserts",
+    "subcategoryId": "Traditional Sweets",
+    "cuisine": "Indian",
+    "dietaryType": "vegetarian",
+    "difficulty": "medium",
+    "preparationTime": 15,
+    "cookingTime": 20,
+    "totalTime": 35,
+    "defaultServings": 4,
+    "coverImage": "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?w=1000&auto=format&fit=crop&q=80",
+    "caloriesPerServing": 280,
+    "beginnerFriendly": true,
+    "featured": true,
+    "rating": 4.96,
+    "reviewsCount": 180,
+    "published": true,
+    "createdAt": "2026-01-25T14:00:00.000Z",
+    "tags": ["dessert", "sweet", "festival", "celebration", "diwali special"],
+    "equipment": ["Deep frying kadai", "Wide saucepan for syrup", "Slotted spoon"],
+    "ingredients": [
+      { "id": "ing_g1", "name": { "en": "Khoya / Milk Powder Mix", "te": "కోవా లేదా మిల్క్ పౌడర్" }, "quantity": 1, "unit": "cup" },
+      { "id": "ing_g2", "name": { "en": "All-Purpose Flour (Maida)", "te": "మైదా పిండి" }, "quantity": 3, "unit": "tbsp" },
+      { "id": "ing_g3", "name": { "en": "Milk", "te": "పాలు" }, "quantity": 4, "unit": "tbsp", "notes": "Lukewarm, as needed" },
+      { "id": "ing_g4", "name": { "en": "Sugar", "te": "పంచదార" }, "quantity": 1.5, "unit": "cups" },
+      { "id": "ing_g5", "name": { "en": "Water", "te": "నీరు" }, "quantity": 1.5, "unit": "cups" },
+      { "id": "ing_g6", "name": { "en": "Green Cardamom Pods", "te": "యాలకులు" }, "quantity": 4, "unit": "pods", "notes": "Crushed" },
+      { "id": "ing_g7", "name": { "en": "Rose Water", "te": "గులాబీ నీరు" }, "quantity": 1, "unit": "tsp" },
+      { "id": "ing_g8", "name": { "en": "Ghee or Oil for deep frying", "te": "నెయ్యి లేదా నూనె" }, "quantity": 2, "unit": "cups" }
+    ],
+    "tips": [
+      "Do not knead the dough hard like chapati dough; gently bring together with finger tips to avoid rubbery jamuns.",
+      "Fry on low flame. Frying on high flame darkens the exterior while keeping the center raw and dense."
+    ],
+    "steps": [
+      {
+        "order": 1,
+        "title": { "en": "Prepare Cardamom Sugar Syrup", "te": "పంచదార పాకం తయారు చేయండి" },
+        "instructions": [
+          "In a wide saucepan, mix 1.5 cups sugar and 1.5 cups water.",
+          "Bring to a boil on medium flame, stirring until sugar dissolves completely.",
+          "Add crushed cardamoms and simmer for 5 minutes until syrup turns slightly sticky (half-string consistency).",
+          "Turn off flame, stir in rose water, and keep syrup warm."
+        ],
+        "imageUrl": "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?w=800&auto=format&fit=crop&q=80",
+        "estimatedMinutes": 8,
+        "timerSeconds": 300
+      },
+      {
+        "order": 2,
+        "title": { "en": "Shape Crack-Free Jamuns", "te": "పగుళ్లు లేకుండా ఉండలు చేయండి" },
+        "instructions": [
+          "In a bowl, mix milk powder and flour.",
+          "Sprinkle milk tablespoon by tablespoon to make a soft, smooth, pliable dough.",
+          "Divide into smooth bite-sized balls between lightly greased palms without any cracks."
+        ],
+        "imageUrl": "https://images.unsplash.com/photo-1540420773420-3366772f4999?w=800&auto=format&fit=crop&q=80",
+        "estimatedMinutes": 7
+      },
+      {
+        "order": 3,
+        "title": { "en": "Gentle Deep Frying", "te": "సన్నని మంటపై వేయించండి" },
+        "instructions": [
+          "Heat ghee or oil in a kadai over gentle low flame.",
+          "Slide jamuns into oil; gently swirl oil with ladle without touching jamuns directly.",
+          "Fry slowly for 6-8 minutes until evenly deep golden-brown all around."
+        ],
+        "imageUrl": "https://images.unsplash.com/photo-1601050690597-df0568f70950?w=800&auto=format&fit=crop&q=80",
+        "estimatedMinutes": 8,
+        "timerSeconds": 420,
+        "warnings": ["Hot oil splashes: use a long slotted spoon and gently slide balls in."]
+      },
+      {
+        "order": 4,
+        "title": { "en": "Soak in Warm Syrup", "te": "వెచ్చని పాకంలో నానబెట్టండి" },
+        "instructions": [
+          "Drain fried jamuns on paper towel for 30 seconds, then transfer directly into warm sugar syrup.",
+          "Allow them to soak for at least 30 minutes to expand and become spongy."
+        ],
+        "imageUrl": "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?w=800&auto=format&fit=crop&q=80",
+        "estimatedMinutes": 30,
+        "timerSeconds": 1800
+      }
+    ]
+  }
+]

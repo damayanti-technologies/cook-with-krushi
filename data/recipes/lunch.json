@@ -1,0 +1,175 @@
+[
+  {
+    "id": "rec_hyderabadi_biryani",
+    "slug": "hyderabadi-biryani",
+    "title": {
+      "en": "Royal Hyderabadi Veg Dum Biryani",
+      "te": "హైదరాబాదీ వెజ్ దమ్ బిర్యానీ"
+    },
+    "description": {
+      "en": "Fragrant long-grain basmati rice layered with spiced vegetables, saffron milk, fried onions (birista), and slow-cooked in traditional dum sealed pot.",
+      "te": "సుగంధ ద్రవ్యాలు మరియు బాస్మతి బియ్యంతో తయారుచేసిన ప్రామాణిక హైదరాబాద్ వెజ్ దమ్ బిర్యానీ."
+    },
+    "categoryId": "cat_lunch",
+    "subcategoryId": "Biryani",
+    "cuisine": "Hyderabadi",
+    "dietaryType": "vegetarian",
+    "difficulty": "hard",
+    "preparationTime": 25,
+    "cookingTime": 35,
+    "totalTime": 60,
+    "defaultServings": 4,
+    "coverImage": "https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=1000&auto=format&fit=crop&q=80",
+    "caloriesPerServing": 450,
+    "beginnerFriendly": false,
+    "featured": true,
+    "rating": 4.98,
+    "reviewsCount": 340,
+    "published": true,
+    "createdAt": "2026-01-05T12:00:00.000Z",
+    "tags": ["biryani", "hyderabadi", "rice", "dum", "celebration", "lunch"],
+    "equipment": ["Heavy-bottom Biryani Handi with tight lid", "Wide colander", "Frying pan", "Foil or dough seal"],
+    "ingredients": [
+      { "id": "ing_b1", "name": { "en": "Aged Basmati Rice", "te": "బాస్మతి బియ్యం" }, "quantity": 2, "unit": "cups", "notes": "Washed and soaked for 30 minutes" },
+      { "id": "ing_b2", "name": { "en": "Mixed Vegetables (Carrot, Beans, Peas, Potato)", "te": "మిశ్రమ కూరగాయలు" }, "quantity": 2.5, "unit": "cups", "notes": "Diced evenly" },
+      { "id": "ing_b3", "name": { "en": "Curd / Plain Yogurt", "te": "పెరుగు" }, "quantity": 0.75, "unit": "cup", "notes": "Whisked smooth" },
+      { "id": "ing_b4", "name": { "en": "Fried Onions (Birista)", "te": "వేయించిన ఉల్లిపాయలు" }, "quantity": 1, "unit": "cup", "notes": "Crispy deep brown" },
+      { "id": "ing_b5", "name": { "en": "Biryani Masala Powder", "te": "బిర్యానీ మసాలా" }, "quantity": 1.5, "unit": "tbsp" },
+      { "id": "ing_b6", "name": { "en": "Whole Spices (Cardamom, Cloves, Bay leaf, Cinnamon)", "te": "బిర్యానీ దినుసులు" }, "quantity": 1, "unit": "set" },
+      { "id": "ing_b7", "name": { "en": "Saffron strands soaked in 3 tbsp warm milk", "te": "కుంకుమపువ్వు పాలు" }, "quantity": 1, "unit": "portion" },
+      { "id": "ing_b8", "name": { "en": "Pure Desi Ghee", "te": "నెయ్యి" }, "quantity": 3, "unit": "tbsp" },
+      { "id": "ing_b9", "name": { "en": "Fresh Mint & Coriander leaves", "te": "పుదీనా మరియు కొత్తిమీర" }, "quantity": 0.5, "unit": "cup", "notes": "Finely chopped" },
+      { "id": "ing_b10", "name": { "en": "Ginger Garlic Paste", "te": "అల్లం వెల్లుల్లి పేస్ట్" }, "quantity": 1.5, "unit": "tbsp" },
+      { "id": "ing_b11", "name": { "en": "Salt", "te": "ఉప్పు" }, "quantity": 2, "unit": "tsp" }
+    ],
+    "tips": [
+      "Cook the basmati rice only up to 70% in rolling boiling water before draining; it finishes cooking inside the dum steam.",
+      "Place a flat tawa underneath your biryani pot during dum to distribute heat uniformly and prevent rice scorching at the bottom."
+    ],
+    "steps": [
+      {
+        "order": 1,
+        "title": { "en": "Marinate the Vegetables", "te": "కూరగాయలను మ్యారినేట్ చేయండి" },
+        "instructions": [
+          "In a large mixing bowl, combine diced vegetables, whisked curd, ginger-garlic paste, biryani masala, red chilli powder, mint, coriander, half the fried onions, and 1 tsp salt.",
+          "Mix thoroughly until every vegetable piece is coated.",
+          "Rest for 20 minutes while you boil water for rice."
+        ],
+        "imageUrl": "https://images.unsplash.com/photo-1540420773420-3366772f4999?w=800&auto=format&fit=crop&q=80",
+        "estimatedMinutes": 20,
+        "timerSeconds": 1200
+      },
+      {
+        "order": 2,
+        "title": { "en": "Boil Rice to 70% Doneness", "te": "బియ్యాన్ని 70% ఉడికించండి" },
+        "instructions": [
+          "Bring 6 cups of water to a vigorous boil with bay leaf, cloves, cinnamon, and 1 tbsp salt.",
+          "Add drained soaked basmati rice.",
+          "Cook on high flame for exactly 5 minutes until the grain breaks into three parts when pinched between fingers.",
+          "Immediately drain in a wide colander."
+        ],
+        "imageUrl": "https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=800&auto=format&fit=crop&q=80",
+        "estimatedMinutes": 6,
+        "timerSeconds": 300,
+        "warnings": ["Do not overboil rice in water or the biryani will turn mushy during dum."]
+      },
+      {
+        "order": 3,
+        "title": { "en": "Layer and Dum Seal", "te": "లేయరింగ్ చేసి దమ్ పెట్టండి" },
+        "instructions": [
+          "In your heavy pot, spread the marinated vegetables evenly as the bottom foundation.",
+          "Spread the 70% cooked hot rice evenly on top.",
+          "Drizzle saffron milk, remaining fried onions, chopped mint, and 3 tablespoons desi ghee across the top layer.",
+          "Seal the rim with aluminium foil and press the heavy lid down firmly to lock all aromatics."
+        ],
+        "imageUrl": "https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=800&auto=format&fit=crop&q=80",
+        "estimatedMinutes": 5
+      },
+      {
+        "order": 4,
+        "title": { "en": "Slow Dum Cooking & Rest", "te": "తక్కువ మంటపై దమ్ ఉడికించండి" },
+        "instructions": [
+          "Cook over high flame for 5 minutes, then transfer the pot onto a heated iron tawa.",
+          "Simmer on the lowest flame for 18 minutes.",
+          "Turn off flame and let it rest undisturbed for 10 minutes before gently fluffing with a flat spoon from the bottom."
+        ],
+        "imageUrl": "https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=800&auto=format&fit=crop&q=80",
+        "estimatedMinutes": 28,
+        "timerSeconds": 1080
+      }
+    ]
+  },
+  {
+    "id": "rec_tomato_pappu",
+    "slug": "andhra-tomato-pappu",
+    "title": {
+      "en": "Andhra Tomato Pappu (Dal)",
+      "te": "ఆంధ్ర టమాటా పప్పు"
+    },
+    "description": {
+      "en": "Tangy, comforting toor dal stewed with ripe country tomatoes, flavoured with garlic cloves, cumin, and fiery ghee tadka.",
+      "te": "కమ్మని ఆంధ్ర టమాటా పప్పు. వేడి అన్నం మరియు నెయ్యితో తింటే ఎంతో రుచిగా ఉంటుంది."
+    },
+    "categoryId": "cat_lunch",
+    "subcategoryId": "Dal & Sambar",
+    "cuisine": "Andhra",
+    "dietaryType": "vegan",
+    "difficulty": "easy",
+    "preparationTime": 10,
+    "cookingTime": 20,
+    "totalTime": 30,
+    "defaultServings": 3,
+    "coverImage": "https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=1000&auto=format&fit=crop&q=80",
+    "caloriesPerServing": 210,
+    "beginnerFriendly": true,
+    "featured": true,
+    "rating": 4.88,
+    "reviewsCount": 95,
+    "published": true,
+    "createdAt": "2026-01-20T11:00:00.000Z",
+    "tags": ["dal", "andhra", "comfort food", "lunch", "pappu", "easy"],
+    "equipment": ["Pressure Cooker or Pot", "Tadka pan", "Dal masher (Pappu gutti)"],
+    "ingredients": [
+      { "id": "ing_p1", "name": { "en": "Toor Dal (Pigeon Pea)", "te": "కందిపప్పు" }, "quantity": 1, "unit": "cup", "notes": "Rinsed well" },
+      { "id": "ing_p2", "name": { "en": "Tomatoes", "te": "టమాటాలు" }, "quantity": 3, "unit": "large", "notes": "Chopped" },
+      { "id": "ing_p3", "name": { "en": "Green Chillies", "te": "పచ్చిమిర్చి" }, "quantity": 3, "unit": "pieces" },
+      { "id": "ing_p4", "name": { "en": "Garlic Cloves", "te": "వెల్లుల్లి రెబ్బలు" }, "quantity": 6, "unit": "cloves", "notes": "Lightly crushed" },
+      { "id": "ing_p5", "name": { "en": "Mustard Seeds & Cumin", "te": "ఆవాలు మరియు జీలకర్ర" }, "quantity": 1, "unit": "tsp" },
+      { "id": "ing_p6", "name": { "en": "Dry Red Chillies", "te": "ఎండుమిర్చి" }, "quantity": 2, "unit": "pieces" },
+      { "id": "ing_p7", "name": { "en": "Curry Leaves", "te": "కరివేపాకు" }, "quantity": 1, "unit": "sprig" },
+      { "id": "ing_p8", "name": { "en": "Turmeric Powder", "te": "పసుపు" }, "quantity": 0.5, "unit": "tsp" },
+      { "id": "ing_p9", "name": { "en": "Ghee or Sesame Oil", "te": "నెయ్యి లేదా నూనె" }, "quantity": 1.5, "unit": "tbsp" },
+      { "id": "ing_p10", "name": { "en": "Salt", "te": "ఉప్పు" }, "quantity": 1, "unit": "tsp" }
+    ],
+    "tips": [
+      "Crushing garlic cloves with skins intact creates that traditional aromatic Andhra kitchen fragrance during tempering."
+    ],
+    "steps": [
+      {
+        "order": 1,
+        "title": { "en": "Pressure Cook Dal & Tomatoes", "te": "పప్పు మరియు టమాటాలను ఉడికించండి" },
+        "instructions": [
+          "In a pressure cooker, add rinsed toor dal, 2.5 cups water, chopped tomatoes, green chillies, and turmeric powder.",
+          "Pressure cook for 4 whistles over medium flame until dal is completely tender.",
+          "Allow steam to release naturally, then mash smoothly with salt using a dal masher."
+        ],
+        "imageUrl": "https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=800&auto=format&fit=crop&q=80",
+        "estimatedMinutes": 15,
+        "timerSeconds": 900
+      },
+      {
+        "order": 2,
+        "title": { "en": "Prepare Sizzling Tadka (Popu)", "te": "ఘుమఘుమలాడే తాళింపు వేయండి" },
+        "instructions": [
+          "Heat ghee or oil in a small tempering pan.",
+          "Add mustard seeds, cumin seeds, crushed garlic, dry red chillies, and curry leaves.",
+          "Fry for 45 seconds until garlic turns golden brown and aroma fills the kitchen.",
+          "Pour sizzling tadka into mashed dal immediately, cover with lid for 2 minutes to lock aroma, and serve."
+        ],
+        "imageUrl": "https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=800&auto=format&fit=crop&q=80",
+        "estimatedMinutes": 5,
+        "timerSeconds": 60
+      }
+    ]
+  }
+]

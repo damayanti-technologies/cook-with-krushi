@@ -1,0 +1,151 @@
+{
+  "terms": [
+    {
+      "id": "term_saute",
+      "slug": "saute",
+      "category": "technique",
+      "term": { "en": "Sauté", "te": "సాటే (దోరగా వేయించడం)" },
+      "definition": {
+        "en": "Cooking ingredients quickly in a small amount of hot oil or butter over medium-high heat while stirring frequently.",
+        "te": "తక్కువ నూనె లేదా వెన్నలో కూరగాయలను దోరగా వేయించే పద్ధతి."
+      },
+      "examples": ["Sautéing onions until golden translucent", "Sautéing bell peppers for fried rice"],
+      "imageUrl": "https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=800&auto=format&fit=crop&q=80"
+    },
+    {
+      "id": "term_simmer",
+      "slug": "simmer",
+      "category": "technique",
+      "term": { "en": "Simmer", "te": "సిమ్మర్ (సన్నని మంటపై ఉడికించడం)" },
+      "definition": {
+        "en": "Cooking liquid gently just below boiling point with small, gentle bubbles breaking softly at the surface.",
+        "te": "మరుగు స్థాయికి కొంచెం తక్కువగా సన్నని మంటపై నెమ్మదిగా ఉడికించే పద్ధతి."
+      },
+      "examples": ["Simmering tomato gravy for 10 minutes", "Simmering dal with spices"],
+      "imageUrl": "https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=800&auto=format&fit=crop&q=80"
+    },
+    {
+      "id": "term_temper",
+      "slug": "temper-tadka",
+      "category": "technique",
+      "term": { "en": "Temper (Tadka / Popu)", "te": "తాళింపు / పోపు" },
+      "definition": {
+        "en": "Frying whole spices and aromatics (like mustard seeds, cumin, garlic, and curry leaves) in hot ghee or oil to extract essential oils, then pouring over the dish.",
+        "te": "నూనె లేదా నెయ్యిలో ఆవాలు, జీలకర్ర, ఎండుమిర్చి, కరివేపాకు వేయించి వంటకానికి సువాసన చేకూర్చే ముఖ్యమైన ప్రక్రియ."
+      },
+      "examples": ["Tadka for Sambar, Dal, or Coconut Chutney"],
+      "imageUrl": "https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?w=800&auto=format&fit=crop&q=80"
+    },
+    {
+      "id": "term_dum",
+      "slug": "dum-cooking",
+      "category": "technique",
+      "term": { "en": "Dum (Steam Sealed)", "te": "దమ్ విధానం" },
+      "definition": {
+        "en": "Slow-cooking meats, rice, or vegetables in a sealed heavy pot over gentle heat so ingredients cook entirely in their own trapped aromatic steam.",
+        "te": "ఆవిరి బయటకు పోకుండా మూతను గట్టిగా మూసి సన్నని సెగపై నెమ్మదిగా వండే పురాతన రాజరిక పద్ధతి."
+      },
+      "examples": ["Hyderabadi Dum Biryani", "Dum Aloo"],
+      "imageUrl": "https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=800&auto=format&fit=crop&q=80"
+    },
+    {
+      "id": "term_knead",
+      "slug": "knead",
+      "category": "technique",
+      "term": { "en": "Knead", "te": "పిండి కలపడం / పిసకడం" },
+      "definition": {
+        "en": "Working dough with the heels of your hands to develop gluten structure for soft chapatis, rotis, or bread.",
+        "te": "చేతి మడమలతో పిండిని అదిమి మృదువుగా అయ్యేలా ఒత్తే విధానం."
+      },
+      "examples": ["Kneading wheat flour dough for soft rotis"],
+      "imageUrl": "https://images.unsplash.com/photo-1540420773420-3366772f4999?w=800&auto=format&fit=crop&q=80"
+    },
+    {
+      "id": "term_whisk",
+      "slug": "whisk",
+      "category": "technique",
+      "term": { "en": "Whisk", "te": "చిలకడం" },
+      "definition": {
+        "en": "Beating ingredients rapidly using a wire whisk or fork to incorporate air and blend smoothly without lumps.",
+        "te": "పెరుగు, గుడ్లు లేదా పిండి మిశ్రమాలను ఉండలు లేకుండా ఒకే దిశలో వేగంగా కలపడం."
+      },
+      "examples": ["Whisking curd for raita or lassi"],
+      "imageUrl": "https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=800&auto=format&fit=crop&q=80"
+    }
+  ],
+  "equipment": [
+    {
+      "name": "Cast Iron Tawa / Griddle",
+      "desc": "Maintains uniform high heat retention for paper-crisp dosas and authentic scorched rotis.",
+      "bestFor": "Dosas, Rotis, Parathas"
+    },
+    {
+      "name": "Heavy-Bottom Kadai / Wok",
+      "desc": "Prevents gravies, milk, and spices from scorching during prolonged sautéing and deep frying.",
+      "bestFor": "Paneer Gravies, Tadkas, Pakodas"
+    },
+    {
+      "name": "Pressure Cooker / Instant Pot",
+      "desc": "Tenderizes tough lentils like toor dal and chickpeas in a fraction of standard boiling time.",
+      "bestFor": "Dals, Biryani, Rice, Sambar"
+    },
+    {
+      "name": "High-Torque Wet & Dry Blender",
+      "desc": "Essential for reducing tomatoes, soaked cashews, and coconuts into silky smooth restaurant purees.",
+      "bestFor": "Chutneys, Masala pastes, Purees"
+    },
+    {
+      "name": "Pappu Gutti (Wooden Dal Masher)",
+      "desc": "Mashes boiled lentils and stewed greens softly without destroying natural texture like electric blades do.",
+      "bestFor": "Andhra Tomato Pappu, Sambar, Rasam"
+    }
+  ],
+  "conversions": [
+    { "measure": "1 Tablespoon (tbsp)", "metric": "15 ml / 3 teaspoons (tsp)" },
+    { "measure": "1 Teaspoon (tsp)", "metric": "5 ml" },
+    { "measure": "1 Standard Cup", "metric": "240 ml (water / milk)" },
+    { "measure": "1 Cup Basmati Rice", "metric": "Approx. 185 – 200 grams" },
+    { "measure": "1 Cup All-Purpose Flour (Maida)", "metric": "Approx. 125 grams" },
+    { "measure": "1 Cup Granulated Sugar", "metric": "Approx. 200 grams" },
+    { "measure": "Pinch of Spices", "metric": "Approx. 1/16 teaspoon / ~0.3g" }
+  ],
+  "safety": [
+    {
+      "title": "Tadka (Tempering) Splatter Prevention",
+      "desc": "Ensure curry leaves and green chillies are wiped dry with a clean kitchen towel before adding them to hot oil or ghee.",
+      "severity": "High"
+    },
+    {
+      "title": "Blending Hot Liquids Safely",
+      "desc": "Never fill a blender jar to the top with steaming gravies. Steam expansion can pop the lid violently. Let the mixture cool 5 minutes, fill half, and hold the lid with a folded cloth.",
+      "severity": "Critical"
+    },
+    {
+      "title": "Deep Frying Temperature Control",
+      "desc": "Use a deep, stable pan with flat bottom. Gently slide fritters or gulab jamuns from the side of the pan rather than dropping from height.",
+      "severity": "High"
+    },
+    {
+      "title": "Raw Dairy & Protein Hygiene",
+      "desc": "Store paneer immersed in salted water in the refrigerator, and consume within 3-4 days. Always sanitize cutting boards after prepping perishables.",
+      "severity": "Medium"
+    }
+  ],
+  "mistakes": [
+    {
+      "mistake": "Burning Ginger-Garlic Paste",
+      "cause": "Adding paste directly into super-hot empty oil.",
+      "fix": "Always sauté onions first. Once onions release moisture and turn translucent, add ginger-garlic paste and sauté on medium heat for 60 seconds."
+    },
+    {
+      "mistake": "Rubbery, Hard Paneer",
+      "cause": "Frying paneer cubes on high heat for too long.",
+      "fix": "Add fresh paneer cubes directly into hot simmering gravy during the last 3-4 minutes of cooking, or soak in warm salted water for 5 minutes."
+    },
+    {
+      "mistake": "Mushy, Clumpy Biryani Rice",
+      "cause": "Boiling rice 100% before dum layering.",
+      "fix": "Cook basmati rice in rolling boiling water only up to 70% (grain breaks into 3 parts when pinched). It finishes cooking in trapped dum steam."
+    }
+  ]
+}

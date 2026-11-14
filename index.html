@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Cook With Krushi - Discover delicious recipes, organize ingredients with smart checklists, and follow interactive step-by-step cooking guides. Powered by Damayanti Technologies.">
+  <meta name="theme-color" content="#294B35">
+  <title>Cook With Krushi | Cook. Learn. Enjoy.</title>
+  
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" type="image/svg+xml" href="assets/icons/icon.svg">
+  <link rel="apple-touch-icon" href="assets/icons/icon-192.png">
+  
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+
+  <!-- Offline Notice -->
+  <div class="offline-banner">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="1" y1="1" x2="23" y2="23"></line><path d="M16.72 11.06A10.94 10.94 0 0 1 19 12.55"></path><path d="M5 12.55a10.94 10.94 0 0 1 5.17-2.39"></path><line x1="12" y1="20" x2="12.01" y2="20"></line></svg>
+    <span data-i18n="offline_notice">You are currently offline. Viewing cached recipes.</span>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo">
+        <div class="brand-icon-wrap">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 13.87A4 4 0 0 1 7.41 6a5.11 5.11 0 0 1 1.05-1.54 5 5 0 0 1 7.08 0A5.11 5.11 0 0 1 16.59 6 4 4 0 0 1 18 13.87V21H6Z"/>
+            <line x1="6" y1="17" x2="18" y2="17"/>
+          </svg>
+        </div>
+        <div class="brand-text-wrap">
+          <span class="brand-name">Cook With Krushi</span>
+          <span class="brand-tagline">Cook. Learn. Enjoy.</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link active" data-i18n="nav_home">Home</a></li>
+          <li><a href="explore.html" class="nav-link" data-i18n="nav_explore">Explore Recipes</a></li>
+          <li><a href="categories.html" class="nav-link" data-i18n="nav_categories">Categories</a></li>
+          <li><a href="what-can-i-cook.html" class="nav-link" data-i18n="nav_what_can_i_cook">What Can I Cook?</a></li>
+          <li><a href="cooking-guide.html" class="nav-link" data-i18n="nav_guide">Cooking Guide</a></li>
+          <li>
+            <a href="my-kitchen.html" class="nav-link nav-kitchen-badge">
+              <span data-i18n="nav_kitchen">My Kitchen</span>
+              <span class="badge-count" style="display:none;">0</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Actions -->
+      <div class="header-actions">
+        <!-- Language Switcher -->
+        <div class="lang-toggle">
+          <button class="lang-btn active" data-lang="en">EN</button>
+          <button class="lang-btn" data-lang="te">తెలుగు</button>
+        </div>
+        
+        <a href="my-kitchen.html" class="btn-icon" aria-label="My Saved Kitchen">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <!-- HERO SECTION -->
+    <section class="hero-section" style="padding: 64px 0 48px; background: radial-gradient(circle at 85% 20%, rgba(243, 217, 200, 0.4) 0%, rgba(250, 248, 242, 0) 65%);">
+      <div class="container" style="display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 48px; align-items: center;">
+        <div class="hero-content">
+          <span class="section-tag" data-i18n="hero_tagline">Cook. Learn. Enjoy.</span>
+          <h1 style="font-size: clamp(2.2rem, 5vw, 3.4rem); color: var(--deep-green); line-height: 1.18; margin-bottom: 18px;" data-i18n="hero_title">
+            What would you love to cook today?
+          </h1>
+          <p style="font-size: 1.12rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 32px; max-width: 520px;" data-i18n="hero_desc">
+            Discover authentic recipes and master culinary techniques with interactive ingredient checklists and distraction-free, step-by-step cooking timers.
+          </p>
+
+          <!-- Search Bar -->
+          <form action="explore.html" method="GET" class="hero-search-form" style="position: relative; max-width: 500px; margin-bottom: 24px;">
+            <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            <input type="text" name="q" class="search-input" placeholder="Search recipes by name or ingredient..." data-i18n-placeholder="search_placeholder" autocomplete="off" />
+            <button type="submit" class="btn btn-primary" style="position: absolute; right: 6px; top: 6px; bottom: 6px; padding: 0 22px; border-radius: var(--radius-full);" data-i18n="btn_search">Search</button>
+          </form>
+
+          <div style="display: flex; gap: 14px; flex-wrap: wrap;">
+            <a href="explore.html" class="btn btn-secondary" data-i18n="btn_explore">Explore All Recipes</a>
+            <a href="what-can-i-cook.html" class="btn btn-outline" style="border-color: var(--terracotta); color: var(--terracotta);">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+              <span data-i18n="btn_pantry">What Can I Cook?</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-image-wrap" style="position: relative;">
+          <div style="border-radius: var(--radius-xl); overflow: hidden; box-shadow: var(--shadow-xl); transform: rotate(1deg); transition: transform 0.4s ease;">
+            <img src="https://images.unsplash.com/photo-1589302168068-964664d93dc0?auto=format&fit=crop&w=900&q=80" alt="Authentic Biryani" style="width: 100%; height: 420px; object-fit: cover;" />
+          </div>
+          <div style="position: absolute; bottom: -20px; left: -20px; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(8px); padding: 14px 20px; border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); display: flex; align-items: center; gap: 12px; border: 1px solid var(--border);">
+            <div style="width: 44px; height: 44px; border-radius: 50%; background: var(--warm-peach); display: flex; align-items: center; justify-content: center; font-size: 1.3rem;">✨</div>
+            <div>
+              <div style="font-weight: 700; color: var(--deep-green); font-size: 0.92rem;">100% Free &amp; Private</div>
+              <div style="font-size: 0.78rem; color: var(--text-secondary);">No logins, no tracking, works offline</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: BROWSE BY MEAL -->
+    <section style="padding: 56px 0;">
+      <div class="container">
+        <div class="section-header-flex">
+          <div>
+            <span class="section-tag" data-i18n="cat_title">Categories</span>
+            <h2 class="section-title" data-i18n="browse_by_meal">Browse by Meal</h2>
+            <p class="section-subtitle" data-i18n="browse_by_meal_desc">Select your meal time to discover hand-curated traditional and modern recipes.</p>
+          </div>
+          <a href="categories.html" class="btn btn-outline btn-sm" data-i18n="view_all_cat">View All Categories &rarr;</a>
+        </div>
+
+        <div class="category-grid" id="meal-category-grid">
+          <!-- Dynamically populated or fallback -->
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: MORE TO EXPLORE -->
+    <section style="padding: 40px 0 56px; background-color: var(--surface-alt);">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Special Collections</span>
+          <h2 class="section-title" data-i18n="more_to_explore">More to Explore</h2>
+          <p class="section-subtitle">Complement your meals with comforting drinks, fiery chutneys, healthy nutrition, and festival feasts.</p>
+        </div>
+
+        <div class="category-grid" id="explore-category-grid">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: POPULAR RECIPES -->
+    <section style="padding: 64px 0;">
+      <div class="container">
+        <div class="section-header-flex">
+          <div>
+            <span class="section-tag">Cook's Favorites</span>
+            <h2 class="section-title" data-i18n="popular_recipes">Popular Recipes</h2>
+            <p class="section-subtitle">Loved by culinary enthusiasts for their balanced flavor and foolproof steps.</p>
+          </div>
+          <a href="explore.html" class="btn btn-outline btn-sm" data-i18n="view_all_recipes">See All Recipes &rarr;</a>
+        </div>
+
+        <div class="recipe-grid" id="popular-recipe-grid">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: BEGINNER FRIENDLY -->
+    <section style="padding: 64px 0; background: linear-gradient(180deg, var(--bg) 0%, var(--primary-subtle) 100%);">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">First Time in the Kitchen?</span>
+          <h2 class="section-title" data-i18n="beginner_friendly">New to Cooking? Start Here.</h2>
+          <p class="section-subtitle">Zero complicated steps, clear measurements, and built-in timers designed for beginners.</p>
+        </div>
+
+        <div class="recipe-grid" id="beginner-recipe-grid">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 6: WHAT CAN I COOK TEASER -->
+    <section style="padding: 64px 0;">
+      <div class="container">
+        <div style="background: linear-gradient(135deg, var(--deep-green) 0%, var(--primary) 100%); border-radius: var(--radius-xl); padding: 48px; color: #FFFFFF; display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 40px; align-items: center; box-shadow: var(--shadow-lg);">
+          <div>
+            <span style="display: inline-block; background: rgba(255,255,255,0.2); padding: 4px 14px; border-radius: var(--radius-full); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; margin-bottom: 16px; color: var(--warm-peach);">Pantry Matcher</span>
+            <h2 style="color: #FFFFFF; font-size: 2.3rem; margin-bottom: 14px;" data-i18n="pantry_title">What can you cook with what you have?</h2>
+            <p style="color: #E7EFE5; font-size: 1.05rem; line-height: 1.6; margin-bottom: 28px;">
+              Don't let ingredients go to waste. Tell us what's in your kitchen (potatoes, onions, tomatoes, rice) and we'll instantly show you complete dishes you can make right now!
+            </p>
+            <a href="what-can-i-cook.html" class="btn btn-terracotta btn-lg" data-i18n="btn_try_pantry">Open Pantry Matcher &rarr;</a>
+          </div>
+          <div style="text-align: center;">
+            <div style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: var(--radius-lg); padding: 24px; display: inline-block; text-align: left;">
+              <div style="font-weight: 700; font-size: 0.95rem; margin-bottom: 12px; color: var(--warm-peach);">Common Pantry Quick Picks:</div>
+              <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+                <span class="pantry-chip selected" style="color: #FFFFFF; border-color: rgba(255,255,255,0.3); background: rgba(255,255,255,0.15);">✓ Onion</span>
+                <span class="pantry-chip selected" style="color: #FFFFFF; border-color: rgba(255,255,255,0.3); background: rgba(255,255,255,0.15);">✓ Tomato</span>
+                <span class="pantry-chip selected" style="color: #FFFFFF; border-color: rgba(255,255,255,0.3); background: rgba(255,255,255,0.15);">✓ Potato</span>
+                <span class="pantry-chip selected" style="color: #FFFFFF; border-color: rgba(255,255,255,0.3); background: rgba(255,255,255,0.15);">✓ Rice</span>
+              </div>
+              <div style="margin-top: 14px; font-size: 0.85rem; color: #D3DDD2;">→ Matches 8+ authentic homestyle dishes</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 7: HOW IT WORKS -->
+    <section style="padding: 56px 0; background: var(--surface);">
+      <div class="container">
+        <div class="section-header" style="text-align: center; max-width: 650px; margin-left: auto; margin-right: auto;">
+          <span class="section-tag">Simple 4-Step Journey</span>
+          <h2 class="section-title" data-i18n="how_it_works">How Cook With Krushi Works</h2>
+          <p class="section-subtitle">Our philosophy guides you smoothly from discovery to the first delicious bite.</p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 28px; margin-top: 40px;">
+          <div style="background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 32px 24px; text-align: center;">
+            <div style="width: 56px; height: 56px; border-radius: 50%; background: var(--primary-light); color: var(--deep-green); font-size: 1.5rem; font-weight: 700; display: flex; align-items: center; justify-content: center; margin: 0 auto 18px;">1</div>
+            <h3 style="font-size: 1.25rem; margin-bottom: 8px;">Discover</h3>
+            <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.5;">Browse by meal, search ingredients, or discover traditional Telugu and Indian recipes.</p>
+          </div>
+
+          <div style="background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 32px 24px; text-align: center;">
+            <div style="width: 56px; height: 56px; border-radius: 50%; background: var(--warm-peach); color: var(--terracotta); font-size: 1.5rem; font-weight: 700; display: flex; align-items: center; justify-content: center; margin: 0 auto 18px;">2</div>
+            <h3 style="font-size: 1.25rem; margin-bottom: 8px;">Prepare</h3>
+            <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.5;">Check off ingredients on your prep checklist and scale serving sizes dynamically.</p>
+          </div>
+
+          <div style="background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 32px 24px; text-align: center;">
+            <div style="width: 56px; height: 56px; border-radius: 50%; background: var(--primary-light); color: var(--deep-green); font-size: 1.5rem; font-weight: 700; display: flex; align-items: center; justify-content: center; margin: 0 auto 18px;">3</div>
+            <h3 style="font-size: 1.25rem; margin-bottom: 8px;">Cook</h3>
+            <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.5;">Enter distraction-free cooking mode with live audio timers and step-by-step guidance.</p>
+          </div>
+
+          <div style="background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 32px 24px; text-align: center;">
+            <div style="width: 56px; height: 56px; border-radius: 50%; background: #FFE082; color: #E65100; font-size: 1.5rem; font-weight: 700; display: flex; align-items: center; justify-content: center; margin: 0 auto 18px;">4</div>
+            <h3 style="font-size: 1.25rem; margin-bottom: 8px;">Enjoy</h3>
+            <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.5;">Celebrate dish completion with confetti, rate your creation, and save to your history.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 8: CULINARY TIPS OF THE DAY -->
+    <section style="padding: 56px 0;">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Chef's Wisdom</span>
+          <h2 class="section-title">Cooking Tips of the Day</h2>
+          <p class="section-subtitle">Little secrets that elevate homestyle cooking into restaurant perfection.</p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px;">
+          <div style="background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 24px; box-shadow: var(--shadow-sm);">
+            <div style="font-weight: 700; color: var(--terracotta); font-size: 0.82rem; text-transform: uppercase; margin-bottom: 8px;">Biryani Dum Technique</div>
+            <h4 style="font-size: 1.2rem; color: var(--deep-green); margin-bottom: 8px;">Layering at 70% Cooked Rice</h4>
+            <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.5;">Never fully boil basmati rice before layering in Dum Biryani. Drain when the grain breaks into three pieces under your thumbnail.</p>
+          </div>
+          <div style="background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 24px; box-shadow: var(--shadow-sm);">
+            <div style="font-weight: 700; color: var(--primary); font-size: 0.82rem; text-transform: uppercase; margin-bottom: 8px;">Crispy Masala Dosa</div>
+            <h4 style="font-size: 1.2rem; color: var(--deep-green); margin-bottom: 8px;">The Sugar &amp; Chana Dal Secret</h4>
+            <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.5;">Add 2 tbsp soaked chana dal and 1/2 tsp sugar to your batter before grinding. This creates the signature golden restaurant crust.</p>
+          </div>
+          <div style="background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 24px; box-shadow: var(--shadow-sm);">
+            <div style="font-weight: 700; color: var(--badge-nonveg); font-size: 0.82rem; text-transform: uppercase; margin-bottom: 8px;">Tadka / Tempering</div>
+            <h4 style="font-size: 1.2rem; color: var(--deep-green); margin-bottom: 8px;">Mustard Seeds Must Crackle</h4>
+            <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.5;">Mustard seeds are bitter until fully crackled. Heat ghee until hot, add seeds, wait for them to pop before adding cumin and curry leaves.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Mobile Bottom Nav -->
+  <nav class="mobile-bottom-nav">
+    <ul class="mobile-nav-items">
+      <li class="mobile-nav-item">
+        <a href="index.html" class="active">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+          <span data-i18n="nav_home">Home</span>
+        </a>
+      </li>
+      <li class="mobile-nav-item">
+        <a href="explore.html">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <span data-i18n="nav_explore">Explore</span>
+        </a>
+      </li>
+      <li class="mobile-nav-item">
+        <a href="what-can-i-cook.html">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/></svg>
+          <span data-i18n="nav_what_can_i_cook">Pantry</span>
+        </a>
+      </li>
+      <li class="mobile-nav-item">
+        <a href="cooking-guide.html">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+          <span data-i18n="nav_guide">Guide</span>
+        </a>
+      </li>
+      <li class="mobile-nav-item">
+        <a href="my-kitchen.html">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          <span data-i18n="nav_kitchen">Kitchen</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="brand-name">Cook With Krushi</div>
+          <div class="brand-tagline">Cook. Learn. Enjoy.</div>
+          <p class="footer-desc">
+            A premium, privacy-first cooking and recipe learning platform designed to help beginners and experienced cooks prepare delicious dishes step-by-step.
+          </p>
+          <div class="footer-philosophy">
+            <span>Discover</span> &rarr; <span>Prepare</span> &rarr; <span>Cook</span> &rarr; <span>Enjoy</span>
+          </div>
+        </div>
+
+        <div>
+          <div class="footer-heading" data-i18n="nav_explore">Explore</div>
+          <ul class="footer-links">
+            <li><a href="explore.html" class="footer-link">All Recipes</a></li>
+            <li><a href="categories.html" class="footer-link">Categories</a></li>
+            <li><a href="what-can-i-cook.html" class="footer-link">What Can I Cook?</a></li>
+            <li><a href="cooking-guide.html" class="footer-link">Glossary &amp; Conversions</a></li>
+            <li><a href="my-kitchen.html" class="footer-link">My Kitchen</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer-heading">Company</div>
+          <ul class="footer-links">
+            <li><a href="about.html" class="footer-link">About Us</a></li>
+            <li><a href="contact.html" class="footer-link">Contact &amp; Feedback</a></li>
+            <li><a href="privacy-policy.html" class="footer-link">Privacy Policy</a></li>
+            <li><a href="terms.html" class="footer-link">Terms of Use</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer-heading">Platform Notes</div>
+          <p style="color: #D3DDD2; font-size: 0.88rem; line-height: 1.6; margin-bottom: 12px;">
+            100% Client-Side. No account required. Your saved favorites, checklist items, and cooking history stay safe on your own device.
+          </p>
+          <div style="font-size: 0.8rem; color: var(--warm-peach);">
+            Offline-Ready Progressive Web App
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          &copy; 2026 Cook With Krushi. All rights reserved.
+        </div>
+        <div class="footer-attribution">
+          Powered by <a href="https://damayantitechnologies.com" target="_blank" rel="noopener">Damayanti Technologies</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/storage.js"></script>
+  <script src="js/db.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/audio.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/app.js"></script>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+      // 1. Load Categories
+      try {
+        const categories = await window.APIManager.getCategories();
+        const mealCats = categories.slice(0, 6);
+        const exploreCats = categories.slice(6);
+        const lang = window.I18nManager.getLang();
+
+        const renderCatCard = (c) => `
+          <a href="category.html?id=${c.id}" class="category-card">
+            <img src="${c.image}" alt="${c.name}" class="category-card-bg" loading="lazy" />
+            <div class="category-card-overlay"></div>
+            <div class="category-card-content">
+              <span class="category-card-count">${c.recipeCount || 10}+ recipes</span>
+              <h3 class="category-card-title">${lang === 'te' && c.nameTe ? c.nameTe : c.name}</h3>
+              <p class="category-card-desc">${lang === 'te' && c.descriptionTe ? c.descriptionTe : c.description}</p>
+            </div>
+          </a>
+        `;
+
+        const mealContainer = document.getElementById('meal-category-grid');
+        if (mealContainer) mealContainer.innerHTML = mealCats.map(renderCatCard).join('');
+
+        const exploreContainer = document.getElementById('explore-category-grid');
+        if (exploreContainer) exploreContainer.innerHTML = exploreCats.map(renderCatCard).join('');
+      } catch (err) {
+        console.error('Error rendering categories:', err);
+      }
+
+      // 2. Load Popular & Beginner Recipes
+      try {
+        const [popular, beginner, favs] = await Promise.all([
+          window.APIManager.getPopularRecipes(6),
+          window.APIManager.getBeginnerRecipes(4),
+          window.DBManager.getFavorites()
+        ]);
+        const favIds = new Set(favs.map(f => f.recipeId));
+
+        const popularGrid = document.getElementById('popular-recipe-grid');
+        if (popularGrid) {
+          popularGrid.innerHTML = popular.map(r => window.renderRecipeCard(r, favIds.has(r.id))).join('');
+        }
+
+        const beginnerGrid = document.getElementById('beginner-recipe-grid');
+        if (beginnerGrid) {
+          beginnerGrid.innerHTML = beginner.map(r => window.renderRecipeCard(r, favIds.has(r.id))).join('');
+        }
+      } catch (err) {
+        console.error('Error rendering recipes:', err);
+      }
+
+      // Re-render when language changes
+      window.addEventListener('cwk-lang-changed', () => {
+        window.location.reload();
+      });
+    });
+  </script>
+</body>
+</html>

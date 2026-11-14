@@ -1,0 +1,81 @@
+[
+  {
+    "id": "rec_sweet_pongal",
+    "slug": "sankranti-sweet-pongal",
+    "title": {
+      "en": "Traditional Sankranti Sweet Pongal",
+      "te": "సంక్రాంతి చక్కర పొంగలి"
+    },
+    "description": {
+      "en": "Sacred festival sweet prepared with freshly harvested rice, roasted yellow moong dal, rich organic jaggery syrup, fried cashews, and aromatic cardamom ghee.",
+      "te": "సంక్రాంతి పండుగ నైవేద్యం: సుగంధభరితమైన నేతి చక్కర పొంగలి."
+    },
+    "categoryId": "cat_occasions",
+    "subcategoryId": "Sankranti Pongal",
+    "cuisine": "South Indian",
+    "dietaryType": "vegetarian",
+    "difficulty": "medium",
+    "preparationTime": 15,
+    "cookingTime": 25,
+    "totalTime": 40,
+    "defaultServings": 4,
+    "coverImage": "https://images.unsplash.com/photo-1610057099443-fde8c4d50f91?w=1000&auto=format&fit=crop&q=80",
+    "caloriesPerServing": 340,
+    "beginnerFriendly": false,
+    "featured": true,
+    "rating": 4.97,
+    "reviewsCount": 130,
+    "published": true,
+    "createdAt": "2026-01-14T06:00:00.000Z",
+    "tags": ["pongal", "sweet pongal", "sankranti", "festival", "jaggery", "temple sweet"],
+    "equipment": ["Pressure cooker or heavy brass pot", "Saucepan for jaggery syrup", "Frying ladle"],
+    "ingredients": [
+      { "id": "ing_sp1", "name": { "en": "Raw Rice", "te": "బియ్యం" }, "quantity": 1, "unit": "cup", "notes": "Rinsed well" },
+      { "id": "ing_sp2", "name": { "en": "Yellow Moong Dal", "te": "పెసరపప్పు" }, "quantity": 0.5, "unit": "cup", "notes": "Dry roasted until aromatic" },
+      { "id": "ing_sp3", "name": { "en": "Jaggery (Gud / Bellam)", "te": "బెల్లం తురుము" }, "quantity": 1.5, "unit": "cups", "notes": "Crushed fine" },
+      { "id": "ing_sp4", "name": { "en": "Desi Ghee", "te": "స్వచ్ఛమైన నెయ్యి" }, "quantity": 4, "unit": "tbsp" },
+      { "id": "ing_sp5", "name": { "en": "Cashews & Raisins", "te": "జీడిపప్పు & కిస్మిస్" }, "quantity": 2, "unit": "tbsp" },
+      { "id": "ing_sp6", "name": { "en": "Cardamom Powder", "te": "యాలకుల పొడి" }, "quantity": 0.5, "unit": "tsp" },
+      { "id": "ing_sp7", "name": { "en": "Pinch of Edible Camphor (Pacha Karpooram)", "te": "పచ్చకర్పూరం" }, "quantity": 1, "unit": "pinch", "notes": "Optional temple aroma" }
+    ],
+    "tips": [
+      "Always roast the yellow moong dal until lightly pink and nutty smelling before cooking with rice for authentic temple texture."
+    ],
+    "steps": [
+      {
+        "order": 1,
+        "title": { "en": "Roast Dal & Cook Rice", "te": "పప్పు వేయించి అన్నం ఉడికించండి" },
+        "instructions": [
+          "Dry roast yellow moong dal in a pan on medium-low flame for 3 minutes until aromatic.",
+          "Add rice, wash together, and pressure cook with 4 cups water for 4 whistles until very soft and mushy."
+        ],
+        "imageUrl": "https://images.unsplash.com/photo-1610057099443-fde8c4d50f91?w=800&auto=format&fit=crop&q=80",
+        "estimatedMinutes": 15,
+        "timerSeconds": 900
+      },
+      {
+        "order": 2,
+        "title": { "en": "Melt Jaggery Syrup", "te": "బెల్లం పాకం సిద్ధం చేయండి" },
+        "instructions": [
+          "In a saucepan, heat crushed jaggery with 1/2 cup water.",
+          "Simmer until completely melted, then strain through a fine mesh filter to remove impurities."
+        ],
+        "imageUrl": "https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=800&auto=format&fit=crop&q=80",
+        "estimatedMinutes": 5,
+        "timerSeconds": 300
+      },
+      {
+        "order": 3,
+        "title": { "en": "Combine with Ghee Tadka", "te": "నెయ్యి మరియు జీడిపప్పు కలపండి" },
+        "instructions": [
+          "Pour strained jaggery syrup into the mashed rice-dal pot and simmer for 4 minutes over gentle flame.",
+          "In a small pan, fry cashews and raisins in generous desi ghee until golden.",
+          "Pour hot ghee cashews and cardamom powder into the pongal, stir gently, and serve warm."
+        ],
+        "imageUrl": "https://images.unsplash.com/photo-1610057099443-fde8c4d50f91?w=800&auto=format&fit=crop&q=80",
+        "estimatedMinutes": 5,
+        "timerSeconds": 300
+      }
+    ]
+  }
+]

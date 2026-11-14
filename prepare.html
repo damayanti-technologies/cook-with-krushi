@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#294B35">
+  <title>Prepare Ingredients | Cook With Krushi</title>
+  
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" type="image/svg+xml" href="assets/icons/icon.svg">
+  <link rel="apple-touch-icon" href="assets/icons/icon-192.png">
+  
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+
+  <div class="offline-banner">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="1" y1="1" x2="23" y2="23"></line><path d="M16.72 11.06A10.94 10.94 0 0 1 19 12.55"></path><path d="M5 12.55a10.94 10.94 0 0 1 5.17-2.39"></path><line x1="12" y1="20" x2="12.01" y2="20"></line></svg>
+    <span data-i18n="offline_notice">You are currently offline. Viewing cached recipes.</span>
+  </div>
+
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo">
+        <div class="brand-icon-wrap">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 13.87A4 4 0 0 1 7.41 6a5.11 5.11 0 0 1 1.05-1.54 5 5 0 0 1 7.08 0A5.11 5.11 0 0 1 16.59 6 4 4 0 0 1 18 13.87V21H6Z"/>
+            <line x1="6" y1="17" x2="18" y2="17"/>
+          </svg>
+        </div>
+        <div class="brand-text-wrap">
+          <span class="brand-name">Cook With Krushi</span>
+          <span class="brand-tagline">Cook. Learn. Enjoy.</span>
+        </div>
+      </a>
+
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link" data-i18n="nav_home">Home</a></li>
+          <li><a href="explore.html" class="nav-link" data-i18n="nav_explore">Explore Recipes</a></li>
+          <li><a href="categories.html" class="nav-link" data-i18n="nav_categories">Categories</a></li>
+          <li><a href="what-can-i-cook.html" class="nav-link" data-i18n="nav_what_can_i_cook">What Can I Cook?</a></li>
+          <li><a href="cooking-guide.html" class="nav-link" data-i18n="nav_guide">Cooking Guide</a></li>
+          <li>
+            <a href="my-kitchen.html" class="nav-link nav-kitchen-badge">
+              <span data-i18n="nav_kitchen">My Kitchen</span>
+              <span class="badge-count" style="display:none;">0</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <div class="lang-toggle">
+          <button class="lang-btn active" data-lang="en">EN</button>
+          <button class="lang-btn" data-lang="te">తెలుగు</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main style="padding: 40px 0 80px;">
+    <div class="container container-narrow">
+      
+      <!-- Back to Recipe link -->
+      <div style="margin-bottom: 24px;">
+        <a id="back-to-recipe-link" href="#" style="display: inline-flex; align-items: center; gap: 8px; font-size: 0.9rem; color: var(--text-secondary); font-weight: 600;">
+          &larr; <span data-i18n="back_to_recipe">Back to Recipe Overview</span>
+        </a>
+      </div>
+
+      <!-- Prep Checklist Card -->
+      <div class="checklist-container">
+        <div style="display: flex; align-items: flex-start; justify-content: space-between; gap: 20px; flex-wrap: wrap;">
+          <div>
+            <span class="section-tag">Step 2: Mise en Place</span>
+            <h1 id="prep-recipe-title" style="font-size: 2rem; color: var(--deep-green); margin-bottom: 4px;">Prepare Ingredients</h1>
+            <p style="color: var(--text-secondary); font-size: 0.95rem;">
+              Measure and gather all ingredients on your counter before lighting the stove.
+            </p>
+          </div>
+
+          <!-- Serving Scaler in Checklist -->
+          <div class="serving-scaler">
+            <span style="font-size: 0.8rem; font-weight: 600; color: var(--text-secondary); text-transform: uppercase;">Servings:</span>
+            <button id="prep-scaler-minus" class="scaler-btn" aria-label="Decrease Servings">-</button>
+            <span id="prep-scaler-val" class="scaler-count">4</span>
+            <button id="prep-scaler-plus" class="scaler-btn" aria-label="Increase Servings">+</button>
+          </div>
+        </div>
+
+        <!-- Progress Bar & Counter -->
+        <div style="margin-top: 28px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.88rem; font-weight: 600;">
+            <span id="prep-progress-text" style="color: var(--deep-green);">0 of 0 collected</span>
+            <span id="prep-progress-pct" style="color: var(--terracotta);">0%</span>
+          </div>
+          <div class="checklist-progress-bar-wrap">
+            <div id="prep-progress-bar" class="checklist-progress-bar-fill" style="width: 0%;"></div>
+          </div>
+        </div>
+
+        <!-- Quick Select Buttons -->
+        <div style="display: flex; justify-content: flex-end; gap: 12px; margin-bottom: 24px;">
+          <button id="btn-select-all" class="btn btn-outline btn-sm">Select All</button>
+          <button id="btn-clear-all" class="btn btn-outline btn-sm">Clear All</button>
+        </div>
+
+        <!-- Checklist Items List -->
+        <div id="prep-items-container">
+          <!-- Populated by JS -->
+        </div>
+
+        <!-- Proceed Action Box -->
+        <div style="margin-top: 36px; padding-top: 28px; border-top: 1.5px solid var(--border-light); display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap;">
+          <div id="prep-status-hint" style="font-size: 0.92rem; color: var(--text-secondary);">
+            Tick each ingredient as you place it on your kitchen counter.
+          </div>
+          <a id="btn-start-cooking" href="#" class="btn btn-primary btn-lg" style="min-width: 220px;">
+            <span data-i18n="btn_start_cooking">Start Cooking Mode</span> &rarr;
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <div>&copy; 2026 Cook With Krushi. All rights reserved.</div>
+        <div class="footer-attribution">Powered by <a href="https://damayantitechnologies.com" target="_blank" rel="noopener">Damayanti Technologies</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/storage.js"></script>
+  <script src="js/db.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/audio.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/app.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+      const params = window.Utils.getQueryParams();
+      const slug = params.slug;
+
+      if (!slug) {
+        window.location.href = 'explore.html';
+        return;
+      }
+
+      let recipe = null;
+      let baseServings = 4;
+      let currentServings = parseInt(params.servings || '4', 10);
+      let checkedItems = new Set();
+
+      try {
+        recipe = await window.APIManager.getRecipeBySlug(slug);
+        if (!recipe) {
+          alert('Recipe not found');
+          window.location.href = 'explore.html';
+          return;
+        }
+
+        baseServings = recipe.servings || 4;
+        if (!params.servings) currentServings = baseServings;
+
+        // Restore saved checklist from IndexedDB
+        const savedProgress = await window.DBManager.getInProgress(recipe.id);
+        if (savedProgress && savedProgress.completedChecklist) {
+          checkedItems = new Set(savedProgress.completedChecklist);
+        }
+
+        // Render UI
+        document.getElementById('back-to-recipe-link').href = `recipe.html?slug=${slug}`;
+        document.getElementById('prep-scaler-val').textContent = currentServings;
+        
+        const lang = window.I18nManager.getLang();
+        const title = lang === 'te' && recipe.titleTe ? recipe.titleTe : recipe.title;
+        document.getElementById('prep-recipe-title').textContent = `${title} — Ingredients`;
+        document.title = `Prepare ${title} | Cook With Krushi`;
+
+        renderChecklist();
+
+        // Scaler Controls
+        document.getElementById('prep-scaler-minus').addEventListener('click', () => {
+          if (currentServings > 1) {
+            currentServings--;
+            document.getElementById('prep-scaler-val').textContent = currentServings;
+            renderChecklist();
+          }
+        });
+
+        document.getElementById('prep-scaler-plus').addEventListener('click', () => {
+          if (currentServings < 20) {
+            currentServings++;
+            document.getElementById('prep-scaler-val').textContent = currentServings;
+            renderChecklist();
+          }
+        });
+
+        // Select All / Clear All
+        document.getElementById('btn-select-all').addEventListener('click', () => {
+          (recipe.ingredients || []).forEach((ig, idx) => checkedItems.add(idx));
+          saveChecklistState();
+          renderChecklist();
+        });
+
+        document.getElementById('btn-clear-all').addEventListener('click', () => {
+          checkedItems.clear();
+          saveChecklistState();
+          renderChecklist();
+        });
+
+        // Start Cooking Button
+        document.getElementById('btn-start-cooking').addEventListener('click', (e) => {
+          e.preventDefault();
+          const total = (recipe.ingredients || []).length;
+          const remaining = total - checkedItems.size;
+
+          if (remaining > 0) {
+            const confirmProceed = confirm(`You still have ${remaining} ingredient${remaining === 1 ? '' : 's'} unchecked. Are you ready to begin cooking now?`);
+            if (!confirmProceed) return;
+          }
+
+          saveChecklistState();
+          window.location.href = `cook.html?slug=${slug}&servings=${currentServings}`;
+        });
+
+      } catch (err) {
+        console.error('Failed to load recipe preparation checklist:', err);
+      }
+
+      function renderChecklist() {
+        const lang = window.I18nManager.getLang();
+        const container = document.getElementById('prep-items-container');
+        const ingredients = recipe.ingredients || [];
+        const total = ingredients.length;
+
+        // Group ingredients
+        const groups = {};
+        ingredients.forEach((ig, idx) => {
+          const gName = ig.group || 'Main Ingredients';
+          if (!groups[gName]) groups[gName] = [];
+          groups[gName].push({ ig, idx });
+        });
+
+        let html = '';
+        for (const [groupName, items] of Object.entries(groups)) {
+          html += `
+            <div class="checklist-group">
+              <div class="checklist-group-title">${window.Utils.escapeHTML(groupName)}</div>
+              <div style="display: flex; flex-direction: column; gap: 8px;">
+          `;
+
+          items.forEach(({ ig, idx }) => {
+            const isChecked = checkedItems.has(idx);
+            const scaledQty = window.Utils.scaleQuantity(ig.amount, baseServings, currentServings);
+            const itemName = lang === 'te' && ig.nameTe ? ig.nameTe : ig.name;
+
+            html += `
+              <div class="checklist-item ${isChecked ? 'checked' : ''}" data-idx="${idx}">
+                <input type="checkbox" class="checklist-checkbox" ${isChecked ? 'checked' : ''} />
+                <div class="checklist-item-text">
+                  <span class="checklist-item-name">${window.Utils.escapeHTML(itemName)}</span>
+                  <span class="checklist-item-amount">${scaledQty} ${window.Utils.escapeHTML(ig.unit || '')}</span>
+                </div>
+              </div>
+            `;
+          });
+
+          html += `</div></div>`;
+        }
+
+        container.innerHTML = html;
+        updateProgress();
+
+        // Wire checkbox clicks
+        container.querySelectorAll('.checklist-item').forEach(item => {
+          item.addEventListener('click', (e) => {
+            const idx = parseInt(item.getAttribute('data-idx'), 10);
+            if (checkedItems.has(idx)) {
+              checkedItems.delete(idx);
+            } else {
+              checkedItems.add(idx);
+              if (window.SoundPlayer) window.SoundPlayer.playChime();
+            }
+            saveChecklistState();
+            renderChecklist();
+          });
+        });
+      }
+
+      function updateProgress() {
+        const total = (recipe.ingredients || []).length;
+        const collected = checkedItems.size;
+        const pct = total > 0 ? Math.round((collected / total) * 100) : 0;
+
+        document.getElementById('prep-progress-text').textContent = `${collected} of ${total} ingredients ready`;
+        document.getElementById('prep-progress-pct').textContent = `${pct}%`;
+        document.getElementById('prep-progress-bar').style.width = `${pct}%`;
+
+        const hintEl = document.getElementById('prep-status-hint');
+        if (pct === 100) {
+          hintEl.innerHTML = '<span style="color: var(--primary); font-weight: 700;">🎉 All ingredients collected and measured! You are ready to cook.</span>';
+        } else {
+          hintEl.textContent = 'Tick each ingredient as you place it on your kitchen counter.';
+        }
+      }
+
+      async function saveChecklistState() {
+        if (!recipe) return;
+        await window.DBManager.saveInProgress({
+          recipeId: recipe.id,
+          slug: recipe.slug,
+          title: recipe.title,
+          image: recipe.image,
+          completedChecklist: Array.from(checkedItems)
+        });
+      }
+    });
+  </script>
+</body>
+</html>

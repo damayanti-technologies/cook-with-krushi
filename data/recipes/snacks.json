@@ -1,0 +1,82 @@
+[
+  {
+    "id": "rec_crispy_onion_pakoda",
+    "slug": "crispy-onion-pakoda",
+    "title": {
+      "en": "Crispy Street-Style Onion Pakoda",
+      "te": "కరకరలాడే ఉల్లిపాయ పకోడీ"
+    },
+    "description": {
+      "en": "Crunchy golden onion fritters spiced with carom seeds (ajwain), green chillies, and fresh curry leaves. Ideal with hot chai on rainy evenings.",
+      "te": "వర్షాకాలపు సాయంత్రం వేడివేడి టీతో ఆస్వాదించే కరకరలాడే ఉల్లిపాయ పకోడీ."
+    },
+    "categoryId": "cat_snacks",
+    "subcategoryId": "Pakoda",
+    "cuisine": "Indian",
+    "dietaryType": "vegan",
+    "difficulty": "easy",
+    "preparationTime": 10,
+    "cookingTime": 15,
+    "totalTime": 25,
+    "defaultServings": 3,
+    "coverImage": "https://images.unsplash.com/photo-1601050690597-df0568f70950?w=1000&auto=format&fit=crop&q=80",
+    "caloriesPerServing": 240,
+    "beginnerFriendly": true,
+    "featured": true,
+    "rating": 4.92,
+    "reviewsCount": 160,
+    "published": true,
+    "createdAt": "2026-02-01T16:00:00.000Z",
+    "tags": ["pakoda", "snacks", "rainy day", "tea time", "crispy", "vegan"],
+    "equipment": ["Frying Kadai", "Mixing bowl", "Slotted spider spoon"],
+    "ingredients": [
+      { "id": "ing_op1", "name": { "en": "Onions", "te": "ఉల్లిపాయలు" }, "quantity": 3, "unit": "large", "notes": "Thinly sliced lengthwise" },
+      { "id": "ing_op2", "name": { "en": "Besan (Gram Flour)", "te": "శనగపిండి" }, "quantity": 1, "unit": "cup" },
+      { "id": "ing_op3", "name": { "en": "Rice Flour", "te": "వరిపిండి" }, "quantity": 2, "unit": "tbsp", "notes": "Gives unbeatable crunch" },
+      { "id": "ing_op4", "name": { "en": "Green Chillies", "te": "పచ్చిమిర్చి" }, "quantity": 2, "unit": "pieces", "notes": "Finely chopped" },
+      { "id": "ing_op5", "name": { "en": "Ajwain (Carom seeds)", "te": "వాము" }, "quantity": 0.5, "unit": "tsp", "notes": "Crushed between palms" },
+      { "id": "ing_op6", "name": { "en": "Curry Leaves", "te": "కరివేపాకు" }, "quantity": 2, "unit": "sprigs" },
+      { "id": "ing_op7", "name": { "en": "Cooking Oil for frying", "te": "నూనె" }, "quantity": 2, "unit": "cups" },
+      { "id": "ing_op8", "name": { "en": "Salt", "te": "ఉప్పు" }, "quantity": 1, "unit": "tsp" }
+    ],
+    "tips": [
+      "Do not add extra water! The salt pulls moisture out of onions, which moistens the flour naturally for ultra-crisp results."
+    ],
+    "steps": [
+      {
+        "order": 1,
+        "title": { "en": "Toss Onions & Spices", "te": "ఉల్లిపాయ ముక్కలు మరియు మసాలా కలపండి" },
+        "instructions": [
+          "In a mixing bowl, separate thinly sliced onions with your fingers.",
+          "Add salt, green chillies, crushed ajwain, and curry leaves.",
+          "Squeeze and toss vigorously with your fingers for 2 minutes until onions release their natural juices."
+        ],
+        "imageUrl": "https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=800&auto=format&fit=crop&q=80",
+        "estimatedMinutes": 4
+      },
+      {
+        "order": 2,
+        "title": { "en": "Coat with Flours", "te": "పిండి కలపండి" },
+        "instructions": [
+          "Sprinkle besan and rice flour gradually over the wet onions.",
+          "Mix until onions are lightly coated in a dryish batter. Do not add water."
+        ],
+        "imageUrl": "https://images.unsplash.com/photo-1540420773420-3366772f4999?w=800&auto=format&fit=crop&q=80",
+        "estimatedMinutes": 3
+      },
+      {
+        "order": 3,
+        "title": { "en": "Fry to Crispy Perfection", "te": "నూనెలో కరకరలాడేలా వేయించండి" },
+        "instructions": [
+          "Heat oil in kadai on medium-high.",
+          "Drop loose clusters of onion mixture into hot oil.",
+          "Fry for 3-4 minutes until golden, crunchy, and bubbling settles.",
+          "Drain on paper towels and enjoy with hot tea."
+        ],
+        "imageUrl": "https://images.unsplash.com/photo-1601050690597-df0568f70950?w=800&auto=format&fit=crop&q=80",
+        "estimatedMinutes": 5,
+        "timerSeconds": 240
+      }
+    ]
+  }
+]

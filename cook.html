@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#294B35">
+  <title>Cooking Mode | Cook With Krushi</title>
+  
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" type="image/svg+xml" href="assets/icons/icon.svg">
+  <link rel="apple-touch-icon" href="assets/icons/icon-192.png">
+  
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body style="background: var(--bg);">
+
+  <canvas id="confetti-canvas"></canvas>
+
+  <div class="cooking-mode-wrapper">
+    <!-- Cooking Top Bar -->
+    <header class="cooking-mode-header">
+      <a id="btn-exit-cooking" href="#" class="btn btn-outline btn-sm" style="gap: 6px;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        <span data-i18n="exit_cooking">Pause / Exit</span>
+      </a>
+
+      <!-- Progress Tracker -->
+      <div class="cooking-progress-tracker">
+        <span id="step-counter-text" style="font-size: 0.88rem; font-weight: 700; color: var(--deep-green); white-space: nowrap;">
+          Step 1 of 5
+        </span>
+        <div class="cooking-progress-line">
+          <div id="step-progress-line-fill" class="cooking-progress-line-fill" style="width: 20%;"></div>
+        </div>
+      </div>
+
+      <!-- Sound toggle & notification permission -->
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <button id="btn-toggle-sound" class="btn-icon" style="width: 36px; height: 36px;" aria-label="Toggle Sound">
+          <svg id="sound-icon-on" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
+        </button>
+      </div>
+    </header>
+
+    <!-- Main Step Focus Container -->
+    <main style="flex: 1; display: flex; align-items: center; justify-content: center; padding: 20px;">
+      
+      <!-- STEP VIEW -->
+      <div id="step-view" class="cooking-step-card">
+        <div class="cooking-step-number" id="step-badge">Step 1</div>
+        <h1 class="cooking-step-title" id="step-title">Loading step...</h1>
+
+        <!-- Step Media Image -->
+        <div id="step-media-wrap" class="cooking-step-media" style="display: none;">
+          <img id="step-media-img" src="" alt="Cooking Step" />
+        </div>
+
+        <!-- Step Instruction Text -->
+        <p class="cooking-step-instruction" id="step-instruction"></p>
+
+        <!-- Timer Widget -->
+        <div id="step-timer-widget" class="timer-widget" style="display: none;">
+          <div class="timer-left">
+            <div class="timer-icon-circle">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            </div>
+            <div>
+              <div class="timer-label" data-i18n="step_timer">Step Timer</div>
+              <div class="timer-display" id="timer-display-digits">05:00</div>
+            </div>
+          </div>
+          <div class="timer-controls">
+            <button id="btn-timer-start" class="btn btn-primary btn-sm">Start Timer</button>
+            <button id="btn-timer-pause" class="btn btn-outline btn-sm" style="display: none;">Pause</button>
+            <button id="btn-timer-reset" class="btn btn-outline btn-sm">Reset</button>
+          </div>
+        </div>
+
+        <!-- Step Tip / Alert -->
+        <div id="step-tip-alert" class="cooking-step-alert" style="display: none;">
+          <div style="font-size: 1.3rem;">💡</div>
+          <div class="cooking-step-alert-text" id="step-tip-text"></div>
+        </div>
+
+        <!-- Safety Caution -->
+        <div id="step-safety-alert" class="cooking-step-alert" style="display: none; border-left-color: var(--badge-nonveg); background: #FFF5F5;">
+          <div style="font-size: 1.3rem;">⚠️</div>
+          <div class="cooking-step-alert-text" id="step-safety-text" style="color: #9B1C1C;"></div>
+        </div>
+      </div>
+
+      <!-- COMPLETION CELEBRATION VIEW -->
+      <div id="completion-view" class="completion-container" style="display: none;">
+        <div class="completion-icon-ring">🎉</div>
+        <h1 class="completion-title">Dish Mastered!</h1>
+        <p class="completion-subtitle">Congratulations! You've cooked this recipe to perfection. Time to enjoy!</p>
+
+        <!-- Summary Dish Card -->
+        <div class="completion-dish-card">
+          <img id="complete-dish-img" src="" alt="Dish" class="completion-dish-img" />
+          <div>
+            <h3 id="complete-dish-title" style="font-size: 1.3rem; color: var(--deep-green); margin-bottom: 4px;">Dish Title</h3>
+            <div style="font-size: 0.85rem; color: var(--text-secondary);">Cooked with Krushi • Fresh &amp; Homemade</div>
+          </div>
+        </div>
+
+        <!-- Rating Stars -->
+        <div style="background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 24px; margin-bottom: 28px;">
+          <div style="font-weight: 700; color: var(--deep-green); margin-bottom: 6px;">How did it turn out?</div>
+          <div class="rating-stars" id="rating-stars-wrap">
+            <button class="star-btn active" data-rating="1">&#9733;</button>
+            <button class="star-btn active" data-rating="2">&#9733;</button>
+            <button class="star-btn active" data-rating="3">&#9733;</button>
+            <button class="star-btn active" data-rating="4">&#9733;</button>
+            <button class="star-btn active" data-rating="5">&#9733;</button>
+          </div>
+          <textarea id="cook-notes-input" placeholder="Add optional cooking notes (e.g. loved extra spice, simmered 3 mins longer)..." style="width: 100%; border: 1.5px solid var(--border); border-radius: var(--radius-md); padding: 12px; font-size: 0.9rem; min-height: 80px; resize: vertical;"></textarea>
+        </div>
+
+        <div style="display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;">
+          <button id="btn-save-history" class="btn btn-primary btn-lg">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg>
+            Save to Cooking History
+          </button>
+          <a href="explore.html" class="btn btn-outline btn-lg">Cook Another Recipe</a>
+        </div>
+      </div>
+    </main>
+
+    <!-- Navigation Footer -->
+    <footer id="cooking-mode-footer" class="cooking-mode-footer">
+      <button id="btn-prev-step" class="btn btn-outline" disabled>
+        &larr; <span data-i18n="prev_step">Previous Step</span>
+      </button>
+
+      <div style="font-size: 0.85rem; color: var(--text-muted); display: none; @media(min-width: 600px){ display:block; }">
+        Tip: Use keyboard &larr; and &rarr; arrow keys to navigate
+      </div>
+
+      <button id="btn-next-step" class="btn btn-primary">
+        <span id="next-step-label" data-i18n="next_step">Next Step</span> &rarr;
+      </button>
+    </footer>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/storage.js"></script>
+  <script src="js/db.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/audio.js"></script>
+  <script src="js/timer.js"></script>
+  <script src="js/confetti.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/app.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+      const params = window.Utils.getQueryParams();
+      const slug = params.slug;
+
+      if (!slug) {
+        window.location.href = 'explore.html';
+        return;
+      }
+
+      let recipe = null;
+      let currentStepIndex = 0;
+      let activeTimer = null;
+      let selectedRating = 5;
+
+      try {
+        recipe = await window.APIManager.getRecipeBySlug(slug);
+        if (!recipe) {
+          alert('Recipe not found');
+          window.location.href = 'explore.html';
+          return;
+        }
+
+        // Restore checkpoint if user was in progress
+        const saved = await window.DBManager.getInProgress(recipe.id);
+        if (saved && typeof saved.currentStep === 'number' && saved.currentStep < (recipe.steps || []).length) {
+          currentStepIndex = saved.currentStep;
+        }
+
+        document.getElementById('btn-exit-cooking').href = `recipe.html?slug=${slug}`;
+        
+        // Render initial step
+        renderCurrentStep();
+
+        // Previous button
+        document.getElementById('btn-prev-step').addEventListener('click', () => {
+          if (currentStepIndex > 0) {
+            currentStepIndex--;
+            saveCheckpoint();
+            renderCurrentStep();
+          }
+        });
+
+        // Next button
+        document.getElementById('btn-next-step').addEventListener('click', () => {
+          const total = (recipe.steps || []).length;
+          if (currentStepIndex < total - 1) {
+            currentStepIndex++;
+            saveCheckpoint();
+            renderCurrentStep();
+            if (window.SoundPlayer) window.SoundPlayer.playChime();
+          } else {
+            // Completed all steps!
+            showCompletionScreen();
+          }
+        });
+
+        // Keyboard navigation
+        window.addEventListener('keydown', (e) => {
+          if (document.getElementById('completion-view').style.display === 'block') return;
+          if (e.key === 'ArrowRight') {
+            document.getElementById('btn-next-step').click();
+          } else if (e.key === 'ArrowLeft') {
+            document.getElementById('btn-prev-step').click();
+          }
+        });
+
+        // Rating Stars interaction
+        const starBtns = document.querySelectorAll('#rating-stars-wrap .star-btn');
+        starBtns.forEach(btn => {
+          btn.addEventListener('click', () => {
+            selectedRating = parseInt(btn.getAttribute('data-rating'), 10);
+            updateStarsUI(selectedRating);
+          });
+        });
+
+        function updateStarsUI(rating) {
+          starBtns.forEach(b => {
+            const r = parseInt(b.getAttribute('data-rating'), 10);
+            b.classList.toggle('active', r <= rating);
+          });
+        }
+
+        // Save to History button
+        document.getElementById('btn-save-history').addEventListener('click', async () => {
+          const notes = document.getElementById('cook-notes-input').value.trim();
+          await window.DBManager.addHistory({
+            recipeId: recipe.id,
+            slug: recipe.slug,
+            title: recipe.title,
+            image: recipe.image,
+            rating: selectedRating,
+            notes
+          });
+          // Remove from inProgress
+          await window.DBManager.deleteInProgress(recipe.id);
+
+          window.Utils.showToast('Dish saved to your Cooking History!', 'success');
+          setTimeout(() => {
+            window.location.href = 'my-kitchen.html';
+          }, 1000);
+        });
+
+        // Sound Mute Toggle
+        const soundBtn = document.getElementById('btn-toggle-sound');
+        soundBtn.addEventListener('click', () => {
+          const enabled = window.StorageManager.isSoundEnabled();
+          window.StorageManager.setSoundEnabled(!enabled);
+          soundBtn.style.opacity = !enabled ? '1' : '0.4';
+          window.Utils.showToast(!enabled ? 'Sound enabled' : 'Sound muted', 'warning', 1800);
+        });
+
+      } catch (err) {
+        console.error('Cooking mode error:', err);
+      }
+
+      function renderCurrentStep() {
+        if (activeTimer) {
+          activeTimer.stop();
+          activeTimer = null;
+        }
+
+        const steps = recipe.steps || [];
+        const total = steps.length;
+        const current = steps[currentStepIndex];
+        const lang = window.I18nManager.getLang();
+
+        document.getElementById('step-view').style.display = 'block';
+        document.getElementById('completion-view').style.display = 'none';
+        document.getElementById('cooking-mode-footer').style.display = 'flex';
+
+        // Update progress tracker
+        document.getElementById('step-counter-text').textContent = `Step ${currentStepIndex + 1} of ${total}`;
+        const pct = Math.round(((currentStepIndex + 1) / total) * 100);
+        document.getElementById('step-progress-line-fill').style.width = `${pct}%`;
+
+        // Update step titles and instruction
+        const title = lang === 'te' && current.titleTe ? current.titleTe : current.title;
+        const instruction = lang === 'te' && current.instructionTe ? current.instructionTe : current.instruction;
+
+        document.getElementById('step-badge').textContent = `Step ${currentStepIndex + 1} • ${recipe.title}`;
+        document.getElementById('step-title').textContent = title;
+        document.getElementById('step-instruction').textContent = instruction;
+        document.title = `Step ${currentStepIndex + 1}: ${title} | Cook With Krushi`;
+
+        // Step media
+        const mediaWrap = document.getElementById('step-media-wrap');
+        const mediaImg = document.getElementById('step-media-img');
+        if (current.image) {
+          mediaWrap.style.display = 'block';
+          mediaImg.src = current.image;
+        } else {
+          mediaWrap.style.display = 'none';
+        }
+
+        // Pro Tip Alert
+        const tipAlert = document.getElementById('step-tip-alert');
+        const tipText = document.getElementById('step-tip-text');
+        if (current.tip) {
+          tipAlert.style.display = 'flex';
+          tipText.innerHTML = `<strong>Chef's Note:</strong> ${window.Utils.escapeHTML(current.tip)}`;
+        } else {
+          tipAlert.style.display = 'none';
+        }
+
+        // Safety Caution
+        const safetyAlert = document.getElementById('step-safety-alert');
+        const safetyText = document.getElementById('step-safety-text');
+        if (current.safety) {
+          safetyAlert.style.display = 'flex';
+          safetyText.innerHTML = `<strong>Kitchen Safety:</strong> ${window.Utils.escapeHTML(current.safety)}`;
+        } else {
+          safetyAlert.style.display = 'none';
+        }
+
+        // Timer widget
+        const timerWidget = document.getElementById('step-timer-widget');
+        if (current.timerMinutes && current.timerMinutes > 0) {
+          timerWidget.style.display = 'flex';
+          setupStepTimer(current.timerMinutes);
+        } else {
+          timerWidget.style.display = 'none';
+        }
+
+        // Nav buttons
+        document.getElementById('btn-prev-step').disabled = currentStepIndex === 0;
+        const nextLabel = document.getElementById('next-step-label');
+        if (currentStepIndex === total - 1) {
+          nextLabel.textContent = 'Finish Cooking & Enjoy';
+        } else {
+          nextLabel.textContent = 'Next Step';
+        }
+
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+
+      function setupStepTimer(minutes) {
+        const displayDigits = document.getElementById('timer-display-digits');
+        const startBtn = document.getElementById('btn-timer-start');
+        const pauseBtn = document.getElementById('btn-timer-pause');
+        const resetBtn = document.getElementById('btn-timer-reset');
+
+        activeTimer = new CookingTimer(
+          minutes,
+          (timeStr, pct) => {
+            displayDigits.textContent = timeStr;
+          },
+          () => {
+            // Timer complete!
+            startBtn.style.display = 'inline-flex';
+            pauseBtn.style.display = 'none';
+            window.Utils.showToast(`⏰ Step Timer Finished!`, 'warning', 6000);
+          }
+        );
+
+        displayDigits.textContent = activeTimer.getFormattedTime();
+        startBtn.style.display = 'inline-flex';
+        pauseBtn.style.display = 'none';
+
+        startBtn.onclick = () => {
+          CookingTimer.requestNotificationPermission();
+          activeTimer.start();
+          startBtn.style.display = 'none';
+          pauseBtn.style.display = 'inline-flex';
+        };
+
+        pauseBtn.onclick = () => {
+          activeTimer.pause();
+          startBtn.style.display = 'inline-flex';
+          pauseBtn.style.display = 'none';
+        };
+
+        resetBtn.onclick = () => {
+          activeTimer.reset();
+          startBtn.style.display = 'inline-flex';
+          pauseBtn.style.display = 'none';
+        };
+      }
+
+      function showCompletionScreen() {
+        if (activeTimer) activeTimer.stop();
+
+        document.getElementById('step-view').style.display = 'none';
+        document.getElementById('cooking-mode-footer').style.display = 'none';
+        document.getElementById('completion-view').style.display = 'block';
+
+        document.getElementById('complete-dish-img').src = recipe.image;
+        document.getElementById('complete-dish-title').textContent = recipe.title;
+
+        // Launch celebratory confetti and music chime
+        if (window.Confetti) window.Confetti.start(180);
+        if (window.SoundPlayer) window.SoundPlayer.playCelebration();
+
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+
+      async function saveCheckpoint() {
+        if (!recipe) return;
+        await window.DBManager.saveInProgress({
+          recipeId: recipe.id,
+          slug: recipe.slug,
+          title: recipe.title,
+          image: recipe.image,
+          currentStep: currentStepIndex,
+          totalSteps: (recipe.steps || []).length
+        });
+      }
+    });
+  </script>
+</body>
+</html>

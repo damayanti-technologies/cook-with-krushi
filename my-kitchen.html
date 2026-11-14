@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="My Kitchen on Cook With Krushi. Your saved recipes, in-progress cooking checkpoints, and completed culinary history stored securely on your device.">
+  <meta name="theme-color" content="#294B35">
+  <title>My Kitchen | Cook With Krushi</title>
+  
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" type="image/svg+xml" href="assets/icons/icon.svg">
+  <link rel="apple-touch-icon" href="assets/icons/icon-192.png">
+  
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+
+  <div class="offline-banner">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="1" y1="1" x2="23" y2="23"></line><path d="M16.72 11.06A10.94 10.94 0 0 1 19 12.55"></path><path d="M5 12.55a10.94 10.94 0 0 1 5.17-2.39"></path><line x1="12" y1="20" x2="12.01" y2="20"></line></svg>
+    <span data-i18n="offline_notice">You are currently offline. Viewing cached recipes.</span>
+  </div>
+
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo">
+        <div class="brand-icon-wrap">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 13.87A4 4 0 0 1 7.41 6a5.11 5.11 0 0 1 1.05-1.54 5 5 0 0 1 7.08 0A5.11 5.11 0 0 1 16.59 6 4 4 0 0 1 18 13.87V21H6Z"/>
+            <line x1="6" y1="17" x2="18" y2="17"/>
+          </svg>
+        </div>
+        <div class="brand-text-wrap">
+          <span class="brand-name">Cook With Krushi</span>
+          <span class="brand-tagline">Cook. Learn. Enjoy.</span>
+        </div>
+      </a>
+
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link" data-i18n="nav_home">Home</a></li>
+          <li><a href="explore.html" class="nav-link" data-i18n="nav_explore">Explore Recipes</a></li>
+          <li><a href="categories.html" class="nav-link" data-i18n="nav_categories">Categories</a></li>
+          <li><a href="what-can-i-cook.html" class="nav-link" data-i18n="nav_what_can_i_cook">What Can I Cook?</a></li>
+          <li><a href="cooking-guide.html" class="nav-link" data-i18n="nav_guide">Cooking Guide</a></li>
+          <li>
+            <a href="my-kitchen.html" class="nav-link active nav-kitchen-badge">
+              <span data-i18n="nav_kitchen">My Kitchen</span>
+              <span class="badge-count" style="display:none;">0</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <div class="lang-toggle">
+          <button class="lang-btn active" data-lang="en">EN</button>
+          <button class="lang-btn" data-lang="te">తెలుగు</button>
+        </div>
+        <a href="my-kitchen.html" class="btn-icon" aria-label="My Saved Kitchen">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main style="padding: 40px 0 80px;">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag" data-i18n="nav_kitchen">Personal Hub</span>
+        <h1 class="section-title">My Kitchen</h1>
+        <p class="section-subtitle">Manage your saved favorites, resume in-progress cooking sessions, and view your completed recipe journal.</p>
+      </div>
+
+      <!-- Privacy Notice Box -->
+      <div style="background: var(--surface-alt); border: 1.5px solid var(--border); border-radius: var(--radius-lg); padding: 18px 24px; margin-bottom: 32px; display: flex; align-items: flex-start; gap: 16px;">
+        <div style="font-size: 1.4rem;">🔒</div>
+        <div style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6;">
+          <strong style="color: var(--deep-green);">100% On-Device &amp; Private:</strong> All your favorites, in-progress checklists, and cooking history are stored exclusively in your browser using IndexedDB. No login required and zero external servers tracking your habits.
+        </div>
+      </div>
+
+      <!-- Navigation Tabs -->
+      <div style="display: flex; gap: 12px; margin-bottom: 32px; border-bottom: 2px solid var(--border-light); padding-bottom: 12px;">
+        <button class="filter-pill active" id="tab-btn-saved">Saved Recipes (<span id="tab-count-saved">0</span>)</button>
+        <button class="filter-pill" id="tab-btn-inprogress">In-Progress (<span id="tab-count-inprogress">0</span>)</button>
+        <button class="filter-pill" id="tab-btn-history">Cooking History (<span id="tab-count-history">0</span>)</button>
+      </div>
+
+      <!-- TAB 1: SAVED RECIPES -->
+      <div id="tab-content-saved">
+        <div class="recipe-grid" id="saved-recipe-grid"></div>
+        <div id="empty-saved" style="display: none; text-align: center; padding: 60px 20px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg);">
+          <div style="font-size: 3rem; margin-bottom: 12px;">❤️</div>
+          <h3 style="font-size: 1.4rem; color: var(--deep-green); margin-bottom: 8px;">No Saved Recipes Yet</h3>
+          <p style="color: var(--text-secondary); margin-bottom: 20px;">Explore recipes and tap the heart icon on any card to save it here for fast access.</p>
+          <a href="explore.html" class="btn btn-primary">Browse Recipes</a>
+        </div>
+      </div>
+
+      <!-- TAB 2: IN PROGRESS -->
+      <div id="tab-content-inprogress" style="display: none;">
+        <div id="inprogress-list" style="display: flex; flex-direction: column; gap: 20px;"></div>
+        <div id="empty-inprogress" style="display: none; text-align: center; padding: 60px 20px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg);">
+          <div style="font-size: 3rem; margin-bottom: 12px;">⏱️</div>
+          <h3 style="font-size: 1.4rem; color: var(--deep-green); margin-bottom: 8px;">No Cooking In Progress</h3>
+          <p style="color: var(--text-secondary); margin-bottom: 20px;">When you start cooking a dish, your active step and checklist will automatically save here so you can resume anytime.</p>
+          <a href="explore.html" class="btn btn-primary">Choose a Dish to Cook</a>
+        </div>
+      </div>
+
+      <!-- TAB 3: COOKING HISTORY -->
+      <div id="tab-content-history" style="display: none;">
+        <div id="history-list" style="display: flex; flex-direction: column; gap: 20px;"></div>
+        <div id="empty-history" style="display: none; text-align: center; padding: 60px 20px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg);">
+          <div style="font-size: 3rem; margin-bottom: 12px;">🏆</div>
+          <h3 style="font-size: 1.4rem; color: var(--deep-green); margin-bottom: 8px;">No Cooked Dishes Logged</h3>
+          <p style="color: var(--text-secondary); margin-bottom: 20px;">Complete a recipe in Cooking Mode to celebrate with confetti and record it in your personal kitchen journal.</p>
+          <a href="explore.html" class="btn btn-primary">Start Your First Dish</a>
+        </div>
+      </div>
+
+      <!-- Data Backup & Reset Actions -->
+      <div style="margin-top: 60px; padding-top: 32px; border-top: 1.5px solid var(--border); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px;">
+        <div>
+          <h4 style="font-size: 1rem; color: var(--deep-green); margin-bottom: 4px;">Local Data Backup</h4>
+          <p style="font-size: 0.85rem; color: var(--text-secondary);">Download a copy of your saved recipes and cooking history to keep as a backup.</p>
+        </div>
+        <div style="display: flex; gap: 12px;">
+          <button id="btn-export-data" class="btn btn-outline btn-sm">Export Data (JSON)</button>
+          <button id="btn-clear-kitchen" class="btn btn-outline btn-sm" style="color: var(--badge-nonveg); border-color: #FFCDD2;">Clear All Local Data</button>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <nav class="mobile-bottom-nav">
+    <ul class="mobile-nav-items">
+      <li class="mobile-nav-item"><a href="index.html"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg><span>Home</span></a></li>
+      <li class="mobile-nav-item"><a href="explore.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg><span>Explore</span></a></li>
+      <li class="mobile-nav-item"><a href="what-can-i-cook.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/></svg><span>Pantry</span></a></li>
+      <li class="mobile-nav-item"><a href="cooking-guide.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg><span>Guide</span></a></li>
+      <li class="mobile-nav-item"><a href="my-kitchen.html" class="active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg><span>Kitchen</span></a></li>
+    </ul>
+  </nav>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <div>&copy; 2026 Cook With Krushi. All rights reserved.</div>
+        <div class="footer-attribution">Powered by <a href="https://damayantitechnologies.com" target="_blank" rel="noopener">Damayanti Technologies</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/storage.js"></script>
+  <script src="js/db.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/audio.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/app.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+      let favorites = [];
+      let inProgress = [];
+      let history = [];
+
+      const savedGrid = document.getElementById('saved-recipe-grid');
+      const inprogressList = document.getElementById('inprogress-list');
+      const historyList = document.getElementById('history-list');
+
+      const emptySaved = document.getElementById('empty-saved');
+      const emptyInProgress = document.getElementById('empty-inprogress');
+      const emptyHistory = document.getElementById('empty-history');
+
+      const countSaved = document.getElementById('tab-count-saved');
+      const countInProgress = document.getElementById('tab-count-inprogress');
+      const countHistory = document.getElementById('tab-count-history');
+
+      const tabBtnSaved = document.getElementById('tab-btn-saved');
+      const tabBtnInProgress = document.getElementById('tab-btn-inprogress');
+      const tabBtnHistory = document.getElementById('tab-btn-history');
+
+      const contentSaved = document.getElementById('tab-content-saved');
+      const contentInProgress = document.getElementById('tab-content-inprogress');
+      const contentHistory = document.getElementById('tab-content-history');
+
+      await loadKitchenData();
+
+      // Tab Switching
+      tabBtnSaved.addEventListener('click', () => switchTab('saved'));
+      tabBtnInProgress.addEventListener('click', () => switchTab('inprogress'));
+      tabBtnHistory.addEventListener('click', () => switchTab('history'));
+
+      function switchTab(tab) {
+        [tabBtnSaved, tabBtnInProgress, tabBtnHistory].forEach(b => b.classList.remove('active'));
+        [contentSaved, contentInProgress, contentHistory].forEach(c => c.style.display = 'none');
+
+        if (tab === 'saved') {
+          tabBtnSaved.classList.add('active');
+          contentSaved.style.display = 'block';
+        } else if (tab === 'inprogress') {
+          tabBtnInProgress.classList.add('active');
+          contentInProgress.style.display = 'block';
+        } else if (tab === 'history') {
+          tabBtnHistory.classList.add('active');
+          contentHistory.style.display = 'block';
+        }
+      }
+
+      async function loadKitchenData() {
+        try {
+          [favorites, inProgress, history] = await Promise.all([
+            window.DBManager.getFavorites(),
+            window.DBManager.getAllInProgress(),
+            window.DBManager.getHistory()
+          ]);
+
+          countSaved.textContent = favorites.length;
+          countInProgress.textContent = inProgress.length;
+          countHistory.textContent = history.length;
+
+          renderSaved();
+          renderInProgress();
+          renderHistory();
+        } catch (err) {
+          console.error('Error loading kitchen data:', err);
+        }
+      }
+
+      function renderSaved() {
+        if (favorites.length === 0) {
+          savedGrid.innerHTML = '';
+          emptySaved.style.display = 'block';
+        } else {
+          emptySaved.style.display = 'none';
+          savedGrid.innerHTML = favorites.map(r => window.renderRecipeCard(r, true)).join('');
+        }
+      }
+
+      function renderInProgress() {
+        if (inProgress.length === 0) {
+          inprogressList.innerHTML = '';
+          emptyInProgress.style.display = 'block';
+        } else {
+          emptyInProgress.style.display = 'none';
+          inprogressList.innerHTML = inProgress.map(p => {
+            const stepNum = (p.currentStep || 0) + 1;
+            const totalSteps = p.totalSteps || 1;
+            const pct = Math.round((stepNum / totalSteps) * 100);
+
+            return `
+              <div style="background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 24px; display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap;">
+                <div style="display: flex; align-items: center; gap: 16px;">
+                  <img src="${p.image}" alt="${window.Utils.escapeHTML(p.title)}" style="width: 80px; height: 80px; border-radius: var(--radius-md); object-fit: cover;" />
+                  <div>
+                    <h3 style="font-size: 1.25rem; color: var(--deep-green); margin-bottom: 4px;">${window.Utils.escapeHTML(p.title)}</h3>
+                    <div style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 8px;">Currently at Step ${stepNum} of ${totalSteps} (${pct}%)</div>
+                    <div style="width: 180px; height: 6px; background: var(--border-light); border-radius: var(--radius-full); overflow: hidden;">
+                      <div style="height: 100%; width: ${pct}%; background: var(--primary);"></div>
+                    </div>
+                  </div>
+                </div>
+                <div style="display: flex; gap: 10px;">
+                  <a href="cook.html?slug=${p.slug}" class="btn btn-primary btn-sm">Resume Cooking &rarr;</a>
+                  <button class="btn btn-outline btn-sm btn-delete-progress" data-id="${p.recipeId}" style="color: var(--badge-nonveg);">Discard</button>
+                </div>
+              </div>
+            `;
+          }).join('');
+
+          inprogressList.querySelectorAll('.btn-delete-progress').forEach(btn => {
+            btn.addEventListener('click', async () => {
+              const id = btn.getAttribute('data-id');
+              await window.DBManager.deleteInProgress(id);
+              await loadKitchenData();
+              window.Utils.showToast('Discarded in-progress checkpoint', 'warning');
+            });
+          });
+        }
+      }
+
+      function renderHistory() {
+        if (history.length === 0) {
+          historyList.innerHTML = '';
+          emptyHistory.style.display = 'block';
+        } else {
+          emptyHistory.style.display = 'none';
+          historyList.innerHTML = history.map(h => {
+            const dateStr = new Date(h.completedAt).toLocaleDateString(undefined, {
+              year: 'numeric',
+              month: 'short',
+              day: 'numeric'
+            });
+
+            return `
+              <div style="background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 24px; display: flex; align-items: flex-start; justify-content: space-between; gap: 20px; flex-wrap: wrap;">
+                <div style="display: flex; align-items: flex-start; gap: 16px;">
+                  <img src="${h.image}" alt="${window.Utils.escapeHTML(h.title)}" style="width: 80px; height: 80px; border-radius: var(--radius-md); object-fit: cover;" />
+                  <div>
+                    <h3 style="font-size: 1.25rem; color: var(--deep-green); margin-bottom: 4px;">${window.Utils.escapeHTML(h.title)}</h3>
+                    <div style="font-size: 0.82rem; color: var(--text-secondary); margin-bottom: 6px;">Cooked on ${dateStr}</div>
+                    <div style="color: var(--star-gold); margin-bottom: 8px;">${'★'.repeat(h.rating || 5)}${'☆'.repeat(5 - (h.rating || 5))}</div>
+                    ${h.notes ? `<div style="font-size: 0.88rem; color: var(--text); background: var(--bg); padding: 8px 12px; border-radius: var(--radius-sm); border-left: 3px solid var(--primary);">"${window.Utils.escapeHTML(h.notes)}"</div>` : ''}
+                  </div>
+                </div>
+                <a href="recipe.html?slug=${h.slug}" class="btn btn-outline btn-sm">Cook Again</a>
+              </div>
+            `;
+          }).join('');
+        }
+      }
+
+      // Export JSON
+      document.getElementById('btn-export-data').addEventListener('click', async () => {
+        const data = await window.DBManager.exportAllData();
+        const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = `cook-with-krushi-backup-${new Date().toISOString().split('T')[0]}.json`;
+        a.click();
+        URL.revokeObjectURL(url);
+        window.Utils.showToast('Kitchen data exported successfully!', 'success');
+      });
+
+      // Clear all
+      document.getElementById('btn-clear-kitchen').addEventListener('click', async () => {
+        const confirmClear = confirm('Are you sure you want to delete all saved recipes and cooking history? This cannot be undone.');
+        if (!confirmClear) return;
+        await window.DBManager.clearAllData();
+        await loadKitchenData();
+        if (window.updateKitchenBadge) window.updateKitchenBadge();
+        window.Utils.showToast('All local kitchen data cleared.', 'warning');
+      });
+    });
+  </script>
+</body>
+</html>

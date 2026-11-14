@@ -1,0 +1,178 @@
+[
+  {
+    "id": "cat_breakfast",
+    "slug": "breakfast",
+    "name": {
+      "en": "Breakfast",
+      "te": "అల్పాహారం"
+    },
+    "description": {
+      "en": "Energizing morning staples from crispy dosas to fluffy idlis and warm poha.",
+      "te": "రుచికరమైన ఉదయపు అల్పాహారాలు: దోశలు, ఇడ్లీలు మరియు ఉప్మా."
+    },
+    "imageUrl": "https://images.unsplash.com/photo-1668236543090-82eba5ee5976?w=800&auto=format&fit=crop&q=80",
+    "recipeCount": 12,
+    "order": 1,
+    "featured": true,
+    "mealType": "breakfast",
+    "subcategories": ["Dosa", "Idli", "Upma", "Paratha", "Puri", "Poha", "Pongal", "Uttapam"]
+  },
+  {
+    "id": "cat_lunch",
+    "slug": "lunch",
+    "name": {
+      "en": "Lunch",
+      "te": "మధ్యాహ్న భోజనం"
+    },
+    "description": {
+      "en": "Wholesome rice bowls, aromatic biryanis, soothing dals, and hearty curries.",
+      "te": "పరిపూర్ణ మధ్యాహ్న భోజన వంటకాలు: బిర్యానీ, పప్పు, సాంబారు మరియు కూరలు."
+    },
+    "imageUrl": "https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=800&auto=format&fit=crop&q=80",
+    "recipeCount": 18,
+    "order": 2,
+    "featured": true,
+    "mealType": "lunch",
+    "subcategories": ["Biryani", "Pulao", "Curries", "Dal & Sambar", "Rice Specials", "Thali"]
+  },
+  {
+    "id": "cat_snacks",
+    "slug": "snacks",
+    "name": {
+      "en": "Snacks",
+      "te": "సాయంత్రపు స్నాక్స్"
+    },
+    "description": {
+      "en": "Crunchy evening delights like onion pakodas, piping hot samosas, and punugulu.",
+      "te": "సాయంత్రపు వేడివేడి చిరుతిళ్లు: పకోడీలు, సమోసాలు మరియు బజ్జీలు."
+    },
+    "imageUrl": "https://images.unsplash.com/photo-1601050690597-df0568f70950?w=800&auto=format&fit=crop&q=80",
+    "recipeCount": 14,
+    "order": 3,
+    "featured": true,
+    "mealType": "snacks",
+    "subcategories": ["Pakoda", "Bajji", "Samosa", "Chaat", "Cutlets", "Punugulu"]
+  },
+  {
+    "id": "cat_dinner",
+    "slug": "dinner",
+    "name": {
+      "en": "Dinner",
+      "te": "రాత్రి భోజనం"
+    },
+    "description": {
+      "en": "Light, comforting night-time curries, soft rotis, fragrant pulao, and soups.",
+      "te": "తేలికైన మరియు పోషకమైన రాత్రి భోజనాలు: చపాతీలు, పనీర్ కర్రీ మరియు రోటీలు."
+    },
+    "imageUrl": "https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=800&auto=format&fit=crop&q=80",
+    "recipeCount": 15,
+    "order": 4,
+    "featured": true,
+    "mealType": "dinner",
+    "subcategories": ["Roti & Chapati", "Paneer Special", "Light Soups", "Fried Rice", "Dal Khichdi"]
+  },
+  {
+    "id": "cat_starters",
+    "slug": "starters",
+    "name": {
+      "en": "Starters",
+      "te": "స్టార్టర్స్"
+    },
+    "description": {
+      "en": "Tantalizing appetizers like Paneer Tikka, Gobi 65, and Crispy Corn.",
+      "te": "నోరూరించే స్టార్టర్లు: పనీర్ టిక్కా, గోబీ 65 మరియు క్రిస్పీ కార్న్."
+    },
+    "imageUrl": "https://images.unsplash.com/photo-1599488615731-7e5c2823ff28?w=800&auto=format&fit=crop&q=80",
+    "recipeCount": 10,
+    "order": 5,
+    "featured": true,
+    "mealType": "starters",
+    "subcategories": ["Tandoori", "Crispy Fries", "Indo-Chinese", "Tikka"]
+  },
+  {
+    "id": "cat_desserts",
+    "slug": "desserts",
+    "name": {
+      "en": "Desserts",
+      "te": "మిఠాయిలు & స్వీట్స్"
+    },
+    "description": {
+      "en": "Irresistible sweets: melt-in-mouth Gulab Jamun, rich Payasam, and Halwa.",
+      "te": "నోరూరించే తీపి వంటకాలు: గులాబ్ జామున్, పాయసం మరియు హల్వా."
+    },
+    "imageUrl": "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?w=800&auto=format&fit=crop&q=80",
+    "recipeCount": 11,
+    "order": 6,
+    "featured": true,
+    "mealType": "desserts",
+    "subcategories": ["Traditional Sweets", "Halwa", "Payasam & Kheer", "Laddu"]
+  },
+  {
+    "id": "cat_drinks",
+    "slug": "drinks",
+    "name": {
+      "en": "Drinks",
+      "te": "పానీయాలు"
+    },
+    "description": {
+      "en": "Refreshing South Indian Filter Coffee, spiced Masala Chai, and coolers.",
+      "te": "రిఫ్రెషింగ్ ఫిల్టర్ కాఫీ, మసాలా టీ మరియు చల్లని పానీయాలు."
+    },
+    "imageUrl": "https://images.unsplash.com/photo-1517256064527-09c73fc73e38?w=800&auto=format&fit=crop&q=80",
+    "recipeCount": 8,
+    "order": 7,
+    "mealType": "drinks",
+    "subcategories": ["Filter Coffee", "Chai", "Lassi", "Juices", "Coolers"]
+  },
+  {
+    "id": "cat_chutneys",
+    "slug": "chutneys-pickles",
+    "name": {
+      "en": "Chutneys & Pickles",
+      "te": "చట్నీలు & పచ్చళ్ళు"
+    },
+    "description": {
+      "en": "Zesty accompaniment chutneys and traditional sun-kissed Indian pickles.",
+      "te": "రుచికరమైన కొబ్బరి, పల్లీ చట్నీలు మరియు సాంప్రదాయ పచ్చళ్లు."
+    },
+    "imageUrl": "https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?w=800&auto=format&fit=crop&q=80",
+    "recipeCount": 9,
+    "order": 8,
+    "mealType": "chutneys-pickles",
+    "subcategories": ["Coconut Chutney", "Peanut Chutney", "Tomato Chutney", "Pickles"]
+  },
+  {
+    "id": "cat_healthy",
+    "slug": "healthy-food",
+    "name": {
+      "en": "Healthy Food",
+      "te": "ఆరోగ్యకరమైన ఆహారం"
+    },
+    "description": {
+      "en": "High-protein, low-oil, fiber-rich millet bowls, and vibrant salads.",
+      "te": "పోషకాలు నిండిన చిరుధాన్యాలు, సలాడ్లు మరియు తక్కువ నూనె వంటకాలు."
+    },
+    "imageUrl": "https://images.unsplash.com/photo-1540420773420-3366772f4999?w=800&auto=format&fit=crop&q=80",
+    "recipeCount": 7,
+    "order": 9,
+    "mealType": "healthy",
+    "subcategories": ["High Protein", "Salads", "Millet Recipes", "Low Oil"]
+  },
+  {
+    "id": "cat_occasions",
+    "slug": "special-occasions",
+    "name": {
+      "en": "Special Occasions",
+      "te": "పండుగ ప్రత్యేక వంటకాలు"
+    },
+    "description": {
+      "en": "Festival feasts for Sankranti, Diwali, Ugadi, and special family gatherings.",
+      "te": "సంక్రాంతి, దీపావళి మరియు ఉగాది పండుగల పవిత్ర సాంప్రదాయ వంటకాలు."
+    },
+    "imageUrl": "https://images.unsplash.com/photo-1610057099443-fde8c4d50f91?w=800&auto=format&fit=crop&q=80",
+    "recipeCount": 6,
+    "order": 10,
+    "mealType": "special-occasions",
+    "subcategories": ["Diwali Specials", "Sankranti Pongal", "Ugadi", "Festival Meals"]
+  }
+]

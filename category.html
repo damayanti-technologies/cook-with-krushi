@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore category recipes on Cook With Krushi.">
+  <meta name="theme-color" content="#294B35">
+  <title>Category Recipes | Cook With Krushi</title>
+  
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" type="image/svg+xml" href="assets/icons/icon.svg">
+  <link rel="apple-touch-icon" href="assets/icons/icon-192.png">
+  
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+
+  <div class="offline-banner">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="1" y1="1" x2="23" y2="23"></line><path d="M16.72 11.06A10.94 10.94 0 0 1 19 12.55"></path><path d="M5 12.55a10.94 10.94 0 0 1 5.17-2.39"></path><line x1="12" y1="20" x2="12.01" y2="20"></line></svg>
+    <span data-i18n="offline_notice">You are currently offline. Viewing cached recipes.</span>
+  </div>
+
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo">
+        <div class="brand-icon-wrap">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 13.87A4 4 0 0 1 7.41 6a5.11 5.11 0 0 1 1.05-1.54 5 5 0 0 1 7.08 0A5.11 5.11 0 0 1 16.59 6 4 4 0 0 1 18 13.87V21H6Z"/>
+            <line x1="6" y1="17" x2="18" y2="17"/>
+          </svg>
+        </div>
+        <div class="brand-text-wrap">
+          <span class="brand-name">Cook With Krushi</span>
+          <span class="brand-tagline">Cook. Learn. Enjoy.</span>
+        </div>
+      </a>
+
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link" data-i18n="nav_home">Home</a></li>
+          <li><a href="explore.html" class="nav-link" data-i18n="nav_explore">Explore Recipes</a></li>
+          <li><a href="categories.html" class="nav-link active" data-i18n="nav_categories">Categories</a></li>
+          <li><a href="what-can-i-cook.html" class="nav-link" data-i18n="nav_what_can_i_cook">What Can I Cook?</a></li>
+          <li><a href="cooking-guide.html" class="nav-link" data-i18n="nav_guide">Cooking Guide</a></li>
+          <li>
+            <a href="my-kitchen.html" class="nav-link nav-kitchen-badge">
+              <span data-i18n="nav_kitchen">My Kitchen</span>
+              <span class="badge-count" style="display:none;">0</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <div class="lang-toggle">
+          <button class="lang-btn active" data-lang="en">EN</button>
+          <button class="lang-btn" data-lang="te">తెలుగు</button>
+        </div>
+        <a href="my-kitchen.html" class="btn-icon" aria-label="My Saved Kitchen">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main style="padding: 40px 0 60px;">
+    <div class="container">
+      <!-- Breadcrumbs -->
+      <div style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 20px;">
+        <a href="index.html">Home</a> &nbsp;/&nbsp; <a href="categories.html">Categories</a> &nbsp;/&nbsp; <span id="breadcrumb-cat" style="color: var(--deep-green); font-weight: 600;">Category</span>
+      </div>
+
+      <!-- Category Hero Banner -->
+      <div id="cat-hero" style="background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-xl); padding: 36px; margin-bottom: 36px; display: flex; align-items: center; justify-content: space-between; gap: 32px; flex-wrap: wrap;">
+        <div style="flex: 1; min-width: 280px;">
+          <span class="section-tag">Category Collection</span>
+          <h1 id="cat-title" class="section-title" style="margin-bottom: 10px;">Loading...</h1>
+          <p id="cat-desc" class="section-subtitle" style="margin-bottom: 16px;">Exploring delicious regional and classic recipes.</p>
+          <div id="cat-count-badge" class="badge-count" style="display: inline-block; position: static; width: auto; height: auto; padding: 4px 12px; border-radius: var(--radius-full); font-size: 0.8rem; background: var(--primary-light); color: var(--deep-green);">0 recipes</div>
+        </div>
+        <div id="cat-hero-img-wrap" style="width: 240px; height: 160px; border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-md);">
+          <img id="cat-hero-img" src="" alt="" style="width: 100%; height: 100%; object-fit: cover;" />
+        </div>
+      </div>
+
+      <!-- Subcategory Filter Chips -->
+      <div id="subcategory-container" style="display: none; margin-bottom: 28px;">
+        <span class="filter-label" style="display: block; margin-bottom: 10px;">Subcategories:</span>
+        <div class="filter-group" id="subcat-chips"></div>
+      </div>
+
+      <!-- Recipe Grid -->
+      <div class="recipe-grid" id="category-recipe-grid"></div>
+
+      <!-- Empty State -->
+      <div id="empty-cat" style="display: none; text-align: center; padding: 60px 20px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg);">
+        <h3 style="font-size: 1.4rem; color: var(--deep-green); margin-bottom: 8px;">No recipes found in this category</h3>
+        <p style="color: var(--text-secondary); margin-bottom: 20px;">Check back soon as our culinary team is continuously adding traditional dishes.</p>
+        <a href="categories.html" class="btn btn-primary">Browse All Categories</a>
+      </div>
+    </div>
+  </main>
+
+  <nav class="mobile-bottom-nav">
+    <ul class="mobile-nav-items">
+      <li class="mobile-nav-item"><a href="index.html"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg><span>Home</span></a></li>
+      <li class="mobile-nav-item"><a href="explore.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg><span>Explore</span></a></li>
+      <li class="mobile-nav-item"><a href="what-can-i-cook.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/></svg><span>Pantry</span></a></li>
+      <li class="mobile-nav-item"><a href="cooking-guide.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg><span>Guide</span></a></li>
+      <li class="mobile-nav-item"><a href="my-kitchen.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg><span>Kitchen</span></a></li>
+    </ul>
+  </nav>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <div>&copy; 2026 Cook With Krushi. All rights reserved.</div>
+        <div class="footer-attribution">Powered by <a href="https://damayantitechnologies.com" target="_blank" rel="noopener">Damayanti Technologies</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/storage.js"></script>
+  <script src="js/db.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/audio.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/app.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+      const params = window.Utils.getQueryParams();
+      const catId = params.id || 'lunch';
+
+      const titleEl = document.getElementById('cat-title');
+      const descEl = document.getElementById('cat-desc');
+      const countEl = document.getElementById('cat-count-badge');
+      const imgEl = document.getElementById('cat-hero-img');
+      const breadcrumbEl = document.getElementById('breadcrumb-cat');
+      const grid = document.getElementById('category-recipe-grid');
+      const emptyEl = document.getElementById('empty-cat');
+      const subcatContainer = document.getElementById('subcategory-container');
+      const subcatChips = document.getElementById('subcat-chips');
+
+      try {
+        const [categories, recipes, favs] = await Promise.all([
+          window.APIManager.getCategories(),
+          window.APIManager.getRecipesByCategory(catId),
+          window.DBManager.getFavorites()
+        ]);
+        const favIds = new Set(favs.map(f => f.recipeId));
+
+        const catMeta = categories.find(c => c.id === catId) || {
+          name: catId.charAt(0).toUpperCase() + catId.slice(1),
+          description: 'Delicious recipes in this category.',
+          image: 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=600&q=80'
+        };
+
+        const lang = window.I18nManager.getLang();
+        const catName = lang === 'te' && catMeta.nameTe ? catMeta.nameTe : catMeta.name;
+        const catDescription = lang === 'te' && catMeta.descriptionTe ? catMeta.descriptionTe : catMeta.description;
+
+        document.title = `${catName} Recipes | Cook With Krushi`;
+        titleEl.textContent = catName;
+        breadcrumbEl.textContent = catName;
+        descEl.textContent = catDescription;
+        imgEl.src = catMeta.image;
+        imgEl.alt = catName;
+        countEl.textContent = `${recipes.length} recipe${recipes.length === 1 ? '' : 's'}`;
+
+        // Render subcategory chips if present
+        if (catMeta.subcategories && catMeta.subcategories.length > 1) {
+          subcatContainer.style.display = 'block';
+          subcatChips.innerHTML = `
+            <button class="filter-pill active" data-sub="all">All</button>
+            ${catMeta.subcategories.map(s => `<button class="filter-pill" data-sub="${s.toLowerCase()}">${s}</button>`).join('')}
+          `;
+
+          subcatChips.addEventListener('click', (e) => {
+            const btn = e.target.closest('.filter-pill');
+            if (!btn) return;
+            subcatChips.querySelectorAll('.filter-pill').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            const sub = btn.getAttribute('data-sub');
+
+            const filtered = sub === 'all' 
+              ? recipes 
+              : recipes.filter(r => (r.subcategory || '').toLowerCase().includes(sub) || (r.tags || []).some(t => t.toLowerCase().includes(sub)));
+            renderGrid(filtered);
+          });
+        }
+
+        function renderGrid(list) {
+          if (list.length === 0) {
+            grid.innerHTML = '';
+            emptyEl.style.display = 'block';
+          } else {
+            emptyEl.style.display = 'none';
+            grid.innerHTML = list.map(r => window.renderRecipeCard(r, favIds.has(r.id))).join('');
+          }
+        }
+
+        renderGrid(recipes);
+      } catch (err) {
+        console.error('Error loading category:', err);
+        titleEl.textContent = 'Category Not Found';
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+[
+  {
+    "id": "rec_crispy_gobi_65",
+    "slug": "crispy-gobi-65",
+    "title": {
+      "en": "Crispy Restaurant Gobi 65",
+      "te": "క్రిస్పీ గోబీ 65"
+    },
+    "description": {
+      "en": "Cauliflower florets marinated in spiced yogurt and ginger-garlic paste, crisp-fried and tossed with tempered curry leaves and green chillies.",
+      "te": "రెస్టారెంట్ స్టైల్ కరకరలాడే కాలీఫ్లవర్ గోబీ 65 స్టార్టర్."
+    },
+    "categoryId": "cat_starters",
+    "subcategoryId": "Crispy Fries",
+    "cuisine": "Indo-Chinese",
+    "dietaryType": "vegetarian",
+    "difficulty": "easy",
+    "preparationTime": 10,
+    "cookingTime": 15,
+    "totalTime": 25,
+    "defaultServings": 3,
+    "coverImage": "https://images.unsplash.com/photo-1599488615731-7e5c2823ff28?w=1000&auto=format&fit=crop&q=80",
+    "caloriesPerServing": 220,
+    "beginnerFriendly": true,
+    "featured": true,
+    "rating": 4.89,
+    "reviewsCount": 85,
+    "published": true,
+    "createdAt": "2026-02-02T12:00:00.000Z",
+    "tags": ["gobi", "starter", "crispy", "snack", "cauliflower"],
+    "equipment": ["Deep frying pan", "Mixing bowl", "Slotted spoon"],
+    "ingredients": [
+      { "id": "ing_gb1", "name": { "en": "Cauliflower Florets", "te": "కాలీఫ్లవర్ ముక్కలు" }, "quantity": 300, "unit": "g", "notes": "Blanched in salted boiling water for 2 mins" },
+      { "id": "ing_gb2", "name": { "en": "Cornflour", "te": "మొక్కజొన్న పిండి" }, "quantity": 3, "unit": "tbsp" },
+      { "id": "ing_gb3", "name": { "en": "Rice Flour", "te": "వరిపిండి" }, "quantity": 2, "unit": "tbsp" },
+      { "id": "ing_gb4", "name": { "en": "Ginger Garlic Paste", "te": "అల్లం వెల్లుల్లి పేస్ట్" }, "quantity": 1, "unit": "tbsp" },
+      { "id": "ing_gb5", "name": { "en": "Kashmiri Red Chilli Powder", "te": "కశ్మీరీ కారం" }, "quantity": 1, "unit": "tsp" },
+      { "id": "ing_gb6", "name": { "en": "Curd", "te": "పెరుగు" }, "quantity": 2, "unit": "tbsp" },
+      { "id": "ing_gb7", "name": { "en": "Curry Leaves & Slit Chillies", "te": "కరివేపాకు & పచ్చిమిర్చి" }, "quantity": 1, "unit": "portion" },
+      { "id": "ing_gb8", "name": { "en": "Oil for frying", "te": "నూనె" }, "quantity": 2, "unit": "cups" },
+      { "id": "ing_gb9", "name": { "en": "Salt", "te": "ఉప్పు" }, "quantity": 1, "unit": "tsp" }
+    ],
+    "tips": [
+      "Drain blanched cauliflower completely on a towel before coating so the batter sticks tightly without becoming soggy."
+    ],
+    "steps": [
+      {
+        "order": 1,
+        "title": { "en": "Marinate Cauliflower", "te": "కాలీఫ్లవర్ ముక్కలను మ్యారినేట్ చేయండి" },
+        "instructions": [
+          "In a bowl, mix curd, ginger-garlic paste, chilli powder, cornflour, rice flour, and salt with 2 tbsp water to form a thick batter.",
+          "Add dry blanched cauliflower florets and coat evenly."
+        ],
+        "imageUrl": "https://images.unsplash.com/photo-1599488615731-7e5c2823ff28?w=800&auto=format&fit=crop&q=80",
+        "estimatedMinutes": 5
+      },
+      {
+        "order": 2,
+        "title": { "en": "Crisp Deep Frying", "te": "నూనెలో ఎర్రగా వేయించండి" },
+        "instructions": [
+          "Heat oil over medium-high heat in a kadai.",
+          "Drop coated florets one by one without overcrowding.",
+          "Fry for 4-5 minutes until crunchy and deep golden brown.",
+          "Drain on paper towels and toss with fried curry leaves and lemon juice."
+        ],
+        "imageUrl": "https://images.unsplash.com/photo-1599488615731-7e5c2823ff28?w=800&auto=format&fit=crop&q=80",
+        "estimatedMinutes": 8,
+        "timerSeconds": 300
+      }
+    ]
+  }
+]

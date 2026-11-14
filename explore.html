@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore delicious recipes with filters for category, prep time, difficulty, and diet on Cook With Krushi.">
+  <meta name="theme-color" content="#294B35">
+  <title>Explore Recipes | Cook With Krushi</title>
+  
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" type="image/svg+xml" href="assets/icons/icon.svg">
+  <link rel="apple-touch-icon" href="assets/icons/icon-192.png">
+  
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+
+  <!-- Offline Notice -->
+  <div class="offline-banner">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="1" y1="1" x2="23" y2="23"></line><path d="M16.72 11.06A10.94 10.94 0 0 1 19 12.55"></path><path d="M5 12.55a10.94 10.94 0 0 1 5.17-2.39"></path><line x1="12" y1="20" x2="12.01" y2="20"></line></svg>
+    <span data-i18n="offline_notice">You are currently offline. Viewing cached recipes.</span>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo">
+        <div class="brand-icon-wrap">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 13.87A4 4 0 0 1 7.41 6a5.11 5.11 0 0 1 1.05-1.54 5 5 0 0 1 7.08 0A5.11 5.11 0 0 1 16.59 6 4 4 0 0 1 18 13.87V21H6Z"/>
+            <line x1="6" y1="17" x2="18" y2="17"/>
+          </svg>
+        </div>
+        <div class="brand-text-wrap">
+          <span class="brand-name">Cook With Krushi</span>
+          <span class="brand-tagline">Cook. Learn. Enjoy.</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link" data-i18n="nav_home">Home</a></li>
+          <li><a href="explore.html" class="nav-link active" data-i18n="nav_explore">Explore Recipes</a></li>
+          <li><a href="categories.html" class="nav-link" data-i18n="nav_categories">Categories</a></li>
+          <li><a href="what-can-i-cook.html" class="nav-link" data-i18n="nav_what_can_i_cook">What Can I Cook?</a></li>
+          <li><a href="cooking-guide.html" class="nav-link" data-i18n="nav_guide">Cooking Guide</a></li>
+          <li>
+            <a href="my-kitchen.html" class="nav-link nav-kitchen-badge">
+              <span data-i18n="nav_kitchen">My Kitchen</span>
+              <span class="badge-count" style="display:none;">0</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Actions -->
+      <div class="header-actions">
+        <div class="lang-toggle">
+          <button class="lang-btn active" data-lang="en">EN</button>
+          <button class="lang-btn" data-lang="te">తెలుగు</button>
+        </div>
+        <a href="my-kitchen.html" class="btn-icon" aria-label="My Saved Kitchen">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main style="padding: 40px 0 60px;">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag" data-i18n="nav_explore">Explore Recipes</span>
+        <h1 class="section-title" data-i18n="explore_heading">Find What You Love to Cook</h1>
+        <p class="section-subtitle">Search by recipe name, ingredients, or filter by category and dietary preferences.</p>
+      </div>
+
+      <!-- FILTER & SEARCH BAR -->
+      <div class="filter-bar">
+        <div class="search-input-wrap">
+          <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <input type="text" id="recipe-search-input" class="search-input" placeholder="Search by recipe name, ingredient (e.g. paneer, potato, rice)..." autocomplete="off" />
+          <button id="search-clear-btn" class="search-clear-btn" aria-label="Clear Search">&times;</button>
+        </div>
+
+        <!-- Filter Controls -->
+        <div class="filter-row">
+          <!-- Meal Category Pills -->
+          <div class="filter-group" id="category-pills">
+            <span class="filter-label">Category:</span>
+            <button class="filter-pill active" data-category="all">All</button>
+            <button class="filter-pill" data-category="breakfast">Breakfast</button>
+            <button class="filter-pill" data-category="lunch">Lunch</button>
+            <button class="filter-pill" data-category="snacks">Snacks</button>
+            <button class="filter-pill" data-category="dinner">Dinner</button>
+            <button class="filter-pill" data-category="starters">Starters</button>
+            <button class="filter-pill" data-category="desserts">Desserts</button>
+            <button class="filter-pill" data-category="drinks">Drinks</button>
+            <button class="filter-pill" data-category="chutneys">Chutneys</button>
+            <button class="filter-pill" data-category="healthy-food">Healthy</button>
+            <button class="filter-pill" data-category="special-occasions">Festivals</button>
+          </div>
+
+          <!-- Sort dropdown -->
+          <div class="filter-group">
+            <span class="filter-label">Sort:</span>
+            <select id="sort-select" class="filter-select">
+              <option value="popular">Most Popular</option>
+              <option value="quickest">Quickest (Total Time)</option>
+              <option value="az">Title A-Z</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="filter-row" style="margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--border-light);">
+          <!-- Dietary Filter -->
+          <div class="filter-group" id="diet-pills">
+            <span class="filter-label">Diet:</span>
+            <button class="filter-pill active" data-diet="all">All</button>
+            <button class="filter-pill" data-diet="vegetarian">Vegetarian</button>
+            <button class="filter-pill" data-diet="vegan">Vegan</button>
+            <button class="filter-pill" data-diet="non-veg">Non-Vegetarian</button>
+          </div>
+
+          <!-- Difficulty Filter -->
+          <div class="filter-group" id="difficulty-pills">
+            <span class="filter-label">Difficulty:</span>
+            <button class="filter-pill active" data-diff="all">All</button>
+            <button class="filter-pill" data-diff="Easy">Easy</button>
+            <button class="filter-pill" data-diff="Medium">Medium</button>
+            <button class="filter-pill" data-diff="Hard">Hard</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Results Summary -->
+      <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 24px;">
+        <div id="recipe-count-text" style="font-size: 0.95rem; font-weight: 600; color: var(--text-secondary);">
+          Loading recipes...
+        </div>
+      </div>
+
+      <!-- Grid -->
+      <div class="recipe-grid" id="explore-recipe-grid">
+        <!-- Rendered by JS -->
+      </div>
+
+      <!-- Empty State -->
+      <div id="empty-state" style="display: none; text-align: center; padding: 60px 20px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); margin-top: 20px;">
+        <div style="font-size: 3rem; margin-bottom: 14px;">🍳</div>
+        <h3 style="font-size: 1.5rem; color: var(--deep-green); margin-bottom: 8px;">No matching recipes found</h3>
+        <p style="color: var(--text-secondary); margin-bottom: 24px;">Try searching for a different term or clearing your filters.</p>
+        <button id="reset-filters-btn" class="btn btn-primary">Reset Filters</button>
+      </div>
+    </div>
+  </main>
+
+  <!-- Mobile Bottom Nav -->
+  <nav class="mobile-bottom-nav">
+    <ul class="mobile-nav-items">
+      <li class="mobile-nav-item">
+        <a href="index.html">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+          <span data-i18n="nav_home">Home</span>
+        </a>
+      </li>
+      <li class="mobile-nav-item">
+        <a href="explore.html" class="active">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <span data-i18n="nav_explore">Explore</span>
+        </a>
+      </li>
+      <li class="mobile-nav-item">
+        <a href="what-can-i-cook.html">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/></svg>
+          <span data-i18n="nav_what_can_i_cook">Pantry</span>
+        </a>
+      </li>
+      <li class="mobile-nav-item">
+        <a href="cooking-guide.html">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+          <span data-i18n="nav_guide">Guide</span>
+        </a>
+      </li>
+      <li class="mobile-nav-item">
+        <a href="my-kitchen.html">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          <span data-i18n="nav_kitchen">Kitchen</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <div>&copy; 2026 Cook With Krushi. All rights reserved.</div>
+        <div class="footer-attribution">Powered by <a href="https://damayantitechnologies.com" target="_blank" rel="noopener">Damayanti Technologies</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/storage.js"></script>
+  <script src="js/db.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/audio.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/app.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+      let allRecipes = [];
+      let favIds = new Set();
+
+      const searchInput = document.getElementById('recipe-search-input');
+      const clearBtn = document.getElementById('search-clear-btn');
+      const countText = document.getElementById('recipe-count-text');
+      const grid = document.getElementById('explore-recipe-grid');
+      const emptyState = document.getElementById('empty-state');
+      const sortSelect = document.getElementById('sort-select');
+
+      let currentCategory = 'all';
+      let currentDiet = 'all';
+      let currentDifficulty = 'all';
+      let currentSort = 'popular';
+      let searchQuery = '';
+
+      // Check URL query parameters
+      const params = window.Utils.getQueryParams();
+      if (params.q) {
+        searchQuery = params.q;
+        searchInput.value = params.q;
+        clearBtn.classList.add('visible');
+      }
+      if (params.category) {
+        currentCategory = params.category;
+      }
+      if (params.diet) {
+        currentDiet = params.diet;
+      }
+
+      // Load data
+      try {
+        const [recipes, favs] = await Promise.all([
+          window.APIManager.getAllRecipes(),
+          window.DBManager.getFavorites()
+        ]);
+        allRecipes = recipes;
+        favIds = new Set(favs.map(f => f.recipeId));
+
+        // Sync pill buttons with initial params
+        updatePillsUI();
+        filterAndRender();
+      } catch (err) {
+        console.error('Failed to load recipes:', err);
+        countText.textContent = 'Could not load recipes.';
+      }
+
+      function updatePillsUI() {
+        document.querySelectorAll('#category-pills .filter-pill').forEach(btn => {
+          btn.classList.toggle('active', btn.getAttribute('data-category') === currentCategory);
+        });
+        document.querySelectorAll('#diet-pills .filter-pill').forEach(btn => {
+          btn.classList.toggle('active', btn.getAttribute('data-diet') === currentDiet);
+        });
+        document.querySelectorAll('#difficulty-pills .filter-pill').forEach(btn => {
+          btn.classList.toggle('active', btn.getAttribute('data-diff') === currentDifficulty);
+        });
+      }
+
+      function filterAndRender() {
+        const q = searchQuery.trim().toLowerCase();
+
+        let filtered = allRecipes.filter(r => {
+          // Search query
+          if (q) {
+            const titleMatch = (r.title || '').toLowerCase().includes(q) || (r.titleTe || '').toLowerCase().includes(q);
+            const descMatch = (r.description || '').toLowerCase().includes(q);
+            const ingMatch = (r.ingredients || []).some(ig => (ig.name || '').toLowerCase().includes(q) || (ig.nameTe || '').toLowerCase().includes(q));
+            const tagMatch = (r.tags || []).some(t => t.toLowerCase().includes(q));
+            if (!titleMatch && !descMatch && !ingMatch && !tagMatch) return false;
+          }
+
+          // Category filter
+          if (currentCategory !== 'all') {
+            const rCat = (r.category || r.mealType || '').toLowerCase();
+            if (!rCat.includes(currentCategory.replace('-', ' '))) return false;
+          }
+
+          // Diet filter
+          if (currentDiet !== 'all') {
+            const rDiet = (r.dietType || r.mealType || '').toLowerCase();
+            if (currentDiet === 'vegetarian' && !rDiet.includes('veg')) return false;
+            if (currentDiet === 'vegan' && !rDiet.includes('vegan')) return false;
+            if (currentDiet === 'non-veg' && !rDiet.includes('non')) return false;
+          }
+
+          // Difficulty filter
+          if (currentDifficulty !== 'all') {
+            if ((r.difficulty || '').toLowerCase() !== currentDifficulty.toLowerCase()) return false;
+          }
+
+          return true;
+        });
+
+        // Sorting
+        if (currentSort === 'popular') {
+          filtered.sort((a, b) => (b.rating || 0) - (a.rating || 0));
+        } else if (currentSort === 'quickest') {
+          filtered.sort((a, b) => ((a.prepTime || 0) + (a.cookTime || 0)) - ((b.prepTime || 0) + (b.cookTime || 0)));
+        } else if (currentSort === 'az') {
+          filtered.sort((a, b) => a.title.localeCompare(b.title));
+        }
+
+        // Render count
+        countText.textContent = `Showing ${filtered.length} recipe${filtered.length === 1 ? '' : 's'}`;
+
+        if (filtered.length === 0) {
+          grid.innerHTML = '';
+          emptyState.style.display = 'block';
+        } else {
+          emptyState.style.display = 'none';
+          grid.innerHTML = filtered.map(r => window.renderRecipeCard(r, favIds.has(r.id))).join('');
+        }
+      }
+
+      // Search input handler
+      searchInput.addEventListener('input', (e) => {
+        searchQuery = e.target.value;
+        clearBtn.classList.toggle('visible', searchQuery.length > 0);
+        filterAndRender();
+      });
+
+      clearBtn.addEventListener('click', () => {
+        searchInput.value = '';
+        searchQuery = '';
+        clearBtn.classList.remove('visible');
+        filterAndRender();
+      });
+
+      // Category pills handler
+      document.getElementById('category-pills').addEventListener('click', (e) => {
+        const btn = e.target.closest('.filter-pill');
+        if (!btn) return;
+        currentCategory = btn.getAttribute('data-category');
+        updatePillsUI();
+        filterAndRender();
+      });
+
+      // Diet pills handler
+      document.getElementById('diet-pills').addEventListener('click', (e) => {
+        const btn = e.target.closest('.filter-pill');
+        if (!btn) return;
+        currentDiet = btn.getAttribute('data-diet');
+        updatePillsUI();
+        filterAndRender();
+      });
+
+      // Difficulty pills handler
+      document.getElementById('difficulty-pills').addEventListener('click', (e) => {
+        const btn = e.target.closest('.filter-pill');
+        if (!btn) return;
+        currentDifficulty = btn.getAttribute('data-diff');
+        updatePillsUI();
+        filterAndRender();
+      });
+
+      // Sort handler
+      sortSelect.addEventListener('change', (e) => {
+        currentSort = e.target.value;
+        filterAndRender();
+      });
+
+      // Reset filters button
+      document.getElementById('reset-filters-btn').addEventListener('click', () => {
+        searchQuery = '';
+        searchInput.value = '';
+        clearBtn.classList.remove('visible');
+        currentCategory = 'all';
+        currentDiet = 'all';
+        currentDifficulty = 'all';
+        currentSort = 'popular';
+        updatePillsUI();
+        filterAndRender();
+      });
+
+      // Language change listener
+      window.addEventListener('cwk-lang-changed', () => {
+        filterAndRender();
+      });
+    });
+  </script>
+</body>
+</html>

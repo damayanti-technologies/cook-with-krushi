@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Privacy Policy of Cook With Krushi - Zero tracking, 100% on-device private cooking.">
+  <meta name="theme-color" content="#294B35">
+  <title>Privacy Policy | Cook With Krushi</title>
+  
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" type="image/svg+xml" href="assets/icons/icon.svg">
+  <link rel="apple-touch-icon" href="assets/icons/icon-192.png">
+  
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo">
+        <div class="brand-icon-wrap">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 13.87A4 4 0 0 1 7.41 6a5.11 5.11 0 0 1 1.05-1.54 5 5 0 0 1 7.08 0A5.11 5.11 0 0 1 16.59 6 4 4 0 0 1 18 13.87V21H6Z"/>
+            <line x1="6" y1="17" x2="18" y2="17"/>
+          </svg>
+        </div>
+        <div class="brand-text-wrap">
+          <span class="brand-name">Cook With Krushi</span>
+          <span class="brand-tagline">Cook. Learn. Enjoy.</span>
+        </div>
+      </a>
+
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link" data-i18n="nav_home">Home</a></li>
+          <li><a href="explore.html" class="nav-link" data-i18n="nav_explore">Explore Recipes</a></li>
+          <li><a href="categories.html" class="nav-link" data-i18n="nav_categories">Categories</a></li>
+          <li><a href="what-can-i-cook.html" class="nav-link" data-i18n="nav_what_can_i_cook">What Can I Cook?</a></li>
+          <li><a href="cooking-guide.html" class="nav-link" data-i18n="nav_guide">Cooking Guide</a></li>
+          <li>
+            <a href="my-kitchen.html" class="nav-link nav-kitchen-badge">
+              <span data-i18n="nav_kitchen">My Kitchen</span>
+              <span class="badge-count" style="display:none;">0</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <div class="lang-toggle">
+          <button class="lang-btn active" data-lang="en">EN</button>
+          <button class="lang-btn" data-lang="te">తెలుగు</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main style="padding: 50px 0 80px;">
+    <div class="container container-narrow">
+      <span class="section-tag">Privacy First</span>
+      <h1 class="section-title" style="font-size: 2.4rem; margin-bottom: 24px;">Privacy Policy</h1>
+
+      <div style="background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-xl); padding: 40px; box-shadow: var(--shadow-sm); line-height: 1.8; color: var(--text);">
+        <p style="font-size: 1.05rem; margin-bottom: 20px;">
+          At <strong>Cook With Krushi</strong>, owned and operated by <strong>Damayanti Technologies</strong>, your privacy is fundamental to our architecture. We designed this platform from the ground up so you never need an account, password, or third-party authentication.
+        </p>
+
+        <h3 style="font-size: 1.3rem; color: var(--deep-green); margin: 24px 0 8px;">1. Client-Side Storage Only</h3>
+        <p style="margin-bottom: 16px;">
+          All your personal interactions—including saved recipes (favorites), in-progress cooking checkpoints, ingredient checklist completion, and cooking history logs—are saved solely inside your browser using standard browser APIs:
+        </p>
+        <ul style="list-style-type: disc; padding-left: 24px; margin-bottom: 20px;">
+          <li><strong>IndexedDB:</strong> Encrypted and sandboxed by your browser for favorites, in-progress cooking steps, and cooking journal records.</li>
+          <li><strong>LocalStorage:</strong> Used exclusively for storing your language selection (English or Telugu) and sound preferences.</li>
+        </ul>
+
+        <h3 style="font-size: 1.3rem; color: var(--deep-green); margin: 24px 0 8px;">2. Zero External Tracking &amp; Zero Databases</h3>
+        <p style="margin-bottom: 20px;">
+          We do not transmit your recipe searches, saved dishes, or cooking times to any external backend server or database. We do not use third-party analytics trackers, advertising pixels, or cross-site fingerprinting scripts.
+        </p>
+
+        <h3 style="font-size: 1.3rem; color: var(--deep-green); margin: 24px 0 8px;">3. Data Portability &amp; Deletion</h3>
+        <p style="margin-bottom: 20px;">
+          Because all data resides in your browser, you retain total control over it. You can export a full JSON backup of your kitchen data or erase everything permanently at any time via the <em>My Kitchen</em> dashboard.
+        </p>
+
+        <h3 style="font-size: 1.3rem; color: var(--deep-green); margin: 24px 0 8px;">4. Contact</h3>
+        <p>
+          For any privacy inquiries, reach out to Damayanti Technologies at <a href="contact.html" style="color: var(--primary); font-weight: 600; text-decoration: underline;">our contact page</a>.
+        </p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <div>&copy; 2026 Cook With Krushi. All rights reserved.</div>
+        <div class="footer-attribution">Powered by <a href="https://damayantitechnologies.com" target="_blank" rel="noopener">Damayanti Technologies</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/storage.js"></script>
+  <script src="js/db.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/audio.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

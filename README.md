@@ -1,145 +1,193 @@
 # 🍲 Cook With Krushi
 ### A Premium Cooking & Recipe Learning Platform
-#### Powered and Developed by **Damayanti Technologies**
-
-> **Tagline:** *Cook. Learn. Enjoy.*  
-> **Core Philosophy:** *Discover → Prepare → Cook → Complete → Enjoy*
+**Owned and Developed by Damayanti Technologies**  
+*Brand Tagline:* **Cook. Learn. Enjoy.**  
+*Brand Philosophy:* **Discover → Prepare → Cook → Complete → Enjoy**  
+*Attribution:* **Powered by Damayanti Technologies**
 
 ---
 
 ## 🌟 Overview
 
-**Cook With Krushi** is a complete, production-grade, responsive culinary learning and cooking companion web application. Engineered by **Damayanti Technologies**, it guides both kitchen beginners and seasoned home cooks from ingredient discovery to step-by-step culinary execution with zero-drift cooking timers, intelligent serving calculations, interactive prep checklists, and authentic bilingual (English & Telugu) support.
+**Cook With Krushi** is a complete, production-grade, responsive culinary and recipe learning website built with clean, modern web standards (**HTML5, CSS3, Vanilla JavaScript, JSON Data, LocalStorage, IndexedDB, and Service Workers**).
+
+The platform eliminates heavy frameworks and backend server dependencies in favor of a **100% static, private, lightning-fast architecture** that runs offline, has zero hosting costs, and requires no logins or user registration.
+
+---
+
+## 🎨 Brand Identity & Design System
+
+- **Background:** `#FAF8F2` (Warm Ivory)
+- **Surface:** `#FFFFFF` (Crisp White) & `#F5F1E8` (Light Cream)
+- **Primary Accent:** `#55765C` (Sage Green)
+- **Deep Action Green:** `#294B35` (Forest Green)
+- **Warm Peach:** `#F3D9C8`
+- **Terracotta Accent:** `#BD765B`
+- **Charcoal Text:** `#292D29`
+- **Secondary Text:** `#777B73`
+- **Typography:** *Playfair Display* for headings, *Plus Jakarta Sans* for clean UI, and *Noto Sans Telugu* for authentic Telugu script rendering.
 
 ---
 
 ## 🚀 Key Features
 
-1. **Bilingual Culinary Experience (English & Telugu):**
-   - Instant language switcher in navigation (`EN` / `తెలుగు`).
-   - Structured bilingual recipe titles, instructions, ingredients, and culinary guides.
-   - Enhanced Telugu typography with `Noto Sans Telugu`.
+### 1. Multi-Category Discovery
+- **Meal-Based Categories:** Breakfast, Lunch, Snacks, Dinner, Starters, Desserts.
+- **Special Collections:** Drinks, Chutneys & Pickles, Healthy Food, Special Occasions (Festivals).
+- Subcategory pill filtering (e.g. Biryani & Rice, Dal & Pappu, Curries).
 
-2. **Smart Recipe Discovery & Filtering (`/explore`):**
-   - Multi-parameter live search (title, ingredients, keywords, cuisine).
-   - Filter by Meal Type (Breakfast, Lunch, Snacks, Dinner, Starters, Desserts, Drinks, Chutneys & Pickles, Healthy Food, Special Occasions).
-   - Filter by Dietary Preference (Vegetarian, Vegan, Non-Vegetarian).
-   - Filter by Difficulty (Easy, Medium, Hard) and cooking duration slider.
-   - Multiple sort modes (Popularity, Newest, Shortest Cooking Time, Alphabetical).
+### 2. Live Recipe Search & Filtering
+- Instant search across recipe titles, descriptions, ingredients, and tags.
+- Multi-dimensional filters: Meal Category, Dietary Type (Vegetarian, Vegan, Non-Vegetarian), Difficulty (Easy, Medium, Hard), and Sorting (Popularity, Quickest, Title A-Z).
 
-3. **Intelligent Serving Calculator:**
-   - Seamlessly scale ingredient quantities from 1 to 24 people.
-   - Fractional and whole kitchen math formatting (e.g. `½ tsp`, `1 ¼ cups`, `200 g`).
+### 3. Recipe Overview & Serving Calculator
+- Dynamic serving scaler (`-` / count / `+`) that recalculates ingredient quantities with fractional formatting (`1/4`, `1/2`, `1 1/2`).
+- Grouped ingredient lists (Main, Masala, Gravy, Garnish).
+- Equipment required checklist.
+- Chef's substitution notes and cooking wisdom.
+- Automated Schema.org `Recipe` JSON-LD metadata for search engine indexing.
 
-4. **Interactive Ingredient Checklist (`/recipe/[slug]/prepare`):**
-   - Dedicated "Mise en place" preparation screen before lighting the stove.
-   - Interactive checklist with strikethrough state and real-time progress counter.
-   - Clear warning banner if required ingredients are missing, without blocking the user.
-   - Equipment on counter checklist.
+### 4. Interactive Ingredient Preparation Mode
+- Dedicated preparation checklist (`prepare.html`) to facilitate *mise en place*.
+- Real-time progress bar tracking collected ingredients.
+- Interactive checkboxes with strikethrough styling and audio chime.
+- Persistent checklist state saved in IndexedDB.
 
-5. **Distraction-Free Step-by-Step Cooking Mode (`/recipe/[slug]/cook`):**
-   - Mobile-optimized focused cooking flow.
-   - Integrated zero-drift cooking timers using target timestamp calculations.
-   - Pleasant synthesized Web Audio bell chimes (no external audio assets required).
-   - Safety notices and chef's tips per step.
-   - Step skip with confirmation dialog.
-   - Confetti celebration screen on dish completion with cooking history logging.
+### 5. Distraction-Free Guided Cooking Mode
+- Focused step-by-step cooking interface (`cook.html`).
+- Large typography, step media images, chef pro-tips, and safety alerts.
+- Built-in zero-drift culinary timers with play, pause, reset, harmonic Web Audio chimes, and native browser notifications.
+- Auto-saving checkpoints allowing cooks to exit and resume later.
+- Dish completion screen with procedural canvas confetti celebration, star rating, and personal cooking journal notes.
 
-6. **"What Can I Cook?" Smart Pantry Matcher (`/what-can-i-cook`):**
-   - Enter ingredients available in your pantry or select quick staples.
-   - Transparent matching algorithm: separates 100% ready dishes from partial matches with a detailed breakdown of missing items.
+### 6. "What Can I Cook?" Smart Pantry Matcher
+- Select ingredients available in your fridge and pantry (Onion, Tomato, Potato, Rice, Dal, etc.).
+- Categorizes results into **100% Ready to Cook** (complete matches) and **Almost Ready** (missing 1-2 items) with missing ingredients highlighted in red tags.
 
-7. **Culinary Guide & Knowledge Base (`/cooking-guide`):**
-   - Glossary of terms (Sauté, Simmer, Dum, Temper/Tadka, Knead, Whisk, etc.).
-   - Standard measurement conversion table.
-   - Kitchen equipment guide.
-   - Hygiene and kitchen safety standards.
-   - Common cooking mistakes and chef solutions.
+### 7. Culinary Guide & Reference Manual
+- Bilingual Culinary Glossary (Sauté, Simmer, Dum, Tadka, Blanch, etc.) with live search.
+- Essential kitchen cookware guide.
+- Accurate measurement conversion table (cups, tbsp, tsp, ml, grams).
+- Emergency kitchen remedies for common cooking mistakes (too salty, too spicy, sticky rice).
+- Kitchen hygiene and fire safety guidelines.
 
-8. **My Kitchen Personal Hub (`/my-kitchen`):**
-   - Saved favorite recipes.
-   - Resume in-progress cooking sessions.
-   - Completed dish history log.
-   - Personal dietary preferences.
+### 8. My Kitchen (Local Personal Hub)
+- **Saved Recipes (Favorites):** Instant access to bookmarked dishes.
+- **In-Progress Sessions:** Resume interrupted recipes at their exact step.
+- **Cooking Journal:** History of cooked dishes with dates, star ratings, and personal notes.
+- **Data Privacy & Backup:** One-click JSON data export and complete local data erasure. 100% on-device via IndexedDB.
 
-9. **Administrative Dashboard (`/admin`):**
-   - Role-guarded admin portal.
-   - Full Recipe Management (create, edit, publish/unpublish, delete).
-   - Category and subcategory taxonomy manager.
-   - Master ingredient library and substitutions.
-   - Registered users directory and role switching.
-   - Editorial homepage content, banner, and tips manager.
-   - **1-Click Firestore Seed Tool**: Uploads all initial sample recipes, categories, and guides into Firestore with one tap!
+### 9. Bilingual Language Support
+- One-click toggle between **English** and **తెలుగు (Telugu)**.
+- Localized recipe names, instructions, glossary terms, and UI labels.
 
----
-
-## 🛠️ Technology Stack
-
-- **Framework:** Next.js 14 (App Router)
-- **Language:** TypeScript
-- **Styling:** Tailwind CSS (Custom culinary palette: Warm Ivory `#FAF8F2`, Sage Green `#55765C`, Deep Forest Green `#294B35`, Warm Peach `#F3D9C8`, Terracotta `#BD765B`)
-- **Backend & Auth:** Google Firebase (Auth, Cloud Firestore, Firebase Storage)
-- **Audio:** Web Audio API (Synthesized pleasant chime tones)
-- **Icons:** Lucide React
-- **Celebration Effects:** Canvas Confetti
+### 10. Progressive Web App (PWA) & Offline Ready
+- Complete `manifest.json` and installable standalone app experience.
+- Service Worker (`sw.js`) implementing cache-first strategies for static assets and network-first strategies for recipe JSON data.
+- Dedicated offline fallback page (`offline.html`).
 
 ---
 
-## 📦 Getting Started
+## 📂 Project Architecture
 
-### 1. Prerequisites
-- Node.js 18+ or 20+ installed
-- npm or yarn
-
-### 2. Installation
-Clone or navigate to the project directory:
-```bash
-cd "C:\Users\Damayanti Crest\.gemini\antigravity\scratch\cook-with-krushi"
-npm install
+```
+cook-with-krushi/
+├── assets/
+│   ├── icons/
+│   │   ├── icon.svg
+│   │   ├── icon-192.png
+│   │   └── icon-512.png
+│   └── images/
+├── css/
+│   ├── style.css           # Design tokens, variables, layout, typography, header, footer
+│   └── components.css      # Recipe cards, category cards, cooking mode, timers, checklists
+├── data/
+│   ├── categories.json     # All 10 category definitions (bilingual)
+│   ├── glossary.json       # Culinary terms, equipment, conversions, mistakes, safety
+│   ├── translations.json   # Full English and Telugu dictionary
+│   └── recipes/
+│       ├── breakfast.json
+│       ├── lunch.json
+│       ├── snacks.json
+│       ├── dinner.json
+│       ├── starters.json
+│       ├── desserts.json
+│       ├── drinks.json
+│       ├── chutneys.json
+│       ├── healthy-food.json
+│       └── special-occasions.json
+├── js/
+│   ├── storage.js          # LocalStorage manager (language, preferences)
+│   ├── db.js               # IndexedDB wrapper (favorites, history, in-progress)
+│   ├── api.js              # JSON data loader & caching layer
+│   ├── audio.js            # Web Audio API procedural chime synthesizer
+│   ├── timer.js            # Target-timestamp drift-free cooking timer
+│   ├── confetti.js         # Canvas celebratory particle system
+│   ├── utils.js            # Scaler fractions, formatting, toasts, diet badges
+│   ├── i18n.js             # Bilingual language switcher (EN / TE)
+│   └── app.js              # Shared controller, SW registration, card renderer
+├── index.html              # Homepage
+├── explore.html            # Search & multi-filters
+├── categories.html         # Categories directory
+├── category.html           # Category detail & subcategories
+├── recipe.html             # Recipe details & serving scaler
+├── prepare.html            # Mise en place ingredient checklist
+├── cook.html               # Step-by-step cooking mode with timers
+├── what-can-i-cook.html    # Smart pantry ingredient matcher
+├── cooking-guide.html      # Culinary glossary & reference
+├── my-kitchen.html         # User hub (favorites, history, in-progress)
+├── about.html              # About Cook With Krushi & Damayanti Technologies
+├── contact.html            # Feedback & recipe submission form
+├── privacy-policy.html     # Privacy-first policy (no tracking)
+├── terms.html              # Terms of use
+├── offline.html            # Offline fallback page
+├── manifest.json           # Web App Manifest
+├── sw.js                   # Service Worker (offline caching)
+├── netlify.toml            # Netlify deployment configuration
+└── README.md
 ```
 
-### 3. Environment Setup (Optional for Demo Mode)
-The platform is designed to work **100% out of the box** in Demo/Offline Mode even without Firebase credentials!
+---
 
-To connect your own real Google Cloud Firebase project:
-1. Copy `.env.example` to `.env.local`:
-   ```bash
-   cp .env.example .env.local
-   ```
-2. Fill in your Firebase Web App credentials from the Firebase Console:
-   ```env
-   NEXT_PUBLIC_FIREBASE_API_KEY=AIzaSy...
-   NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=your-app.firebaseapp.com
-   NEXT_PUBLIC_FIREBASE_PROJECT_ID=your-project-id
-   NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=your-app.appspot.com
-   NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=...
-   NEXT_PUBLIC_FIREBASE_APP_ID=...
-   ```
+## ⚡ Deployment & Hosting
 
-### 4. Run Development Server
+### Option A: Netlify (Free)
+1. Drag and drop the `cook-with-krushi` folder directly into [Netlify Drop](https://app.netlify.com/drop), or connect your Git repository.
+2. Build command: *(Leave blank - No build command needed)*
+3. Publish directory: `.` *(Root)*
+4. The included `netlify.toml` automatically configures headers, cache control, and PWA security.
+
+### Option B: GitHub Pages (Free)
+1. Push the repository to GitHub.
+2. In your repository settings, go to **Settings → Pages**.
+3. Under **Source**, choose `Deploy from a branch` and select `master` / `/ (root)`.
+4. Your site will be live instantly!
+
+### Option C: Local Testing
+Run any standard static file server in the project directory:
 ```bash
-npm run dev
-```
-Open [http://localhost:3000](http://localhost:3000) in your browser.
+# Using Python
+python -m http.server 3000
 
-### 5. Build for Production
-```bash
-npm run build
-npm start
+# Or using Node
+npx serve -p 3000
 ```
+Open `http://localhost:3000` in your browser.
 
 ---
 
-## 🔒 Firebase Security Rules & Seeding
+## 🔒 Privacy & Data Policy
 
-- **Firestore Security Rules:** Located in [`firestore.rules`](file:///C:/Users/Damayanti%20Crest/.gemini/antigravity/scratch/cook-with-krushi/firestore.rules).
-- **Storage Security Rules:** Located in [`storage.rules`](file:///C:/Users/Damayanti%20Crest/.gemini/antigravity/scratch/cook-with-krushi/storage.rules).
-- **1-Click Seed:** Log in as Administrator and navigate to `/admin/settings` to populate all initial recipes and categories into your Cloud Firestore collection.
+Cook With Krushi does not collect, sell, or transmit any user information. All user state is stored on your device using:
+- **LocalStorage:** User interface language preference (`cwk_lang`).
+- **IndexedDB:** Saved recipes (`favorites`), active cooking state (`inProgress`), and completed dish log (`history`).
 
 ---
 
-## 🏢 Brand Attribution
+## 👨‍💻 Ownership & Credits
 
-**Cook With Krushi** is owned, engineered, and maintained by:  
-**Damayanti Technologies**  
-*Powering modern digital culinary learning.*
+- **Platform:** Cook With Krushi
+- **Tagline:** Cook. Learn. Enjoy.
+- **Owner & Developer:** [Damayanti Technologies](https://damayantitechnologies.com)
+- **Footer Attribution:** "Powered by Damayanti Technologies"
+- **Copyright:** &copy; 2026 Damayanti Technologies. All rights reserved.
