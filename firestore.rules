@@ -1,0 +1,67 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Helper functions
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+
+    function isOwner(userId) {
+      return isAuthenticated() && request.auth.uid == userId;
+    }
+
+    function isAdmin() {
+      return isAuthenticated() && 
+        (request.auth.token.admin == true || 
+         request.auth.token.email.matches('.*admin.*') ||
+         get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'admin');
+    }
+
+    // Public recipes collection
+    match /recipes/{recipeId} {
+      // Anyone can read published recipes
+      allow read: if resource.data.published == true || isAdmin();
+      // Only authorized admins can create, update, publish, or delete recipes
+      allow create, update, delete: if isAdmin();
+    }
+
+    // Categories collection
+    match /categories/{categoryId} {
+      allow read: if true;
+      allow create, update, delete: if isAdmin();
+    }
+
+    // Cooking Guides & Glossary
+    match /cookingGuides/{guideId} {
+      allow read: if true;
+      allow create, update, delete: if isAdmin();
+    }
+
+    // Homepage content & banners
+    match /homepageContent/{contentId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    // User profiles
+    match /users/{userId} {
+      allow read: if isOwner(userId) || isAdmin();
+      allow create: if isAuthenticated() && request.auth.uid == userId;
+      allow update: if isOwner(userId) && (!request.resource.data.diff(resource.data).affectedKeys().hasAny(['role']) || isAdmin());
+      allow delete: if isAdmin();
+    }
+
+    // User personal cooking progress & checklists
+    match /cookingProgress/{progressId} {
+      allow read, write: if isAuthenticated() && 
+        (progressId.matches('^' + request.auth.uid + '_.*') || resource.data.userId == request.auth.uid);
+    }
+
+    // App settings
+    match /appSettings/{settingId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+  }
+}
