@@ -77,11 +77,29 @@ The platform eliminates heavy frameworks and backend server dependencies in favo
 - **Cooking Journal:** History of cooked dishes with dates, star ratings, and personal notes.
 - **Data Privacy & Backup:** One-click JSON data export and complete local data erasure. 100% on-device via IndexedDB.
 
-### 9. Bilingual Language Support
+### 9. Cook With Me — Hands-Free Voice Assistant
+- Browser Web Speech Text-to-Speech (TTS) reading instructions step-by-step.
+- Speech Recognition (STT) for hands-free kitchen voice commands: *"Next step"*, *"Repeat"*, *"Start timer"*, *"How much time is left?"* (with English and Telugu support).
+- Automatic browser capability detection with manual touch fallback and zero-record user privacy safeguards.
+
+### 10. Automated Nutrition Calculator
+- Scientific nutrition estimates per serving and whole dish compiled from ICMR-NIN & USDA nutritional standards.
+- Dynamic macro breakdown: Calories (kcal), Protein (g), Carbohydrates (g), Fats (g), and Dietary Fibre (g) that scales dynamically as serving size changes.
+
+### 11. Regional & Global Food Discovery ("Explore Cuisines")
+- Dedicated cuisine explorer covering 8 Indian regions (Telugu, Andhra, Telangana, South Indian, North Indian, Tamil, Kerala, Karnataka) and 8 International cuisines (Chinese, Italian, Mexican, Thai, Japanese, Continental, Mediterranean, Other).
+- Multi-criteria filtering by Diet, Difficulty, Time, and Meal Category.
+
+### 12. Cook Within My Budget & Smart Grocery List
+- Dynamic recipe filtering by target budget (₹100, ₹200, ₹500, or Custom).
+- Unit conversion algorithms with real local retail price surveys.
+- Interactive grocery shopping list allowing home cooks to check off pantry staples and automatically recalculate their exact out-of-pocket store expenses.
+
+### 13. Bilingual Language Support
 - One-click toggle between **English** and **తెలుగు (Telugu)**.
 - Localized recipe names, instructions, glossary terms, and UI labels.
 
-### 10. Progressive Web App (PWA) & Offline Ready
+### 14. Progressive Web App (PWA) & Offline Ready
 - Complete `manifest.json` and installable standalone app experience.
 - Service Worker (`sw.js`) implementing cache-first strategies for static assets and network-first strategies for recipe JSON data.
 - Dedicated offline fallback page (`offline.html`).
