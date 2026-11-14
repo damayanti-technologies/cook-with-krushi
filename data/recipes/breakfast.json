@@ -27,24 +27,141 @@
     "reviewsCount": 210,
     "published": true,
     "createdAt": "2026-01-10T08:00:00.000Z",
-    "tags": ["dosa", "south indian", "breakfast", "crispy", "potato masala"],
-    "equipment": ["Cast iron tawa or non-stick griddle", "Flat ladle", "Spatula", "Potato masher"],
+    "tags": [
+      "dosa",
+      "south indian",
+      "breakfast",
+      "crispy",
+      "potato masala"
+    ],
+    "equipment": [
+      "Cast iron tawa or non-stick griddle",
+      "Flat ladle",
+      "Spatula",
+      "Potato masher"
+    ],
     "ingredients": [
-      { "id": "ing_d1", "name": { "en": "Fermented Dosa Batter", "te": "దోశ పిండి" }, "quantity": 3, "unit": "cups", "notes": "Well-fermented at room temperature" },
-      { "id": "ing_d2", "name": { "en": "Potatoes", "te": "బంగాళాదుంపలు" }, "quantity": 3, "unit": "medium", "notes": "Boiled, peeled, and coarsely mashed" },
-      { "id": "ing_d3", "name": { "en": "Onion", "te": "ఉల్లిపాయ" }, "quantity": 1, "unit": "large", "notes": "Thinly sliced" },
-      { "id": "ing_d4", "name": { "en": "Green Chillies", "te": "పచ్చిమిర్చి" }, "quantity": 2, "unit": "pieces", "notes": "Finely slit" },
-      { "id": "ing_d5", "name": { "en": "Ginger", "te": "అల్లం ముక్క" }, "quantity": 1, "unit": "inch", "notes": "Finely minced" },
-      { "id": "ing_d6", "name": { "en": "Mustard Seeds", "te": "ఆవాలు" }, "quantity": 1, "unit": "tsp" },
-      { "id": "ing_d7", "name": { "en": "Chana Dal (Bengal gram)", "te": "శనగపప్పు" }, "quantity": 1, "unit": "tsp" },
-      { "id": "ing_d8", "name": { "en": "Curry Leaves", "te": "కరివేపాకు" }, "quantity": 1, "unit": "sprig" },
-      { "id": "ing_d9", "name": { "en": "Turmeric Powder", "te": "పసుపు" }, "quantity": 0.5, "unit": "tsp" },
-      { "id": "ing_d10", "name": { "en": "Oil or Ghee", "te": "నూనె లేదా నెయ్యి" }, "quantity": 3, "unit": "tbsp" },
-      { "id": "ing_d11", "name": { "en": "Salt", "te": "ఉప్పు" }, "quantity": 1, "unit": "tsp" },
-      { "id": "ing_d12", "name": { "en": "Fresh Coriander", "te": "కొత్తిమీర" }, "quantity": 2, "unit": "tbsp", "notes": "Chopped" }
+      {
+        "id": "ing_d1",
+        "name": {
+          "en": "Fermented Dosa Batter",
+          "te": "దోశ పిండి"
+        },
+        "quantity": 3,
+        "unit": "cups",
+        "notes": "Well-fermented at room temperature"
+      },
+      {
+        "id": "ing_d2",
+        "name": {
+          "en": "Potatoes",
+          "te": "బంగాళాదుంపలు"
+        },
+        "quantity": 3,
+        "unit": "medium",
+        "notes": "Boiled, peeled, and coarsely mashed"
+      },
+      {
+        "id": "ing_d3",
+        "name": {
+          "en": "Onion",
+          "te": "ఉల్లిపాయ"
+        },
+        "quantity": 1,
+        "unit": "large",
+        "notes": "Thinly sliced"
+      },
+      {
+        "id": "ing_d4",
+        "name": {
+          "en": "Green Chillies",
+          "te": "పచ్చిమిర్చి"
+        },
+        "quantity": 2,
+        "unit": "pieces",
+        "notes": "Finely slit"
+      },
+      {
+        "id": "ing_d5",
+        "name": {
+          "en": "Ginger",
+          "te": "అల్లం ముక్క"
+        },
+        "quantity": 1,
+        "unit": "inch",
+        "notes": "Finely minced"
+      },
+      {
+        "id": "ing_d6",
+        "name": {
+          "en": "Mustard Seeds",
+          "te": "ఆవాలు"
+        },
+        "quantity": 1,
+        "unit": "tsp"
+      },
+      {
+        "id": "ing_d7",
+        "name": {
+          "en": "Chana Dal (Bengal gram)",
+          "te": "శనగపప్పు"
+        },
+        "quantity": 1,
+        "unit": "tsp"
+      },
+      {
+        "id": "ing_d8",
+        "name": {
+          "en": "Curry Leaves",
+          "te": "కరివేపాకు"
+        },
+        "quantity": 1,
+        "unit": "sprig"
+      },
+      {
+        "id": "ing_d9",
+        "name": {
+          "en": "Turmeric Powder",
+          "te": "పసుపు"
+        },
+        "quantity": 0.5,
+        "unit": "tsp"
+      },
+      {
+        "id": "ing_d10",
+        "name": {
+          "en": "Oil or Ghee",
+          "te": "నూనె లేదా నెయ్యి"
+        },
+        "quantity": 3,
+        "unit": "tbsp"
+      },
+      {
+        "id": "ing_d11",
+        "name": {
+          "en": "Salt",
+          "te": "ఉప్పు"
+        },
+        "quantity": 1,
+        "unit": "tsp"
+      },
+      {
+        "id": "ing_d12",
+        "name": {
+          "en": "Fresh Coriander",
+          "te": "కొత్తిమీర"
+        },
+        "quantity": 2,
+        "unit": "tbsp",
+        "notes": "Chopped"
+      }
     ],
     "alternatives": [
-      { "original": "Ghee", "substitute": "Sesame oil or Coconut oil", "note": "Maintains 100% plant-based vegan credentials." }
+      {
+        "original": "Ghee",
+        "substitute": "Sesame oil or Coconut oil",
+        "note": "Maintains 100% plant-based vegan credentials."
+      }
     ],
     "tips": [
       "Ensure the tawa is hot before pouring batter, but sprinkle cold water and wipe with a cloth right before spreading to regulate surface heat.",
@@ -53,7 +170,10 @@
     "steps": [
       {
         "order": 1,
-        "title": { "en": "Prepare Potato Masala Filling", "te": "బంగాళాదుంప మసాలా తయారు చేయండి" },
+        "title": {
+          "en": "Prepare Potato Masala Filling",
+          "te": "బంగాళాదుంప మసాలా తయారు చేయండి"
+        },
         "instructions": [
           "Heat 1 tablespoon oil in a pan over medium flame.",
           "Add mustard seeds; once they crackle, add chana dal, curry leaves, and green chillies.",
@@ -67,7 +187,10 @@
       },
       {
         "order": 2,
-        "title": { "en": "Heat & Temper the Tawa", "te": "పెనాన్ని సిద్ధం చేసుకోండి" },
+        "title": {
+          "en": "Heat & Temper the Tawa",
+          "te": "పెనాన్ని సిద్ధం చేసుకోండి"
+        },
         "instructions": [
           "Heat a cast-iron tawa or heavy griddle over high flame until hot.",
           "Sprinkle a few drops of water; it should sizzle and evaporate instantly.",
@@ -76,11 +199,16 @@
         ],
         "imageUrl": "https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=800&auto=format&fit=crop&q=80",
         "estimatedMinutes": 2,
-        "warnings": ["Splattering water on hot oil causes sizzling droplets; keep safe distance."]
+        "warnings": [
+          "Splattering water on hot oil causes sizzling droplets; keep safe distance."
+        ]
       },
       {
         "order": 3,
-        "title": { "en": "Spread Batter & Crisp to Golden", "te": "దోశ వేసి ఎర్రగా కాల్చండి" },
+        "title": {
+          "en": "Spread Batter & Crisp to Golden",
+          "te": "దోశ వేసి ఎర్రగా కాల్చండి"
+        },
         "instructions": [
           "Pour a full ladle of dosa batter into the center of the tawa.",
           "Using the back of the ladle, spread in outward concentric circles into a thin crepe.",
@@ -93,7 +221,10 @@
       },
       {
         "order": 4,
-        "title": { "en": "Fill Masala & Fold", "te": "మసాలా పెట్టి మడవండి" },
+        "title": {
+          "en": "Fill Masala & Fold",
+          "te": "మసాలా పెట్టి మడవండి"
+        },
         "instructions": [
           "Spoon 2-3 tablespoons of warm potato masala right down the center of the dosa.",
           "Using your spatula, gently fold both sides over the filling or roll into a cylinder.",
@@ -102,6 +233,8 @@
         "imageUrl": "https://images.unsplash.com/photo-1668236543090-82eba5ee5976?w=800&auto=format&fit=crop&q=80",
         "estimatedMinutes": 1
       }
-    ]
+    ],
+    "cuisineId": "south-indian",
+    "region": "Southern India"
   }
 ]

@@ -1,0 +1,180 @@
+{
+  "cuisines": [
+    {
+      "id": "telugu",
+      "name": "Telugu Cuisine",
+      "nameTe": "తెలుగు వంటకాలు",
+      "category": "Indian",
+      "region": "Andhra Pradesh & Telangana",
+      "description": "Richly spiced, tangy tamarind broths, hearty lentil pappu, and aromatic podis deeply rooted in Telugu culture.",
+      "descriptionTe": "ఘుమఘుమలాడే మసాలాలు, పప్పు, కమ్మని నెయ్యి మరియు ఘాటైన పచ్చళ్లతో కూడిన సంప్రదాయ తెలుగు వంటకాలు.",
+      "image": "https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?w=800&auto=format&fit=crop&q=80",
+      "popularDishes": ["Pappu Charu", "Gongura Pachadi", "Sarva Pindi", "Pesarattu"]
+    },
+    {
+      "id": "andhra",
+      "name": "Andhra Cuisine",
+      "nameTe": "ఆంధ్ర వంటకాలు",
+      "category": "Indian",
+      "region": "Coastal Andhra & Rayalaseema",
+      "description": "Famous worldwide for fiery red chillies, Guntur spices, tangy gongura leaves, and mouthwatering curries.",
+      "descriptionTe": "గుంటూరు ఘాటైన మిరపకాయలు, గోంగూర మరియు నోరూరించే కొస్తాంధ్రా వంటకాలు.",
+      "image": "https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=800&auto=format&fit=crop&q=80",
+      "popularDishes": ["Andhra Tomato Pappu", "Gongura Mutton", "Royyala Iguru", "Ulava Charu"]
+    },
+    {
+      "id": "telangana",
+      "name": "Telangana Cuisine",
+      "nameTe": "తెలంగాణ వంటకాలు",
+      "category": "Indian",
+      "region": "Telangana",
+      "description": "Rustic, soul-nourishing millets, jowar rotis, fragrant Sarva Pindi, and rich spicy meat and lentil stews.",
+      "descriptionTe": "జొన్న రొట్టెలు, సర్వపిండి, సకినాలు మరియు గ్రామ్య రుచులతో కూడిన తెలంగాణ భోజనం.",
+      "image": "https://images.unsplash.com/photo-1606491956689-2ea866880c84?w=800&auto=format&fit=crop&q=80",
+      "popularDishes": ["Sarva Pindi", "Jonna Rotte", "Pachi Pulusu", "Golichina Mamsam"]
+    },
+    {
+      "id": "south-indian",
+      "name": "South Indian",
+      "nameTe": "దక్షిణ భారతీయ వంటకాలు",
+      "category": "Indian",
+      "region": "Southern India",
+      "description": "Crispy fermented dosas, fluffy idlis, fragrant sambar, fresh coconut chutneys, and filter coffee.",
+      "descriptionTe": "క్రిస్పీ దోశలు, ఇడ్లీ, సాంబార్, కొబ్బరి చట్నీ మరియు ఫిల్టర్ కాఫీ రుచులు.",
+      "image": "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?w=800&auto=format&fit=crop&q=80",
+      "popularDishes": ["Masala Dosa", "Filter Coffee", "Coconut Chutney", "Medu Vada"]
+    },
+    {
+      "id": "north-indian",
+      "name": "North Indian",
+      "nameTe": "ఉత్తర భారతీయ వంటకాలు",
+      "category": "Indian",
+      "region": "Northern India",
+      "description": "Rich tomato butter gravies, soft paneer, aromatic tandoor breads, hearty dals, and slow-simmered curries.",
+      "descriptionTe": "పనీర్ బటర్ మసాలా, నాన్, దాల్ మఖని మరియు సుగంధ భరిత కూరలు.",
+      "image": "https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=800&auto=format&fit=crop&q=80",
+      "popularDishes": ["Paneer Butter Masala", "Dal Makhani", "Butter Naan", "Chole Bhature"]
+    },
+    {
+      "id": "tamil",
+      "name": "Tamil Cuisine",
+      "nameTe": "తమిళ వంటకాలు",
+      "category": "Indian",
+      "region": "Tamil Nadu",
+      "description": "Chettinad black pepper spices, aromatic rasam, comforting kootu, and temple-style tamarind rice.",
+      "descriptionTe": "చెట్టినాడ్ మసాలాలు, రసం, కూటు మరియు సాంప్రదాయ పులియోధరై.",
+      "image": "https://images.unsplash.com/photo-1610057099443-fde8c4d50f91?w=800&auto=format&fit=crop&q=80",
+      "popularDishes": ["Chettinad Curry", "Pepper Rasam", "Kootu", "Ven Pongal"]
+    },
+    {
+      "id": "kerala",
+      "name": "Kerala Cuisine",
+      "nameTe": "కేరళ వంటకాలు",
+      "category": "Indian",
+      "region": "Kerala",
+      "description": "Fragrant coconut oil, fluffy appams, gentle coconut milk stews, Malabar biryani, and crispy banana chips.",
+      "descriptionTe": "కొబ్బరినూనె ఘుమఘుమలు, ఆప్పం, ఇష్టూ మరియు మలబార్ బిర్యానీ.",
+      "image": "https://images.unsplash.com/photo-1516714435131-44d6b64dc6a2?w=800&auto=format&fit=crop&q=80",
+      "popularDishes": ["Appam & Stew", "Malabar Parotta", "Avial", "Fish Moilee"]
+    },
+    {
+      "id": "karnataka",
+      "name": "Karnataka Cuisine",
+      "nameTe": "కర్ణాటక వంటకాలు",
+      "category": "Indian",
+      "region": "Karnataka",
+      "description": "Udupi pure-vegetarian traditions, spicy tamarind Bisi Bele Bath, Neer Dosa, and melt-in-mouth Mysore Pak.",
+      "descriptionTe": "ఉడిపి వంటలు, బిసిబేలే బాత్, నీర్ దోశ మరియు మైసూర్ పాక్.",
+      "image": "https://images.unsplash.com/photo-1596797038530-2c107229654b?w=800&auto=format&fit=crop&q=80",
+      "popularDishes": ["Bisi Bele Bath", "Neer Dosa", "Mysore Masala Dosa", "Mysore Pak"]
+    },
+    {
+      "id": "chinese",
+      "name": "Chinese",
+      "nameTe": "చైనీస్ వంటకాలు",
+      "category": "International",
+      "region": "East Asia",
+      "description": "Wok-tossed noodles, crunchy stir-fry greens, savoury soy and ginger garlic sauces, and dim sums.",
+      "descriptionTe": "నూడుల్స్, మంచూరియా, ఫ్రైడ్ రైస్ మరియు రుచికరమైన సాస్‌లతో తయారైన వంటలు.",
+      "image": "https://images.unsplash.com/photo-1525755662778-989d0524087e?w=800&auto=format&fit=crop&q=80",
+      "popularDishes": ["Hakka Noodles", "Veg Manchurian", "Crispy Gobi 65", "Fried Rice"]
+    },
+    {
+      "id": "italian",
+      "name": "Italian",
+      "nameTe": "ఇటాలియన్ వంటకాలు",
+      "category": "International",
+      "region": "Europe",
+      "description": "Sun-ripened tomatoes, fragrant fresh basil, al dente pasta, rich extra virgin olive oil, and wood-fired artisanal pizzas.",
+      "descriptionTe": "పాస్తా, పిజ్జా, ఫ్రెష్ బాసిల్ మరియు ఆలివ్ ఆయిల్‌తో కూడిన ఇటాలియన్ రుచులు.",
+      "image": "https://images.unsplash.com/photo-1551183053-bf91a1d81141?w=800&auto=format&fit=crop&q=80",
+      "popularDishes": ["Penne Arrabbiata", "Margherita Pizza", "Creamy Alfredo", "Risotto"]
+    },
+    {
+      "id": "mexican",
+      "name": "Mexican",
+      "nameTe": "మెక్సికన్ వంటకాలు",
+      "category": "International",
+      "region": "Latin America",
+      "description": "Crisp corn tortillas, creamy spiced black beans, fresh avocado guacamole, tangy salsa, and grilled fajitas.",
+      "descriptionTe": "టాకోస్, సల్సా, బ్యూరిటోస్ మరియు అవకాడో గువాకమోలే.",
+      "image": "https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=800&auto=format&fit=crop&q=80",
+      "popularDishes": ["Bean Tacos", "Quesadillas", "Fresh Guacamole", "Enchiladas"]
+    },
+    {
+      "id": "thai",
+      "name": "Thai",
+      "nameTe": "థాయ్ వంటకాలు",
+      "category": "International",
+      "region": "Southeast Asia",
+      "description": "The perfect balance of sweet, sour, spicy and salty: fragrant coconut milk, lemongrass, galangal, and pad thai noodles.",
+      "descriptionTe": "థాయ్ గ్రీన్ కర్రీ, లెమన్‌గ్రాస్, కొబ్బరిపాలు మరియు పాడ్ థాయ్ నూడుల్స్.",
+      "image": "https://images.unsplash.com/photo-1559847844-5315695dadae?w=800&auto=format&fit=crop&q=80",
+      "popularDishes": ["Thai Green Curry", "Pad Thai", "Tom Yum Soup", "Som Tum"]
+    },
+    {
+      "id": "japanese",
+      "name": "Japanese",
+      "nameTe": "జపనీస్ వంటకాలు",
+      "category": "International",
+      "region": "East Asia",
+      "description": "Deep umami broths, comforting ramen bowls, vegetable tempura, teriyaki glazes, and seasoned sushi rolls.",
+      "descriptionTe": "రామెన్, సుషీ, టెంపురా మరియు ఉమామి రుచులు.",
+      "image": "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=800&auto=format&fit=crop&q=80",
+      "popularDishes": ["Veg Ramen", "Vegetable Tempura", "Teriyaki Bowl", "Miso Soup"]
+    },
+    {
+      "id": "continental",
+      "name": "Continental",
+      "nameTe": "కాంటినెంటల్ వంటకాలు",
+      "category": "International",
+      "region": "Europe",
+      "description": "Subtle herb butter seasoning, baked casseroles, grilled vegetables, garlic breads, and velvety cream soups.",
+      "descriptionTe": "గార్లిక్ బ్రెడ్, క్రీమీ సూప్స్ మరియు బేక్ చేసిన కూరగాయలు.",
+      "image": "https://images.unsplash.com/photo-1544025162-d76694265947?w=800&auto=format&fit=crop&q=80",
+      "popularDishes": ["Garlic Herb Toast", "Vegetable Au Gratin", "Mushroom Stroganoff", "Minestrone"]
+    },
+    {
+      "id": "mediterranean",
+      "name": "Mediterranean",
+      "nameTe": "మెడిటరేనియన్ వంటకాలు",
+      "category": "International",
+      "region": "Mediterranean Basin",
+      "description": "Wholesome extra virgin olive oil, creamy chickpea hummus, warm pita bread, crisp Greek salads, and grilled vegetables.",
+      "descriptionTe": "హమ్ముస్, పిటా బ్రెడ్, ఆలివ్ ఆయిల్ మరియు ఫ్రెష్ సలాడ్స్.",
+      "image": "https://images.unsplash.com/photo-1540420773420-3366772f4999?w=800&auto=format&fit=crop&q=80",
+      "popularDishes": ["Creamy Hummus & Pita", "Falafel Bowl", "Greek Salad", "Tabbouleh"]
+    },
+    {
+      "id": "international",
+      "name": "Other International",
+      "nameTe": "ఇతర అంతర్జాతీయ వంటకాలు",
+      "category": "International",
+      "region": "Global Fusion",
+      "description": "Globally inspired fusion breakfasts, fresh artisan salads, healthy grain bowls, and comforting world street food.",
+      "descriptionTe": "ప్రపంచవ్యాప్త ఫ్యూజన్ వంటకాలు మరియు రుచికరమైన సలాడ్స్.",
+      "image": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=800&auto=format&fit=crop&q=80",
+      "popularDishes": ["Avocado Toast", "Quinoa Salad", "Pancake Stack", "Shakshuka"]
+    }
+  ]
+}

@@ -12,7 +12,7 @@
     },
     "categoryId": "cat_lunch",
     "subcategoryId": "Biryani",
-    "cuisine": "Hyderabadi",
+    "cuisine": "Telangana",
     "dietaryType": "vegetarian",
     "difficulty": "hard",
     "preparationTime": 25,
@@ -27,20 +27,125 @@
     "reviewsCount": 340,
     "published": true,
     "createdAt": "2026-01-05T12:00:00.000Z",
-    "tags": ["biryani", "hyderabadi", "rice", "dum", "celebration", "lunch"],
-    "equipment": ["Heavy-bottom Biryani Handi with tight lid", "Wide colander", "Frying pan", "Foil or dough seal"],
+    "tags": [
+      "biryani",
+      "hyderabadi",
+      "rice",
+      "dum",
+      "celebration",
+      "lunch"
+    ],
+    "equipment": [
+      "Heavy-bottom Biryani Handi with tight lid",
+      "Wide colander",
+      "Frying pan",
+      "Foil or dough seal"
+    ],
     "ingredients": [
-      { "id": "ing_b1", "name": { "en": "Aged Basmati Rice", "te": "బాస్మతి బియ్యం" }, "quantity": 2, "unit": "cups", "notes": "Washed and soaked for 30 minutes" },
-      { "id": "ing_b2", "name": { "en": "Mixed Vegetables (Carrot, Beans, Peas, Potato)", "te": "మిశ్రమ కూరగాయలు" }, "quantity": 2.5, "unit": "cups", "notes": "Diced evenly" },
-      { "id": "ing_b3", "name": { "en": "Curd / Plain Yogurt", "te": "పెరుగు" }, "quantity": 0.75, "unit": "cup", "notes": "Whisked smooth" },
-      { "id": "ing_b4", "name": { "en": "Fried Onions (Birista)", "te": "వేయించిన ఉల్లిపాయలు" }, "quantity": 1, "unit": "cup", "notes": "Crispy deep brown" },
-      { "id": "ing_b5", "name": { "en": "Biryani Masala Powder", "te": "బిర్యానీ మసాలా" }, "quantity": 1.5, "unit": "tbsp" },
-      { "id": "ing_b6", "name": { "en": "Whole Spices (Cardamom, Cloves, Bay leaf, Cinnamon)", "te": "బిర్యానీ దినుసులు" }, "quantity": 1, "unit": "set" },
-      { "id": "ing_b7", "name": { "en": "Saffron strands soaked in 3 tbsp warm milk", "te": "కుంకుమపువ్వు పాలు" }, "quantity": 1, "unit": "portion" },
-      { "id": "ing_b8", "name": { "en": "Pure Desi Ghee", "te": "నెయ్యి" }, "quantity": 3, "unit": "tbsp" },
-      { "id": "ing_b9", "name": { "en": "Fresh Mint & Coriander leaves", "te": "పుదీనా మరియు కొత్తిమీర" }, "quantity": 0.5, "unit": "cup", "notes": "Finely chopped" },
-      { "id": "ing_b10", "name": { "en": "Ginger Garlic Paste", "te": "అల్లం వెల్లుల్లి పేస్ట్" }, "quantity": 1.5, "unit": "tbsp" },
-      { "id": "ing_b11", "name": { "en": "Salt", "te": "ఉప్పు" }, "quantity": 2, "unit": "tsp" }
+      {
+        "id": "ing_b1",
+        "name": {
+          "en": "Aged Basmati Rice",
+          "te": "బాస్మతి బియ్యం"
+        },
+        "quantity": 2,
+        "unit": "cups",
+        "notes": "Washed and soaked for 30 minutes"
+      },
+      {
+        "id": "ing_b2",
+        "name": {
+          "en": "Mixed Vegetables (Carrot, Beans, Peas, Potato)",
+          "te": "మిశ్రమ కూరగాయలు"
+        },
+        "quantity": 2.5,
+        "unit": "cups",
+        "notes": "Diced evenly"
+      },
+      {
+        "id": "ing_b3",
+        "name": {
+          "en": "Curd / Plain Yogurt",
+          "te": "పెరుగు"
+        },
+        "quantity": 0.75,
+        "unit": "cup",
+        "notes": "Whisked smooth"
+      },
+      {
+        "id": "ing_b4",
+        "name": {
+          "en": "Fried Onions (Birista)",
+          "te": "వేయించిన ఉల్లిపాయలు"
+        },
+        "quantity": 1,
+        "unit": "cup",
+        "notes": "Crispy deep brown"
+      },
+      {
+        "id": "ing_b5",
+        "name": {
+          "en": "Biryani Masala Powder",
+          "te": "బిర్యానీ మసాలా"
+        },
+        "quantity": 1.5,
+        "unit": "tbsp"
+      },
+      {
+        "id": "ing_b6",
+        "name": {
+          "en": "Whole Spices (Cardamom, Cloves, Bay leaf, Cinnamon)",
+          "te": "బిర్యానీ దినుసులు"
+        },
+        "quantity": 1,
+        "unit": "set"
+      },
+      {
+        "id": "ing_b7",
+        "name": {
+          "en": "Saffron strands soaked in 3 tbsp warm milk",
+          "te": "కుంకుమపువ్వు పాలు"
+        },
+        "quantity": 1,
+        "unit": "portion"
+      },
+      {
+        "id": "ing_b8",
+        "name": {
+          "en": "Pure Desi Ghee",
+          "te": "నెయ్యి"
+        },
+        "quantity": 3,
+        "unit": "tbsp"
+      },
+      {
+        "id": "ing_b9",
+        "name": {
+          "en": "Fresh Mint & Coriander leaves",
+          "te": "పుదీనా మరియు కొత్తిమీర"
+        },
+        "quantity": 0.5,
+        "unit": "cup",
+        "notes": "Finely chopped"
+      },
+      {
+        "id": "ing_b10",
+        "name": {
+          "en": "Ginger Garlic Paste",
+          "te": "అల్లం వెల్లుల్లి పేస్ట్"
+        },
+        "quantity": 1.5,
+        "unit": "tbsp"
+      },
+      {
+        "id": "ing_b11",
+        "name": {
+          "en": "Salt",
+          "te": "ఉప్పు"
+        },
+        "quantity": 2,
+        "unit": "tsp"
+      }
     ],
     "tips": [
       "Cook the basmati rice only up to 70% in rolling boiling water before draining; it finishes cooking inside the dum steam.",
@@ -49,7 +154,10 @@
     "steps": [
       {
         "order": 1,
-        "title": { "en": "Marinate the Vegetables", "te": "కూరగాయలను మ్యారినేట్ చేయండి" },
+        "title": {
+          "en": "Marinate the Vegetables",
+          "te": "కూరగాయలను మ్యారినేట్ చేయండి"
+        },
         "instructions": [
           "In a large mixing bowl, combine diced vegetables, whisked curd, ginger-garlic paste, biryani masala, red chilli powder, mint, coriander, half the fried onions, and 1 tsp salt.",
           "Mix thoroughly until every vegetable piece is coated.",
@@ -61,7 +169,10 @@
       },
       {
         "order": 2,
-        "title": { "en": "Boil Rice to 70% Doneness", "te": "బియ్యాన్ని 70% ఉడికించండి" },
+        "title": {
+          "en": "Boil Rice to 70% Doneness",
+          "te": "బియ్యాన్ని 70% ఉడికించండి"
+        },
         "instructions": [
           "Bring 6 cups of water to a vigorous boil with bay leaf, cloves, cinnamon, and 1 tbsp salt.",
           "Add drained soaked basmati rice.",
@@ -71,11 +182,16 @@
         "imageUrl": "https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=800&auto=format&fit=crop&q=80",
         "estimatedMinutes": 6,
         "timerSeconds": 300,
-        "warnings": ["Do not overboil rice in water or the biryani will turn mushy during dum."]
+        "warnings": [
+          "Do not overboil rice in water or the biryani will turn mushy during dum."
+        ]
       },
       {
         "order": 3,
-        "title": { "en": "Layer and Dum Seal", "te": "లేయరింగ్ చేసి దమ్ పెట్టండి" },
+        "title": {
+          "en": "Layer and Dum Seal",
+          "te": "లేయరింగ్ చేసి దమ్ పెట్టండి"
+        },
         "instructions": [
           "In your heavy pot, spread the marinated vegetables evenly as the bottom foundation.",
           "Spread the 70% cooked hot rice evenly on top.",
@@ -87,7 +203,10 @@
       },
       {
         "order": 4,
-        "title": { "en": "Slow Dum Cooking & Rest", "te": "తక్కువ మంటపై దమ్ ఉడికించండి" },
+        "title": {
+          "en": "Slow Dum Cooking & Rest",
+          "te": "తక్కువ మంటపై దమ్ ఉడికించండి"
+        },
         "instructions": [
           "Cook over high flame for 5 minutes, then transfer the pot onto a heated iron tawa.",
           "Simmer on the lowest flame for 18 minutes.",
@@ -97,7 +216,9 @@
         "estimatedMinutes": 28,
         "timerSeconds": 1080
       }
-    ]
+    ],
+    "cuisineId": "telangana",
+    "region": "Telangana"
   },
   {
     "id": "rec_tomato_pappu",
@@ -127,19 +248,113 @@
     "reviewsCount": 95,
     "published": true,
     "createdAt": "2026-01-20T11:00:00.000Z",
-    "tags": ["dal", "andhra", "comfort food", "lunch", "pappu", "easy"],
-    "equipment": ["Pressure Cooker or Pot", "Tadka pan", "Dal masher (Pappu gutti)"],
+    "tags": [
+      "dal",
+      "andhra",
+      "comfort food",
+      "lunch",
+      "pappu",
+      "easy"
+    ],
+    "equipment": [
+      "Pressure Cooker or Pot",
+      "Tadka pan",
+      "Dal masher (Pappu gutti)"
+    ],
     "ingredients": [
-      { "id": "ing_p1", "name": { "en": "Toor Dal (Pigeon Pea)", "te": "కందిపప్పు" }, "quantity": 1, "unit": "cup", "notes": "Rinsed well" },
-      { "id": "ing_p2", "name": { "en": "Tomatoes", "te": "టమాటాలు" }, "quantity": 3, "unit": "large", "notes": "Chopped" },
-      { "id": "ing_p3", "name": { "en": "Green Chillies", "te": "పచ్చిమిర్చి" }, "quantity": 3, "unit": "pieces" },
-      { "id": "ing_p4", "name": { "en": "Garlic Cloves", "te": "వెల్లుల్లి రెబ్బలు" }, "quantity": 6, "unit": "cloves", "notes": "Lightly crushed" },
-      { "id": "ing_p5", "name": { "en": "Mustard Seeds & Cumin", "te": "ఆవాలు మరియు జీలకర్ర" }, "quantity": 1, "unit": "tsp" },
-      { "id": "ing_p6", "name": { "en": "Dry Red Chillies", "te": "ఎండుమిర్చి" }, "quantity": 2, "unit": "pieces" },
-      { "id": "ing_p7", "name": { "en": "Curry Leaves", "te": "కరివేపాకు" }, "quantity": 1, "unit": "sprig" },
-      { "id": "ing_p8", "name": { "en": "Turmeric Powder", "te": "పసుపు" }, "quantity": 0.5, "unit": "tsp" },
-      { "id": "ing_p9", "name": { "en": "Ghee or Sesame Oil", "te": "నెయ్యి లేదా నూనె" }, "quantity": 1.5, "unit": "tbsp" },
-      { "id": "ing_p10", "name": { "en": "Salt", "te": "ఉప్పు" }, "quantity": 1, "unit": "tsp" }
+      {
+        "id": "ing_p1",
+        "name": {
+          "en": "Toor Dal (Pigeon Pea)",
+          "te": "కందిపప్పు"
+        },
+        "quantity": 1,
+        "unit": "cup",
+        "notes": "Rinsed well"
+      },
+      {
+        "id": "ing_p2",
+        "name": {
+          "en": "Tomatoes",
+          "te": "టమాటాలు"
+        },
+        "quantity": 3,
+        "unit": "large",
+        "notes": "Chopped"
+      },
+      {
+        "id": "ing_p3",
+        "name": {
+          "en": "Green Chillies",
+          "te": "పచ్చిమిర్చి"
+        },
+        "quantity": 3,
+        "unit": "pieces"
+      },
+      {
+        "id": "ing_p4",
+        "name": {
+          "en": "Garlic Cloves",
+          "te": "వెల్లుల్లి రెబ్బలు"
+        },
+        "quantity": 6,
+        "unit": "cloves",
+        "notes": "Lightly crushed"
+      },
+      {
+        "id": "ing_p5",
+        "name": {
+          "en": "Mustard Seeds & Cumin",
+          "te": "ఆవాలు మరియు జీలకర్ర"
+        },
+        "quantity": 1,
+        "unit": "tsp"
+      },
+      {
+        "id": "ing_p6",
+        "name": {
+          "en": "Dry Red Chillies",
+          "te": "ఎండుమిర్చి"
+        },
+        "quantity": 2,
+        "unit": "pieces"
+      },
+      {
+        "id": "ing_p7",
+        "name": {
+          "en": "Curry Leaves",
+          "te": "కరివేపాకు"
+        },
+        "quantity": 1,
+        "unit": "sprig"
+      },
+      {
+        "id": "ing_p8",
+        "name": {
+          "en": "Turmeric Powder",
+          "te": "పసుపు"
+        },
+        "quantity": 0.5,
+        "unit": "tsp"
+      },
+      {
+        "id": "ing_p9",
+        "name": {
+          "en": "Ghee or Sesame Oil",
+          "te": "నెయ్యి లేదా నూనె"
+        },
+        "quantity": 1.5,
+        "unit": "tbsp"
+      },
+      {
+        "id": "ing_p10",
+        "name": {
+          "en": "Salt",
+          "te": "ఉప్పు"
+        },
+        "quantity": 1,
+        "unit": "tsp"
+      }
     ],
     "tips": [
       "Crushing garlic cloves with skins intact creates that traditional aromatic Andhra kitchen fragrance during tempering."
@@ -147,7 +362,10 @@
     "steps": [
       {
         "order": 1,
-        "title": { "en": "Pressure Cook Dal & Tomatoes", "te": "పప్పు మరియు టమాటాలను ఉడికించండి" },
+        "title": {
+          "en": "Pressure Cook Dal & Tomatoes",
+          "te": "పప్పు మరియు టమాటాలను ఉడికించండి"
+        },
         "instructions": [
           "In a pressure cooker, add rinsed toor dal, 2.5 cups water, chopped tomatoes, green chillies, and turmeric powder.",
           "Pressure cook for 4 whistles over medium flame until dal is completely tender.",
@@ -159,7 +377,10 @@
       },
       {
         "order": 2,
-        "title": { "en": "Prepare Sizzling Tadka (Popu)", "te": "ఘుమఘుమలాడే తాళింపు వేయండి" },
+        "title": {
+          "en": "Prepare Sizzling Tadka (Popu)",
+          "te": "ఘుమఘుమలాడే తాళింపు వేయండి"
+        },
         "instructions": [
           "Heat ghee or oil in a small tempering pan.",
           "Add mustard seeds, cumin seeds, crushed garlic, dry red chillies, and curry leaves.",
@@ -168,6 +389,282 @@
         ],
         "imageUrl": "https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=800&auto=format&fit=crop&q=80",
         "estimatedMinutes": 5,
+        "timerSeconds": 60
+      }
+    ],
+    "cuisineId": "andhra",
+    "region": "Andhra Pradesh"
+  },
+  {
+    "id": "rec_karnataka_bisi_bele_bath",
+    "slug": "karnataka-bisi-bele-bath",
+    "title": {
+      "en": "Traditional Karnataka Bisi Bele Bath",
+      "te": "కర్ణాటక బిసిబేలే బాత్"
+    },
+    "description": {
+      "en": "A flavorful, hearty hot-lentil-rice dish packed with vegetables, tamarind, and aromatic freshly ground spice mix.",
+      "te": "కూరగాయలు, కందిపప్పు, చింతపండు మరియు ప్రత్యేక మసాలా పొడితో చేసిన వేడివేడి బిసిబేలే బాత్."
+    },
+    "categoryId": "cat_lunch",
+    "subcategoryId": "Rice & Lentils",
+    "cuisineId": "karnataka",
+    "cuisine": "Karnataka",
+    "region": "Karnataka",
+    "dietaryType": "vegetarian",
+    "difficulty": "medium",
+    "preparationTime": 20,
+    "cookingTime": 25,
+    "totalTime": 45,
+    "defaultServings": 4,
+    "coverImage": "https://images.unsplash.com/photo-1596797038530-2c107229654b?w=800&auto=format&fit=crop&q=80",
+    "caloriesPerServing": 380,
+    "rating": 4.9,
+    "published": true,
+    "tags": [
+      "karnataka",
+      "rice",
+      "dal",
+      "comfort",
+      "lunch"
+    ],
+    "equipment": [
+      "Pressure Cooker",
+      "Tadka Pan",
+      "Colander"
+    ],
+    "ingredients": [
+      {
+        "id": "ing_bbb1",
+        "name": {
+          "en": "Basmati Rice",
+          "te": "బియ్యం"
+        },
+        "quantity": 1,
+        "unit": "cup"
+      },
+      {
+        "id": "ing_bbb2",
+        "name": {
+          "en": "Toor Dal (Pigeon Pea)",
+          "te": "కందిపప్పు"
+        },
+        "quantity": 0.5,
+        "unit": "cup"
+      },
+      {
+        "id": "ing_bbb3",
+        "name": {
+          "en": "Mixed Vegetables (Carrot, Beans, Peas, Potato)",
+          "te": "మిశ్రమ కూరగాయలు"
+        },
+        "quantity": 1.5,
+        "unit": "cups"
+      },
+      {
+        "id": "ing_bbb4",
+        "name": {
+          "en": "Onion",
+          "te": "ఉల్లిపాయ"
+        },
+        "quantity": 1,
+        "unit": "piece"
+      },
+      {
+        "id": "ing_bbb5",
+        "name": {
+          "en": "Tomato",
+          "te": "టమాటా"
+        },
+        "quantity": 1,
+        "unit": "piece"
+      },
+      {
+        "id": "ing_bbb6",
+        "name": {
+          "en": "Pure Desi Ghee",
+          "te": "నెయ్యి"
+        },
+        "quantity": 2,
+        "unit": "tbsp"
+      },
+      {
+        "id": "ing_bbb7",
+        "name": {
+          "en": "Cashews (Kaju)",
+          "te": "జీడిపప్పు"
+        },
+        "quantity": 1,
+        "unit": "tbsp"
+      },
+      {
+        "id": "ing_bbb8",
+        "name": {
+          "en": "Kitchen Spices (Turmeric, Mustard, Cumin, Chilli)",
+          "te": "పోపు దినుసులు"
+        },
+        "quantity": 2,
+        "unit": "tsp"
+      }
+    ],
+    "tips": [
+      "Soak rice and toor dal together for 20 minutes before pressure cooking."
+    ],
+    "steps": [
+      {
+        "order": 1,
+        "title": {
+          "en": "Cook Rice and Dal",
+          "te": "అన్నం మరియు పప్పు ఉడికించండి"
+        },
+        "instructions": [
+          "Pressure cook rice, toor dal, and diced mixed vegetables with 4 cups of water and turmeric for 3 whistles."
+        ],
+        "timerSeconds": 600
+      },
+      {
+        "order": 2,
+        "title": {
+          "en": "Simmer with Masala",
+          "te": "మసాలాతో మరిగించండి"
+        },
+        "instructions": [
+          "Add tamarind water, salt, and bisi bele bath masala powder. Simmer for 6 minutes on low flame."
+        ],
+        "timerSeconds": 360
+      },
+      {
+        "order": 3,
+        "title": {
+          "en": "Ghee Tadka",
+          "te": "నెయ్యి తాలింపు"
+        },
+        "instructions": [
+          "In ghee, fry mustard seeds, curry leaves, and cashews until golden brown. Pour sizzling over the hot bath and mix."
+        ],
+        "timerSeconds": 180
+      }
+    ]
+  },
+  {
+    "id": "rec_kerala_avial",
+    "slug": "kerala-style-avial",
+    "title": {
+      "en": "Authentic Kerala Coconut Avial",
+      "te": "కేరళ కొబ్బరి అవియల్"
+    },
+    "description": {
+      "en": "Wholesome medley of native vegetables cooked in fresh ground coconut paste, mild green chillies, and whisked curd, finished with raw coconut oil.",
+      "te": "కొబ్బరి తురుము, పచ్చిమిర్చి, పెరుగు మరియు కొబ్బరి నూనెతో చేసిన సంప్రదాయ కేరళ అవియల్."
+    },
+    "categoryId": "cat_lunch",
+    "subcategoryId": "Vegetable Stew",
+    "cuisineId": "kerala",
+    "cuisine": "Kerala",
+    "region": "Kerala",
+    "dietaryType": "vegetarian",
+    "difficulty": "easy",
+    "preparationTime": 15,
+    "cookingTime": 15,
+    "totalTime": 30,
+    "defaultServings": 4,
+    "coverImage": "https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=800&auto=format&fit=crop&q=80",
+    "caloriesPerServing": 240,
+    "rating": 4.88,
+    "published": true,
+    "tags": [
+      "kerala",
+      "avial",
+      "coconut",
+      "healthy",
+      "lunch"
+    ],
+    "equipment": [
+      "Wide Pan",
+      "Blender / Mixer"
+    ],
+    "ingredients": [
+      {
+        "id": "ing_av1",
+        "name": {
+          "en": "Mixed Vegetables (Carrot, Beans, Peas, Potato)",
+          "te": "కూరగాయల ముక్కలు"
+        },
+        "quantity": 2,
+        "unit": "cups"
+      },
+      {
+        "id": "ing_av2",
+        "name": {
+          "en": "Fresh Coconut",
+          "te": "కొబ్బరి తురుము"
+        },
+        "quantity": 1,
+        "unit": "cup"
+      },
+      {
+        "id": "ing_av3",
+        "name": {
+          "en": "Green Chillies",
+          "te": "పచ్చిమిర్చి"
+        },
+        "quantity": 3,
+        "unit": "pieces"
+      },
+      {
+        "id": "ing_av4",
+        "name": {
+          "en": "Curd / Plain Yogurt",
+          "te": "పెరుగు"
+        },
+        "quantity": 0.5,
+        "unit": "cup"
+      },
+      {
+        "id": "ing_av5",
+        "name": {
+          "en": "Cooking Oil (Sunflower / Groundnut)",
+          "te": "కొబ్బరి నూనె"
+        },
+        "quantity": 1,
+        "unit": "tbsp"
+      }
+    ],
+    "tips": [
+      "Do not overcook the vegetables; they should remain crisp-tender."
+    ],
+    "steps": [
+      {
+        "order": 1,
+        "title": {
+          "en": "Steam Vegetables",
+          "te": "కూరగాయలను ఉడికించండి"
+        },
+        "instructions": [
+          "Steam baton-cut vegetables with 1/2 cup water, turmeric, and salt until 80% tender."
+        ],
+        "timerSeconds": 480
+      },
+      {
+        "order": 2,
+        "title": {
+          "en": "Blend Coconut Paste",
+          "te": "కొబ్బరి పేస్ట్ తయారుచేయండి"
+        },
+        "instructions": [
+          "Coarsely grind fresh coconut with cumin seeds and green chillies without adding too much water. Add to vegetables with whisked curd."
+        ],
+        "timerSeconds": 240
+      },
+      {
+        "order": 3,
+        "title": {
+          "en": "Finishing Touch",
+          "te": "కొబ్బరినూనెతో ముగించండి"
+        },
+        "instructions": [
+          "Drizzle 1 tbsp cold-pressed oil and fresh curry leaves over the steaming avial. Cover lid immediately."
+        ],
         "timerSeconds": 60
       }
     ]

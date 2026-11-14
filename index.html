@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Cook With Krushi - Discover delicious recipes, organize ingredients with smart checklists, and follow interactive step-by-step cooking guides. Powered by Damayanti Technologies.">
+  <meta name="description" content="Cook With Krushi - Discover authentic regional cuisines, Cook With Me hands-free voice assistant, estimated nutrition calculator, and budget-friendly recipe planning. Powered by Damayanti Technologies.">
   <meta name="theme-color" content="#294B35">
   <title>Cook With Krushi | Cook. Learn. Enjoy.</title>
   
@@ -44,8 +44,10 @@
           <li><a href="index.html" class="nav-link active" data-i18n="nav_home">Home</a></li>
           <li><a href="explore.html" class="nav-link" data-i18n="nav_explore">Explore Recipes</a></li>
           <li><a href="categories.html" class="nav-link" data-i18n="nav_categories">Categories</a></li>
+          <li><a href="cuisines.html" class="nav-link">Cuisines</a></li>
+          <li><a href="budget.html" class="nav-link">Budget Cooking</a></li>
           <li><a href="what-can-i-cook.html" class="nav-link" data-i18n="nav_what_can_i_cook">What Can I Cook?</a></li>
-          <li><a href="cooking-guide.html" class="nav-link" data-i18n="nav_guide">Cooking Guide</a></li>
+          <li><a href="cooking-guide.html" class="nav-link" data-i18n="nav_guide">Guide</a></li>
           <li>
             <a href="my-kitchen.html" class="nav-link nav-kitchen-badge">
               <span data-i18n="nav_kitchen">My Kitchen</span>
@@ -73,29 +75,35 @@
   <!-- Main Content -->
   <main>
     <!-- HERO SECTION -->
-    <section class="hero-section" style="padding: 64px 0 48px; background: radial-gradient(circle at 85% 20%, rgba(243, 217, 200, 0.4) 0%, rgba(250, 248, 242, 0) 65%);">
+    <section class="hero-section" style="padding: 60px 0 44px; background: radial-gradient(circle at 85% 20%, rgba(243, 217, 200, 0.4) 0%, rgba(250, 248, 242, 0) 65%);">
       <div class="container" style="display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 48px; align-items: center;">
         <div class="hero-content">
           <span class="section-tag" data-i18n="hero_tagline">Cook. Learn. Enjoy.</span>
           <h1 style="font-size: clamp(2.2rem, 5vw, 3.4rem); color: var(--deep-green); line-height: 1.18; margin-bottom: 18px;" data-i18n="hero_title">
             What would you love to cook today?
           </h1>
-          <p style="font-size: 1.12rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 32px; max-width: 520px;" data-i18n="hero_desc">
-            Discover authentic recipes and master culinary techniques with interactive ingredient checklists and distraction-free, step-by-step cooking timers.
+          <p style="font-size: 1.12rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 30px; max-width: 520px;" data-i18n="hero_desc">
+            Discover authentic homestyle recipes with hands-free voice guidance, automated nutrition estimates, regional cuisine discovery, and smart budget cooking tools.
           </p>
 
           <!-- Search Bar -->
           <form action="explore.html" method="GET" class="hero-search-form" style="position: relative; max-width: 500px; margin-bottom: 24px;">
             <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-            <input type="text" name="q" class="search-input" placeholder="Search recipes by name or ingredient..." data-i18n-placeholder="search_placeholder" autocomplete="off" />
+            <input type="text" name="q" class="search-input" placeholder="Search recipes by name, ingredient, or cuisine..." data-i18n-placeholder="search_placeholder" autocomplete="off" />
             <button type="submit" class="btn btn-primary" style="position: absolute; right: 6px; top: 6px; bottom: 6px; padding: 0 22px; border-radius: var(--radius-full);" data-i18n="btn_search">Search</button>
           </form>
 
-          <div style="display: flex; gap: 14px; flex-wrap: wrap;">
+          <!-- Quick Navigation Action Badges -->
+          <div style="display: flex; gap: 12px; flex-wrap: wrap;">
             <a href="explore.html" class="btn btn-secondary" data-i18n="btn_explore">Explore All Recipes</a>
+            <a href="cuisines.html" class="btn btn-outline" style="border-color: var(--primary); color: var(--deep-green);">
+              🌍 Cuisines
+            </a>
+            <a href="budget.html" class="btn btn-outline" style="border-color: var(--badge-veg); color: var(--badge-veg);">
+              💰 Budget Cooking
+            </a>
             <a href="what-can-i-cook.html" class="btn btn-outline" style="border-color: var(--terracotta); color: var(--terracotta);">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
-              <span data-i18n="btn_pantry">What Can I Cook?</span>
+              🧺 Pantry Matcher
             </a>
           </div>
         </div>
@@ -105,17 +113,143 @@
             <img src="https://images.unsplash.com/photo-1589302168068-964664d93dc0?auto=format&fit=crop&w=900&q=80" alt="Authentic Biryani" style="width: 100%; height: 420px; object-fit: cover;" />
           </div>
           <div style="position: absolute; bottom: -20px; left: -20px; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(8px); padding: 14px 20px; border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); display: flex; align-items: center; gap: 12px; border: 1px solid var(--border);">
-            <div style="width: 44px; height: 44px; border-radius: 50%; background: var(--warm-peach); display: flex; align-items: center; justify-content: center; font-size: 1.3rem;">✨</div>
+            <div style="width: 44px; height: 44px; border-radius: 50%; background: var(--warm-peach); display: flex; align-items: center; justify-content: center; font-size: 1.3rem;">🎙️</div>
             <div>
-              <div style="font-weight: 700; color: var(--deep-green); font-size: 0.92rem;">100% Free &amp; Private</div>
-              <div style="font-size: 0.78rem; color: var(--text-secondary);">No logins, no tracking, works offline</div>
+              <div style="font-weight: 700; color: var(--deep-green); font-size: 0.92rem;">Cook With Me Mode</div>
+              <div style="font-size: 0.78rem; color: var(--text-secondary);">Hands-free voice assistant with timers</div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- SECTION 2: BROWSE BY MEAL -->
+    <!-- NEW FEATURE SECTION 1: COOK WITH ME ASSISTANT TEASER -->
+    <section style="padding: 56px 0; background: linear-gradient(135deg, var(--deep-green) 0%, #1E3726 100%); color: #FFFFFF;">
+      <div class="container" style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 40px; align-items: center;">
+        <div>
+          <span style="display: inline-block; background: rgba(255,255,255,0.15); padding: 4px 14px; border-radius: var(--radius-full); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; margin-bottom: 14px; color: var(--warm-peach);">
+            Interactive Cooking Assistant
+          </span>
+          <h2 style="font-size: 2.3rem; color: #FFFFFF; margin-bottom: 14px; line-height: 1.2;">
+            Meet "Cook With Me" — Your Hands-Free Kitchen Voice Guide
+          </h2>
+          <p style="color: #D3DDD2; font-size: 1.05rem; line-height: 1.6; margin-bottom: 24px;">
+            Don't touch your screen with floury or oily hands! Cook With Me speaks every instruction aloud using natural speech synthesis and listens for voice commands like <strong>"Next step"</strong>, <strong>"Start timer"</strong>, and <strong>"Repeat"</strong> in both English and Telugu.
+          </p>
+
+          <div style="display: flex; gap: 14px; flex-wrap: wrap;">
+            <a href="cook-with-me.html?slug=paneer-butter-masala" class="btn btn-terracotta btn-lg" style="box-shadow: 0 4px 14px rgba(189, 118, 91, 0.4);">
+              🎙️ Try Cook With Me Mode &rarr;
+            </a>
+            <a href="cooking-guide.html" class="btn btn-outline" style="border-color: rgba(255,255,255,0.3); color: #FFFFFF;">
+              View Kitchen Glossary
+            </a>
+          </div>
+        </div>
+
+        <!-- Interactive Voice Card Preview -->
+        <div style="background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.15); border-radius: var(--radius-xl); padding: 28px; backdrop-filter: blur(8px);">
+          <div style="font-weight: 700; color: var(--warm-peach); font-size: 0.9rem; text-transform: uppercase; margin-bottom: 12px;">Hands-Free Voice Commands:</div>
+          <div style="display: flex; flex-direction: column; gap: 10px; font-size: 0.92rem;">
+            <div style="background: rgba(255, 255, 255, 0.1); padding: 8px 14px; border-radius: var(--radius-md);">🗣️ "Next step" &rarr; Advances to next step &amp; reads instruction</div>
+            <div style="background: rgba(255, 255, 255, 0.1); padding: 8px 14px; border-radius: var(--radius-md);">🗣️ "Repeat" / "మళ్లీ చెప్పు" &rarr; Speaks instruction again</div>
+            <div style="background: rgba(255, 255, 255, 0.1); padding: 8px 14px; border-radius: var(--radius-md);">🗣️ "Start timer" &rarr; Triggers countdown with zero drift</div>
+            <div style="background: rgba(255, 255, 255, 0.1); padding: 8px 14px; border-radius: var(--radius-md);">🗣️ "How much time is left?" &rarr; Assistant speaks remaining time</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- NEW FEATURE SECTION 2: EXPLORE REGIONAL & WORLD CUISINES -->
+    <section style="padding: 56px 0;">
+      <div class="container">
+        <div class="section-header-flex">
+          <div>
+            <span class="section-tag">Authentic Traditions</span>
+            <h2 class="section-title">Explore Cuisines</h2>
+            <p class="section-subtitle">Discover culinary heritage from Telugu, Andhra, and North Indian traditions to Italian, Chinese, and Mexican classics.</p>
+          </div>
+          <a href="cuisines.html" class="btn btn-outline btn-sm">View All 16 Cuisines &rarr;</a>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 20px;">
+          <!-- Telugu -->
+          <a href="cuisines.html?cuisine=telugu" class="category-card" style="aspect-ratio: 16/10;">
+            <img src="https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?w=600&auto=format&fit=crop&q=80" alt="Telugu Cuisine" class="category-card-bg" />
+            <div class="category-card-overlay"></div>
+            <div class="category-card-content">
+              <span class="category-card-count">Andhra &amp; Telangana</span>
+              <h3 class="category-card-title">Telugu Cuisine</h3>
+            </div>
+          </a>
+
+          <!-- South Indian -->
+          <a href="cuisines.html?cuisine=south-indian" class="category-card" style="aspect-ratio: 16/10;">
+            <img src="https://images.unsplash.com/photo-1589301760014-d929f3979dbc?w=600&auto=format&fit=crop&q=80" alt="South Indian" class="category-card-bg" />
+            <div class="category-card-overlay"></div>
+            <div class="category-card-content">
+              <span class="category-card-count">Southern India</span>
+              <h3 class="category-card-title">South Indian</h3>
+            </div>
+          </a>
+
+          <!-- North Indian -->
+          <a href="cuisines.html?cuisine=north-indian" class="category-card" style="aspect-ratio: 16/10;">
+            <img src="https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=600&auto=format&fit=crop&q=80" alt="North Indian" class="category-card-bg" />
+            <div class="category-card-overlay"></div>
+            <div class="category-card-content">
+              <span class="category-card-count">Northern India</span>
+              <h3 class="category-card-title">North Indian</h3>
+            </div>
+          </a>
+
+          <!-- Italian -->
+          <a href="cuisines.html?cuisine=italian" class="category-card" style="aspect-ratio: 16/10;">
+            <img src="https://images.unsplash.com/photo-1551183053-bf91a1d81141?w=600&auto=format&fit=crop&q=80" alt="Italian" class="category-card-bg" />
+            <div class="category-card-overlay"></div>
+            <div class="category-card-content">
+              <span class="category-card-count">Europe</span>
+              <h3 class="category-card-title">Italian Cuisine</h3>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- NEW FEATURE SECTION 3: COOK WITHIN MY BUDGET -->
+    <section style="padding: 56px 0; background: var(--surface-alt);">
+      <div class="container">
+        <div style="background: var(--surface); border: 1.5px solid var(--border); border-radius: var(--radius-xl); padding: 44px; display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 40px; align-items: center; box-shadow: var(--shadow-sm);">
+          <div>
+            <span class="section-tag" style="color: var(--badge-veg);">Smart Kitchen Budgeting</span>
+            <h2 class="section-title" style="margin-bottom: 12px;">Cook Within My Budget</h2>
+            <p style="color: var(--text-secondary); line-height: 1.6; margin-bottom: 24px;">
+              Eating well shouldn't break the bank. Choose your budget limit and we'll calculate the exact estimated cost of every dish using realistic local market prices and generate an interactive shopping list subtracting what you already have at home.
+            </p>
+
+            <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 20px;">
+              <a href="budget.html?budget=100" class="btn btn-outline" style="border-color: var(--border);">Under ₹100 Meals</a>
+              <a href="budget.html?budget=200" class="btn btn-outline" style="border-color: var(--badge-veg); color: var(--badge-veg);">Under ₹200 Family Dinners</a>
+              <a href="budget.html?budget=500" class="btn btn-outline" style="border-color: var(--terracotta); color: var(--terracotta);">Under ₹500 Weekend Feasts</a>
+            </div>
+
+            <a href="budget.html" class="btn btn-primary">Open Budget Calculator &rarr;</a>
+          </div>
+
+          <div style="background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 24px;">
+            <div style="font-weight: 700; color: var(--deep-green); margin-bottom: 14px; font-size: 0.95rem;">Budget Cooking Highlights:</div>
+            <ul style="list-style: none; display: flex; flex-direction: column; gap: 12px; font-size: 0.9rem; color: var(--text);">
+              <li style="display: flex; align-items: center; gap: 8px;">✓ <strong>Proportional Pricing:</strong> Calculates cost per serving and whole recipe</li>
+              <li style="display: flex; align-items: center; gap: 8px;">✓ <strong>Unit Conversions:</strong> Grams, kg, ml, liters, and pieces accounted for</li>
+              <li style="display: flex; align-items: center; gap: 8px;">✓ <strong>Interactive Shopping List:</strong> Check off pantry items to reduce out-of-pocket spending</li>
+              <li style="display: flex; align-items: center; gap: 8px;">✓ <strong>Transparent Disclaimer:</strong> Clear notices that grocery retail packaging varies</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: BROWSE BY MEAL -->
     <section style="padding: 56px 0;">
       <div class="container">
         <div class="section-header-flex">
@@ -127,29 +261,12 @@
           <a href="categories.html" class="btn btn-outline btn-sm" data-i18n="view_all_cat">View All Categories &rarr;</a>
         </div>
 
-        <div class="category-grid" id="meal-category-grid">
-          <!-- Dynamically populated or fallback -->
-        </div>
+        <div class="category-grid" id="meal-category-grid"></div>
       </div>
     </section>
 
-    <!-- SECTION 3: MORE TO EXPLORE -->
-    <section style="padding: 40px 0 56px; background-color: var(--surface-alt);">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-tag">Special Collections</span>
-          <h2 class="section-title" data-i18n="more_to_explore">More to Explore</h2>
-          <p class="section-subtitle">Complement your meals with comforting drinks, fiery chutneys, healthy nutrition, and festival feasts.</p>
-        </div>
-
-        <div class="category-grid" id="explore-category-grid">
-          <!-- Populated by JS -->
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 4: POPULAR RECIPES -->
-    <section style="padding: 64px 0;">
+    <!-- SECTION 5: POPULAR RECIPES -->
+    <section style="padding: 56px 0; background: var(--surface);">
       <div class="container">
         <div class="section-header-flex">
           <div>
@@ -160,57 +277,12 @@
           <a href="explore.html" class="btn btn-outline btn-sm" data-i18n="view_all_recipes">See All Recipes &rarr;</a>
         </div>
 
-        <div class="recipe-grid" id="popular-recipe-grid">
-          <!-- Populated by JS -->
-        </div>
+        <div class="recipe-grid" id="popular-recipe-grid"></div>
       </div>
     </section>
 
-    <!-- SECTION 5: BEGINNER FRIENDLY -->
-    <section style="padding: 64px 0; background: linear-gradient(180deg, var(--bg) 0%, var(--primary-subtle) 100%);">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-tag">First Time in the Kitchen?</span>
-          <h2 class="section-title" data-i18n="beginner_friendly">New to Cooking? Start Here.</h2>
-          <p class="section-subtitle">Zero complicated steps, clear measurements, and built-in timers designed for beginners.</p>
-        </div>
-
-        <div class="recipe-grid" id="beginner-recipe-grid">
-          <!-- Populated by JS -->
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 6: WHAT CAN I COOK TEASER -->
-    <section style="padding: 64px 0;">
-      <div class="container">
-        <div style="background: linear-gradient(135deg, var(--deep-green) 0%, var(--primary) 100%); border-radius: var(--radius-xl); padding: 48px; color: #FFFFFF; display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 40px; align-items: center; box-shadow: var(--shadow-lg);">
-          <div>
-            <span style="display: inline-block; background: rgba(255,255,255,0.2); padding: 4px 14px; border-radius: var(--radius-full); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; margin-bottom: 16px; color: var(--warm-peach);">Pantry Matcher</span>
-            <h2 style="color: #FFFFFF; font-size: 2.3rem; margin-bottom: 14px;" data-i18n="pantry_title">What can you cook with what you have?</h2>
-            <p style="color: #E7EFE5; font-size: 1.05rem; line-height: 1.6; margin-bottom: 28px;">
-              Don't let ingredients go to waste. Tell us what's in your kitchen (potatoes, onions, tomatoes, rice) and we'll instantly show you complete dishes you can make right now!
-            </p>
-            <a href="what-can-i-cook.html" class="btn btn-terracotta btn-lg" data-i18n="btn_try_pantry">Open Pantry Matcher &rarr;</a>
-          </div>
-          <div style="text-align: center;">
-            <div style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: var(--radius-lg); padding: 24px; display: inline-block; text-align: left;">
-              <div style="font-weight: 700; font-size: 0.95rem; margin-bottom: 12px; color: var(--warm-peach);">Common Pantry Quick Picks:</div>
-              <div style="display: flex; flex-wrap: wrap; gap: 8px;">
-                <span class="pantry-chip selected" style="color: #FFFFFF; border-color: rgba(255,255,255,0.3); background: rgba(255,255,255,0.15);">✓ Onion</span>
-                <span class="pantry-chip selected" style="color: #FFFFFF; border-color: rgba(255,255,255,0.3); background: rgba(255,255,255,0.15);">✓ Tomato</span>
-                <span class="pantry-chip selected" style="color: #FFFFFF; border-color: rgba(255,255,255,0.3); background: rgba(255,255,255,0.15);">✓ Potato</span>
-                <span class="pantry-chip selected" style="color: #FFFFFF; border-color: rgba(255,255,255,0.3); background: rgba(255,255,255,0.15);">✓ Rice</span>
-              </div>
-              <div style="margin-top: 14px; font-size: 0.85rem; color: #D3DDD2;">→ Matches 8+ authentic homestyle dishes</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 7: HOW IT WORKS -->
-    <section style="padding: 56px 0; background: var(--surface);">
+    <!-- SECTION 6: HOW IT WORKS -->
+    <section style="padding: 56px 0;">
       <div class="container">
         <div class="section-header" style="text-align: center; max-width: 650px; margin-left: auto; margin-right: auto;">
           <span class="section-tag">Simple 4-Step Journey</span>
@@ -219,57 +291,28 @@
         </div>
 
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 28px; margin-top: 40px;">
-          <div style="background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 32px 24px; text-align: center;">
+          <div style="background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 32px 24px; text-align: center;">
             <div style="width: 56px; height: 56px; border-radius: 50%; background: var(--primary-light); color: var(--deep-green); font-size: 1.5rem; font-weight: 700; display: flex; align-items: center; justify-content: center; margin: 0 auto 18px;">1</div>
             <h3 style="font-size: 1.25rem; margin-bottom: 8px;">Discover</h3>
-            <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.5;">Browse by meal, search ingredients, or discover traditional Telugu and Indian recipes.</p>
+            <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.5;">Explore by meal, cuisine, or budget with estimated nutrition calculations.</p>
           </div>
 
-          <div style="background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 32px 24px; text-align: center;">
+          <div style="background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 32px 24px; text-align: center;">
             <div style="width: 56px; height: 56px; border-radius: 50%; background: var(--warm-peach); color: var(--terracotta); font-size: 1.5rem; font-weight: 700; display: flex; align-items: center; justify-content: center; margin: 0 auto 18px;">2</div>
             <h3 style="font-size: 1.25rem; margin-bottom: 8px;">Prepare</h3>
             <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.5;">Check off ingredients on your prep checklist and scale serving sizes dynamically.</p>
           </div>
 
-          <div style="background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 32px 24px; text-align: center;">
+          <div style="background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 32px 24px; text-align: center;">
             <div style="width: 56px; height: 56px; border-radius: 50%; background: var(--primary-light); color: var(--deep-green); font-size: 1.5rem; font-weight: 700; display: flex; align-items: center; justify-content: center; margin: 0 auto 18px;">3</div>
-            <h3 style="font-size: 1.25rem; margin-bottom: 8px;">Cook</h3>
-            <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.5;">Enter distraction-free cooking mode with live audio timers and step-by-step guidance.</p>
+            <h3 style="font-size: 1.25rem; margin-bottom: 8px;">Cook With Me</h3>
+            <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.5;">Hands-free voice assistant reads instructions and listens for voice commands.</p>
           </div>
 
-          <div style="background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 32px 24px; text-align: center;">
+          <div style="background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 32px 24px; text-align: center;">
             <div style="width: 56px; height: 56px; border-radius: 50%; background: #FFE082; color: #E65100; font-size: 1.5rem; font-weight: 700; display: flex; align-items: center; justify-content: center; margin: 0 auto 18px;">4</div>
             <h3 style="font-size: 1.25rem; margin-bottom: 8px;">Enjoy</h3>
-            <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.5;">Celebrate dish completion with confetti, rate your creation, and save to your history.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 8: CULINARY TIPS OF THE DAY -->
-    <section style="padding: 56px 0;">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-tag">Chef's Wisdom</span>
-          <h2 class="section-title">Cooking Tips of the Day</h2>
-          <p class="section-subtitle">Little secrets that elevate homestyle cooking into restaurant perfection.</p>
-        </div>
-
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px;">
-          <div style="background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 24px; box-shadow: var(--shadow-sm);">
-            <div style="font-weight: 700; color: var(--terracotta); font-size: 0.82rem; text-transform: uppercase; margin-bottom: 8px;">Biryani Dum Technique</div>
-            <h4 style="font-size: 1.2rem; color: var(--deep-green); margin-bottom: 8px;">Layering at 70% Cooked Rice</h4>
-            <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.5;">Never fully boil basmati rice before layering in Dum Biryani. Drain when the grain breaks into three pieces under your thumbnail.</p>
-          </div>
-          <div style="background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 24px; box-shadow: var(--shadow-sm);">
-            <div style="font-weight: 700; color: var(--primary); font-size: 0.82rem; text-transform: uppercase; margin-bottom: 8px;">Crispy Masala Dosa</div>
-            <h4 style="font-size: 1.2rem; color: var(--deep-green); margin-bottom: 8px;">The Sugar &amp; Chana Dal Secret</h4>
-            <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.5;">Add 2 tbsp soaked chana dal and 1/2 tsp sugar to your batter before grinding. This creates the signature golden restaurant crust.</p>
-          </div>
-          <div style="background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 24px; box-shadow: var(--shadow-sm);">
-            <div style="font-weight: 700; color: var(--badge-nonveg); font-size: 0.82rem; text-transform: uppercase; margin-bottom: 8px;">Tadka / Tempering</div>
-            <h4 style="font-size: 1.2rem; color: var(--deep-green); margin-bottom: 8px;">Mustard Seeds Must Crackle</h4>
-            <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.5;">Mustard seeds are bitter until fully crackled. Heat ghee until hot, add seeds, wait for them to pop before adding cumin and curry leaves.</p>
+            <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.5;">Celebrate dish completion with confetti, rate your creation, and save to your journal.</p>
           </div>
         </div>
       </div>
@@ -292,15 +335,15 @@
         </a>
       </li>
       <li class="mobile-nav-item">
-        <a href="what-can-i-cook.html">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/></svg>
-          <span data-i18n="nav_what_can_i_cook">Pantry</span>
+        <a href="cuisines.html">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          <span>Cuisines</span>
         </a>
       </li>
       <li class="mobile-nav-item">
-        <a href="cooking-guide.html">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
-          <span data-i18n="nav_guide">Guide</span>
+        <a href="budget.html">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M12 8v8"/><path d="M8 12h8"/></svg>
+          <span>Budget</span>
         </a>
       </li>
       <li class="mobile-nav-item">
@@ -331,7 +374,8 @@
           <div class="footer-heading" data-i18n="nav_explore">Explore</div>
           <ul class="footer-links">
             <li><a href="explore.html" class="footer-link">All Recipes</a></li>
-            <li><a href="categories.html" class="footer-link">Categories</a></li>
+            <li><a href="cuisines.html" class="footer-link">Regional Cuisines</a></li>
+            <li><a href="budget.html" class="footer-link">Budget Cooking</a></li>
             <li><a href="what-can-i-cook.html" class="footer-link">What Can I Cook?</a></li>
             <li><a href="cooking-guide.html" class="footer-link">Glossary &amp; Conversions</a></li>
             <li><a href="my-kitchen.html" class="footer-link">My Kitchen</a></li>
@@ -385,7 +429,6 @@
       try {
         const categories = await window.APIManager.getCategories();
         const mealCats = categories.slice(0, 6);
-        const exploreCats = categories.slice(6);
         const lang = window.I18nManager.getLang();
 
         const renderCatCard = (c) => `
@@ -402,18 +445,14 @@
 
         const mealContainer = document.getElementById('meal-category-grid');
         if (mealContainer) mealContainer.innerHTML = mealCats.map(renderCatCard).join('');
-
-        const exploreContainer = document.getElementById('explore-category-grid');
-        if (exploreContainer) exploreContainer.innerHTML = exploreCats.map(renderCatCard).join('');
       } catch (err) {
         console.error('Error rendering categories:', err);
       }
 
-      // 2. Load Popular & Beginner Recipes
+      // 2. Load Popular Recipes
       try {
-        const [popular, beginner, favs] = await Promise.all([
+        const [popular, favs] = await Promise.all([
           window.APIManager.getPopularRecipes(6),
-          window.APIManager.getBeginnerRecipes(4),
           window.DBManager.getFavorites()
         ]);
         const favIds = new Set(favs.map(f => f.recipeId));
@@ -422,19 +461,9 @@
         if (popularGrid) {
           popularGrid.innerHTML = popular.map(r => window.renderRecipeCard(r, favIds.has(r.id))).join('');
         }
-
-        const beginnerGrid = document.getElementById('beginner-recipe-grid');
-        if (beginnerGrid) {
-          beginnerGrid.innerHTML = beginner.map(r => window.renderRecipeCard(r, favIds.has(r.id))).join('');
-        }
       } catch (err) {
         console.error('Error rendering recipes:', err);
       }
-
-      // Re-render when language changes
-      window.addEventListener('cwk-lang-changed', () => {
-        window.location.reload();
-      });
     });
   </script>
 </body>

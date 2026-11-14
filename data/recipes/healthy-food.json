@@ -12,7 +12,7 @@
     },
     "categoryId": "cat_healthy",
     "subcategoryId": "Salad Recipes",
-    "cuisine": "Healthy Fusion",
+    "cuisine": "Continental",
     "dietaryType": "vegan",
     "difficulty": "easy",
     "preparationTime": 10,
@@ -27,21 +27,86 @@
     "reviewsCount": 78,
     "published": true,
     "createdAt": "2026-02-08T09:00:00.000Z",
-    "tags": ["healthy", "salad", "high-protein", "weight loss", "quick", "raw"],
-    "equipment": ["Salad bowl", "Knife and cutting board", "Citrus squeezer"],
-    "ingredients": [
-      { "id": "ing_ms1", "name": { "en": "Sprouted Green Moong", "te": "మొలకెత్తిన పెసలు" }, "quantity": 2, "unit": "cups" },
-      { "id": "ing_ms2", "name": { "en": "Cucumber", "te": "దోసకాయ" }, "quantity": 1, "unit": "medium", "notes": "Diced" },
-      { "id": "ing_ms3", "name": { "en": "Pomegranate Pearls", "te": "దానిమ్మ గింజలు" }, "quantity": 0.5, "unit": "cup" },
-      { "id": "ing_ms4", "name": { "en": "Lemon Juice", "te": "నిమ్మరసం" }, "quantity": 1.5, "unit": "tbsp" },
-      { "id": "ing_ms5", "name": { "en": "Chaat Masala", "te": "చాట్ మసాలా" }, "quantity": 0.5, "unit": "tsp" },
-      { "id": "ing_ms6", "name": { "en": "Pink Salt", "te": "సైంధవ లవణం" }, "quantity": 0.5, "unit": "tsp" }
+    "tags": [
+      "healthy",
+      "salad",
+      "high-protein",
+      "weight loss",
+      "quick",
+      "raw"
     ],
-    "tips": ["If you prefer soft sprouts, steam them over boiling water for 3 minutes before tossing."],
+    "equipment": [
+      "Salad bowl",
+      "Knife and cutting board",
+      "Citrus squeezer"
+    ],
+    "ingredients": [
+      {
+        "id": "ing_ms1",
+        "name": {
+          "en": "Sprouted Green Moong",
+          "te": "మొలకెత్తిన పెసలు"
+        },
+        "quantity": 2,
+        "unit": "cups"
+      },
+      {
+        "id": "ing_ms2",
+        "name": {
+          "en": "Cucumber",
+          "te": "దోసకాయ"
+        },
+        "quantity": 1,
+        "unit": "medium",
+        "notes": "Diced"
+      },
+      {
+        "id": "ing_ms3",
+        "name": {
+          "en": "Pomegranate Pearls",
+          "te": "దానిమ్మ గింజలు"
+        },
+        "quantity": 0.5,
+        "unit": "cup"
+      },
+      {
+        "id": "ing_ms4",
+        "name": {
+          "en": "Lemon Juice",
+          "te": "నిమ్మరసం"
+        },
+        "quantity": 1.5,
+        "unit": "tbsp"
+      },
+      {
+        "id": "ing_ms5",
+        "name": {
+          "en": "Chaat Masala",
+          "te": "చాట్ మసాలా"
+        },
+        "quantity": 0.5,
+        "unit": "tsp"
+      },
+      {
+        "id": "ing_ms6",
+        "name": {
+          "en": "Pink Salt",
+          "te": "సైంధవ లవణం"
+        },
+        "quantity": 0.5,
+        "unit": "tsp"
+      }
+    ],
+    "tips": [
+      "If you prefer soft sprouts, steam them over boiling water for 3 minutes before tossing."
+    ],
     "steps": [
       {
         "order": 1,
-        "title": { "en": "Assemble & Toss Salad", "te": "సలాడ్ పదార్థాలను కలపండి" },
+        "title": {
+          "en": "Assemble & Toss Salad",
+          "te": "సలాడ్ పదార్థాలను కలపండి"
+        },
         "instructions": [
           "In a large salad bowl, combine fresh sprouts, diced cucumber, and juicy pomegranate pearls.",
           "Drizzle lemon juice, sprinkle chaat masala and salt.",
@@ -50,6 +115,8 @@
         "imageUrl": "https://images.unsplash.com/photo-1540420773420-3366772f4999?w=800&auto=format&fit=crop&q=80",
         "estimatedMinutes": 5
       }
-    ]
+    ],
+    "cuisineId": "continental",
+    "region": "Europe"
   }
 ]

@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#294B35">
+  <title>Cook With Me Assistant | Cook With Krushi</title>
+  
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" type="image/svg+xml" href="assets/icons/icon.svg">
+  <link rel="apple-touch-icon" href="assets/icons/icon-192.png">
+  
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body style="background: var(--bg);">
+
+  <canvas id="confetti-canvas"></canvas>
+
+  <div class="cooking-mode-wrapper">
+    <!-- Top Assistant Header -->
+    <header class="cooking-mode-header">
+      <div style="display: flex; align-items: center; gap: 12px;">
+        <a id="btn-cwm-exit" href="#" class="btn btn-outline btn-sm">
+          &larr; <span data-i18n="exit_cooking">Pause / Exit</span>
+        </a>
+        <!-- Drawer for Ingredients -->
+        <button id="btn-toggle-ingredients-drawer" class="btn btn-secondary btn-sm" style="display: inline-flex; align-items: center; gap: 6px;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+          <span>Ingredients</span>
+        </button>
+      </div>
+
+      <!-- Step Counter Tracker -->
+      <div class="cooking-progress-tracker">
+        <span id="cwm-step-counter" style="font-size: 0.88rem; font-weight: 700; color: var(--deep-green); white-space: nowrap;">
+          Step 1 of 4
+        </span>
+        <div class="cooking-progress-line">
+          <div id="cwm-progress-fill" class="cooking-progress-line-fill" style="width: 25%;"></div>
+        </div>
+      </div>
+
+      <!-- Assistant Status Indicator -->
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <button id="btn-toggle-mic" class="btn-icon" style="width: 40px; height: 40px;" title="Voice Commands">
+          <svg id="mic-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
+        </button>
+      </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main style="flex: 1; display: flex; align-items: center; justify-content: center; padding: 20px;">
+      
+      <!-- ACTIVE STEP CARD -->
+      <div id="cwm-step-card" class="cooking-step-card" style="box-shadow: var(--shadow-lg);">
+        
+        <!-- Assistant Voice Toolbar -->
+        <div style="background: var(--surface-alt); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 12px 18px; margin-bottom: 24px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;">
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <span style="font-size: 0.85rem; font-weight: 700; color: var(--deep-green); text-transform: uppercase; letter-spacing: 0.05em;">Voice Assistant:</span>
+            <button id="btn-tts-read" class="btn btn-sage btn-sm" style="padding: 6px 14px; font-size: 0.8rem;">🔊 Read Step</button>
+            <button id="btn-tts-pause" class="btn btn-outline btn-sm" style="padding: 6px 12px; font-size: 0.8rem; display: none;">⏸️ Pause</button>
+            <button id="btn-tts-repeat" class="btn btn-outline btn-sm" style="padding: 6px 12px; font-size: 0.8rem;">🔁 Repeat</button>
+          </div>
+
+          <label style="display: flex; align-items: center; gap: 8px; font-size: 0.82rem; color: var(--text-secondary); cursor: pointer; user-select: none;">
+            <input type="checkbox" id="chk-auto-read" checked style="accent-color: var(--deep-green); width: 16px; height: 16px;" />
+            <span>Read next step automatically</span>
+          </label>
+        </div>
+
+        <!-- Voice Recognition Status Banner -->
+        <div id="cwm-mic-banner" style="background: var(--primary-light); border: 1.5px solid var(--primary); border-radius: var(--radius-md); padding: 10px 16px; margin-bottom: 20px; font-size: 0.85rem; display: none; align-items: center; justify-content: space-between;">
+          <div style="display: flex; align-items: center; gap: 8px; color: var(--deep-green); font-weight: 600;">
+            <span style="display: inline-block; width: 10px; height: 10px; background: #E53935; border-radius: 50%; animation: pulse 1.2s infinite;"></span>
+            <span id="cwm-mic-status-text">Listening for commands ("Next step", "Start timer", "Repeat")...</span>
+          </div>
+          <button id="btn-dismiss-mic" style="color: var(--text-secondary); font-size: 1.1rem; cursor: pointer;">&times;</button>
+        </div>
+
+        <!-- Step Header & Media -->
+        <div class="cooking-step-number" id="cwm-step-badge">Step 1</div>
+        <h1 class="cooking-step-title" id="cwm-step-title">Loading step...</h1>
+
+        <div id="cwm-step-media-wrap" class="cooking-step-media" style="display: none;">
+          <img id="cwm-step-img" src="" alt="Cooking Step" />
+        </div>
+
+        <!-- Instruction Text -->
+        <p class="cooking-step-instruction" id="cwm-step-instruction" style="font-size: 1.25rem; font-weight: 400;"></p>
+
+        <!-- Step Timer Widget -->
+        <div id="cwm-timer-widget" class="timer-widget" style="display: none;">
+          <div class="timer-left">
+            <div class="timer-icon-circle">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            </div>
+            <div>
+              <div class="timer-label">Cooking Timer</div>
+              <div class="timer-display" id="cwm-timer-digits">05:00</div>
+            </div>
+          </div>
+          <div class="timer-controls">
+            <button id="cwm-btn-timer-start" class="btn btn-primary btn-sm">Start Timer</button>
+            <button id="cwm-btn-timer-pause" class="btn btn-outline btn-sm" style="display: none;">Pause</button>
+            <button id="cwm-btn-timer-reset" class="btn btn-outline btn-sm">Reset</button>
+            <button id="cwm-btn-add-min" class="btn btn-outline btn-sm" style="font-size: 0.78rem;">+1 Min</button>
+          </div>
+        </div>
+
+        <!-- Pro Tip Note -->
+        <div id="cwm-tip-alert" class="cooking-step-alert" style="display: none;">
+          <div style="font-size: 1.3rem;">💡</div>
+          <div class="cooking-step-alert-text" id="cwm-tip-text"></div>
+        </div>
+
+        <!-- Safety Caution -->
+        <div id="cwm-safety-alert" class="cooking-step-alert" style="display: none; border-left-color: var(--badge-nonveg); background: #FFF5F5;">
+          <div style="font-size: 1.3rem;">⚠️</div>
+          <div class="cooking-step-alert-text" id="cwm-safety-text" style="color: #9B1C1C;"></div>
+        </div>
+      </div>
+
+      <!-- COMPLETION SCREEN -->
+      <div id="cwm-completion-view" class="completion-container" style="display: none;">
+        <div class="completion-icon-ring">🎉</div>
+        <h1 class="completion-title">Dish Cooked to Perfection!</h1>
+        <p class="completion-subtitle">Congratulations! You've mastered this recipe with Cook With Me.</p>
+
+        <div class="completion-dish-card">
+          <img id="cwm-complete-img" src="" alt="Dish" class="completion-dish-img" />
+          <div>
+            <h3 id="cwm-complete-title" style="font-size: 1.3rem; color: var(--deep-green); margin-bottom: 4px;">Dish</h3>
+            <div style="font-size: 0.85rem; color: var(--text-secondary);">Cook With Krushi • Damayanti Technologies</div>
+          </div>
+        </div>
+
+        <div style="background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 24px; margin-bottom: 28px;">
+          <div style="font-weight: 700; color: var(--deep-green); margin-bottom: 6px;">Rate your dish:</div>
+          <div class="rating-stars" id="cwm-stars-wrap">
+            <button class="star-btn active" data-rating="1">&#9733;</button>
+            <button class="star-btn active" data-rating="2">&#9733;</button>
+            <button class="star-btn active" data-rating="3">&#9733;</button>
+            <button class="star-btn active" data-rating="4">&#9733;</button>
+            <button class="star-btn active" data-rating="5">&#9733;</button>
+          </div>
+          <textarea id="cwm-notes-input" placeholder="How did it taste? Add optional cooking notes for your journal..." style="width: 100%; border: 1.5px solid var(--border); border-radius: var(--radius-md); padding: 12px; font-size: 0.9rem; min-height: 80px;"></textarea>
+        </div>
+
+        <div style="display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;">
+          <button id="btn-cwm-save-history" class="btn btn-primary btn-lg">Save to Cooking Journal</button>
+          <a href="explore.html" class="btn btn-outline btn-lg">Explore More Recipes</a>
+        </div>
+      </div>
+
+    </main>
+
+    <!-- Navigation Footer -->
+    <footer id="cwm-footer" class="cooking-mode-footer">
+      <button id="btn-cwm-prev" class="btn btn-outline" disabled>
+        &larr; Previous Step
+      </button>
+
+      <div style="display: flex; gap: 8px;">
+        <button id="btn-cwm-repeat-footer" class="btn btn-outline btn-sm">🔁 Repeat Voice</button>
+      </div>
+
+      <button id="btn-cwm-next" class="btn btn-primary btn-lg">
+        <span id="cwm-next-label">Next Step</span> &rarr;
+      </button>
+    </footer>
+  </div>
+
+  <!-- INGREDIENT CHECKLIST QUICK DRAWER MODAL -->
+  <div id="cwm-ingredients-drawer" style="display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 1000; align-items: center; justify-content: center; padding: 20px;">
+    <div style="background: var(--surface); border-radius: var(--radius-xl); max-width: 540px; width: 100%; max-height: 80vh; display: flex; flex-direction: column; overflow: hidden; box-shadow: var(--shadow-xl);">
+      <div style="padding: 20px 24px; border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between;">
+        <h3 style="font-size: 1.3rem; color: var(--deep-green);">Recipe Ingredients</h3>
+        <button id="btn-close-drawer" class="scaler-btn" style="width: 36px; height: 36px;">&times;</button>
+      </div>
+
+      <div id="drawer-ingredients-list" style="padding: 20px 24px; overflow-y: auto; flex: 1; display: flex; flex-direction: column; gap: 10px;">
+        <!-- Populated by JS -->
+      </div>
+
+      <div style="padding: 16px 24px; border-top: 1px solid var(--border); text-align: right;">
+        <button id="btn-drawer-ok" class="btn btn-primary btn-sm">Return to Cooking</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MICROPHONE PERMISSION EXPLAINER MODAL -->
+  <div id="cwm-mic-modal" style="display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 1000; align-items: center; justify-content: center; padding: 20px;">
+    <div style="background: var(--surface); border-radius: var(--radius-xl); max-width: 480px; width: 100%; padding: 32px; box-shadow: var(--shadow-xl); text-align: center;">
+      <div style="width: 60px; height: 60px; border-radius: 50%; background: var(--primary-light); color: var(--deep-green); display: flex; align-items: center; justify-content: center; margin: 0 auto 16px;">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/></svg>
+      </div>
+      <h3 style="font-size: 1.4rem; color: var(--deep-green); margin-bottom: 10px;">Hands-Free Voice Commands</h3>
+      <p style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 24px;">
+        Cook With Krushi can listen for simple voice commands so you don't have to touch the screen with messy hands.
+        <br><br>
+        <strong>Commands you can say:</strong><br>
+        • "Next step" or "Previous step"<br>
+        • "Start timer" or "Pause timer"<br>
+        • "How much time is left?"<br>
+        • "Repeat" (to hear instructions again)
+      </p>
+      <div style="display: flex; gap: 12px; justify-content: center;">
+        <button id="btn-allow-mic" class="btn btn-primary">Enable Microphone</button>
+        <button id="btn-cancel-mic" class="btn btn-outline">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/storage.js"></script>
+  <script src="js/db.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/audio.js"></script>
+  <script src="js/timer.js"></script>
+  <script src="js/confetti.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/voice-assistant.js"></script>
+  <script src="js/cook-with-me.js"></script>
+  <script src="js/app.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+      const params = window.Utils.getQueryParams();
+      const slug = params.slug;
+
+      if (!slug) {
+        window.location.href = 'explore.html';
+        return;
+      }
+
+      let recipe = null;
+      let assistant = null;
+      let selectedRating = 5;
+
+      try {
+        recipe = await window.APIManager.getRecipeBySlug(slug);
+        if (!recipe) {
+          alert('Recipe not found');
+          window.location.href = 'explore.html';
+          return;
+        }
+
+        document.getElementById('btn-cwm-exit').href = `recipe.html?slug=${slug}`;
+
+        assistant = new CookWithMeAssistant(recipe, {
+          servings: parseInt(params.servings || '4', 10),
+          onStepChange: (step, stepNum, total) => {
+            renderStepUI(step, stepNum, total);
+          },
+          onTimerTick: (timeDigits, pct) => {
+            document.getElementById('cwm-timer-digits').textContent = timeDigits;
+          },
+          onTimerComplete: () => {
+            window.Utils.showToast('⏰ Step Timer Finished!', 'warning', 6000);
+            document.getElementById('cwm-btn-timer-start').style.display = 'inline-flex';
+            document.getElementById('cwm-btn-timer-pause').style.display = 'none';
+          },
+          onComplete: () => {
+            showCompletionUI();
+          }
+        });
+
+        assistant.init();
+
+        // Initial UI render
+        assistant.onStepUpdated();
+
+        // Next / Prev controls
+        document.getElementById('btn-cwm-next').addEventListener('click', () => {
+          assistant.goToNextStep();
+        });
+
+        document.getElementById('btn-cwm-prev').addEventListener('click', () => {
+          assistant.goToPreviousStep();
+        });
+
+        // Repeat button
+        document.getElementById('btn-tts-repeat').addEventListener('click', () => {
+          assistant.repeatStepInstruction();
+        });
+        document.getElementById('btn-cwm-repeat-footer').addEventListener('click', () => {
+          assistant.repeatStepInstruction();
+        });
+
+        // Read button
+        const btnRead = document.getElementById('btn-tts-read');
+        const btnPause = document.getElementById('btn-tts-pause');
+        btnRead.addEventListener('click', () => {
+          assistant.repeatStepInstruction();
+        });
+
+        btnPause.addEventListener('click', () => {
+          if (window.VoiceAssistant) {
+            if (window.VoiceAssistant.isSpeaking() && !window.VoiceAssistant.isPaused()) {
+              window.VoiceAssistant.pauseSpeaking();
+              btnPause.textContent = '▶️ Resume';
+            } else if (window.VoiceAssistant.isPaused()) {
+              window.VoiceAssistant.resumeSpeaking();
+              btnPause.textContent = '⏸️ Pause';
+            }
+          }
+        });
+
+        // Voice status event
+        window.addEventListener('cwk-voice-status', (e) => {
+          const s = e.detail.status;
+          if (s === 'speaking') {
+            btnRead.style.display = 'none';
+            btnPause.style.display = 'inline-flex';
+            btnPause.textContent = '⏸️ Pause';
+          } else if (s === 'paused') {
+            btnPause.textContent = '▶️ Resume';
+          } else {
+            btnRead.style.display = 'inline-flex';
+            btnPause.style.display = 'none';
+          }
+        });
+
+        // Auto read toggle
+        document.getElementById('chk-auto-read').addEventListener('change', (e) => {
+          assistant.isAutoReadActive = e.target.checked;
+          window.VoiceAssistant.setAutoRead(e.target.checked);
+        });
+
+        // Timers controls
+        const btnStartTimer = document.getElementById('cwm-btn-timer-start');
+        const btnPauseTimer = document.getElementById('cwm-btn-timer-pause');
+        const btnResetTimer = document.getElementById('cwm-btn-timer-reset');
+        const btnAddMin = document.getElementById('cwm-btn-add-min');
+
+        btnStartTimer.addEventListener('click', () => {
+          assistant.startStepTimer();
+          btnStartTimer.style.display = 'none';
+          btnPauseTimer.style.display = 'inline-flex';
+        });
+
+        btnPauseTimer.addEventListener('click', () => {
+          assistant.pauseStepTimer();
+          btnStartTimer.style.display = 'inline-flex';
+          btnPauseTimer.style.display = 'none';
+        });
+
+        btnResetTimer.addEventListener('click', () => {
+          assistant.resetStepTimer();
+          btnStartTimer.style.display = 'inline-flex';
+          btnPauseTimer.style.display = 'none';
+        });
+
+        btnAddMin.addEventListener('click', () => {
+          if (assistant.activeTimer) {
+            assistant.activeTimer.remainingSeconds += 60;
+            assistant.activeTimer.totalSeconds += 60;
+            document.getElementById('cwm-timer-digits').textContent = assistant.activeTimer.getFormattedTime();
+            window.Utils.showToast('+1 Minute Added', 'success');
+          }
+        });
+
+        // Voice Recognition (STT) Trigger
+        const btnToggleMic = document.getElementById('btn-toggle-mic');
+        const micBanner = document.getElementById('cwm-mic-banner');
+        const micModal = document.getElementById('cwm-mic-modal');
+
+        btnToggleMic.addEventListener('click', () => {
+          if (!window.VoiceAssistant.isRecognitionSupported()) {
+            window.Utils.showToast('Voice recognition is not supported in your browser. Touch controls are fully active.', 'warning', 4000);
+            return;
+          }
+
+          if (window.VoiceAssistant.isListening()) {
+            window.VoiceAssistant.stopListening();
+            btnToggleMic.style.color = 'var(--text)';
+            micBanner.style.display = 'none';
+          } else {
+            // Show explanation modal
+            micModal.style.display = 'flex';
+          }
+        });
+
+        document.getElementById('btn-allow-mic').addEventListener('click', () => {
+          micModal.style.display = 'none';
+          const ok = window.VoiceAssistant.startListening();
+          if (ok) {
+            btnToggleMic.style.color = 'var(--terracotta)';
+            micBanner.style.display = 'flex';
+            window.Utils.showToast('Microphone activated. Speak commands clearly!', 'success');
+          }
+        });
+
+        document.getElementById('btn-cancel-mic').addEventListener('click', () => {
+          micModal.style.display = 'none';
+        });
+
+        document.getElementById('btn-dismiss-mic').addEventListener('click', () => {
+          micBanner.style.display = 'none';
+        });
+
+        // Ingredients Drawer
+        const drawer = document.getElementById('cwm-ingredients-drawer');
+        document.getElementById('btn-toggle-ingredients-drawer').addEventListener('click', () => {
+          renderDrawerIngredients();
+          drawer.style.display = 'flex';
+        });
+        document.getElementById('btn-close-drawer').addEventListener('click', () => drawer.style.display = 'none');
+        document.getElementById('btn-drawer-ok').addEventListener('click', () => drawer.style.display = 'none');
+
+        // Rating Stars
+        const starBtns = document.querySelectorAll('#cwm-stars-wrap .star-btn');
+        starBtns.forEach(b => {
+          b.addEventListener('click', () => {
+            selectedRating = parseInt(b.getAttribute('data-rating'), 10);
+            starBtns.forEach(sb => {
+              sb.classList.toggle('active', parseInt(sb.getAttribute('data-rating'), 10) <= selectedRating);
+            });
+          });
+        });
+
+        // Save to journal
+        document.getElementById('btn-cwm-save-history').addEventListener('click', async () => {
+          const notes = document.getElementById('cwm-notes-input').value.trim();
+          await window.DBManager.addHistory({
+            recipeId: recipe.id,
+            slug: recipe.slug,
+            title: recipe.title,
+            image: recipe.image,
+            rating: selectedRating,
+            notes
+          });
+          await window.DBManager.deleteInProgress(recipe.id);
+          window.Utils.showToast('Dish saved to your Cooking Journal!', 'success');
+          setTimeout(() => {
+            window.location.href = 'my-kitchen.html';
+          }, 1000);
+        });
+
+      } catch (err) {
+        console.error('CookWithMe init error:', err);
+      }
+
+      function renderStepUI(step, stepNum, total) {
+        const lang = window.I18nManager.getLang();
+        const title = lang === 'te' && step.titleTe ? step.titleTe : step.title;
+        const instruction = lang === 'te' && step.instructionTe ? step.instructionTe : step.instruction;
+
+        document.getElementById('cwm-step-badge').textContent = `Step ${stepNum} of ${total} • ${recipe.title}`;
+        document.getElementById('cwm-step-title').textContent = title;
+        document.getElementById('cwm-step-instruction').textContent = instruction;
+        document.getElementById('cwm-step-counter').textContent = `Step ${stepNum} of ${total}`;
+        document.getElementById('cwm-progress-fill').style.width = `${Math.round((stepNum / total) * 100)}%`;
+
+        document.getElementById('btn-cwm-prev').disabled = stepNum === 1;
+        document.getElementById('cwm-next-label').textContent = stepNum === total ? 'Complete Dish & Enjoy' : 'Next Step';
+
+        // Media
+        const mediaWrap = document.getElementById('cwm-step-media-wrap');
+        const img = document.getElementById('cwm-step-img');
+        if (step.image) {
+          mediaWrap.style.display = 'block';
+          img.src = step.image;
+        } else {
+          mediaWrap.style.display = 'none';
+        }
+
+        // Timer
+        const timerWidget = document.getElementById('cwm-timer-widget');
+        if (step.timerMinutes && step.timerMinutes > 0) {
+          timerWidget.style.display = 'flex';
+          document.getElementById('cwm-timer-digits').textContent = assistant.activeTimer.getFormattedTime();
+          document.getElementById('cwm-btn-timer-start').style.display = 'inline-flex';
+          document.getElementById('cwm-btn-timer-pause').style.display = 'none';
+        } else {
+          timerWidget.style.display = 'none';
+        }
+
+        // Tips
+        const tipAlert = document.getElementById('cwm-tip-alert');
+        if (step.tip) {
+          tipAlert.style.display = 'flex';
+          document.getElementById('cwm-tip-text').innerHTML = `<strong>Chef's Note:</strong> ${window.Utils.escapeHTML(step.tip)}`;
+        } else {
+          tipAlert.style.display = 'none';
+        }
+
+        // Safety
+        const safetyAlert = document.getElementById('cwm-safety-alert');
+        if (step.safety) {
+          safetyAlert.style.display = 'flex';
+          document.getElementById('cwm-safety-text').innerHTML = `<strong>Kitchen Safety:</strong> ${window.Utils.escapeHTML(step.safety)}`;
+        } else {
+          safetyAlert.style.display = 'none';
+        }
+
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+
+      function renderDrawerIngredients() {
+        const container = document.getElementById('drawer-ingredients-list');
+        const lang = window.I18nManager.getLang();
+
+        container.innerHTML = (recipe.ingredients || []).map((ig, idx) => {
+          const isChecked = assistant.checkedIngredients.has(idx);
+          const scaledQty = window.Utils.scaleQuantity(ig.amount, recipe.servings || 4, assistant.servings);
+          const name = lang === 'te' && ig.nameTe ? ig.nameTe : ig.name;
+
+          return `
+            <label style="display: flex; align-items: center; justify-content: space-between; padding: 10px 14px; background: var(--bg); border: 1px solid var(--border-light); border-radius: var(--radius-md); cursor: pointer;">
+              <div style="display: flex; align-items: center; gap: 10px;">
+                <input type="checkbox" class="checklist-checkbox drawer-check" data-idx="${idx}" ${isChecked ? 'checked' : ''} />
+                <span style="${isChecked ? 'text-decoration: line-through; color: var(--text-muted);' : 'font-weight: 500;'}">${window.Utils.escapeHTML(name)}</span>
+              </div>
+              <span style="font-weight: 600; color: var(--deep-green); font-size: 0.9rem;">${scaledQty} ${ig.unit}</span>
+            </label>
+          `;
+        }).join('');
+
+        container.querySelectorAll('.drawer-check').forEach(cb => {
+          cb.addEventListener('change', () => {
+            const idx = parseInt(cb.getAttribute('data-idx'), 10);
+            if (cb.checked) {
+              assistant.checkedIngredients.add(idx);
+            } else {
+              assistant.checkedIngredients.delete(idx);
+            }
+            assistant.saveCheckpoint();
+            renderDrawerIngredients();
+          });
+        });
+      }
+
+      function showCompletionUI() {
+        document.getElementById('cwm-step-card').style.display = 'none';
+        document.getElementById('cwm-footer').style.display = 'none';
+        document.getElementById('cwm-completion-view').style.display = 'block';
+
+        document.getElementById('cwm-complete-img').src = recipe.image;
+        document.getElementById('cwm-complete-title').textContent = recipe.title;
+
+        if (window.Confetti) window.Confetti.start(200);
+        if (window.SoundPlayer) window.SoundPlayer.playCelebration();
+        if (window.VoiceAssistant) {
+          window.VoiceAssistant.speak('Congratulations! Your dish is cooked and ready to enjoy.');
+        }
+
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    });
+  </script>
+</body>
+</html>

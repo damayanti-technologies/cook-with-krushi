@@ -12,7 +12,7 @@
     },
     "categoryId": "cat_drinks",
     "subcategoryId": "Filter Coffee",
-    "cuisine": "South Indian",
+    "cuisine": "Tamil",
     "dietaryType": "vegetarian",
     "difficulty": "easy",
     "preparationTime": 5,
@@ -27,13 +27,57 @@
     "reviewsCount": 190,
     "published": true,
     "createdAt": "2026-02-05T07:00:00.000Z",
-    "tags": ["coffee", "filter coffee", "morning", "drinks", "south indian"],
-    "equipment": ["Traditional brass/steel coffee filter", "Saucepan", "Davarah and tumbler"],
+    "tags": [
+      "coffee",
+      "filter coffee",
+      "morning",
+      "drinks",
+      "south indian"
+    ],
+    "equipment": [
+      "Traditional brass/steel coffee filter",
+      "Saucepan",
+      "Davarah and tumbler"
+    ],
     "ingredients": [
-      { "id": "ing_fc1", "name": { "en": "Filter Coffee Powder (80:20 Coffee:Chicory)", "te": "ఫిల్టర్ కాఫీ పొడి" }, "quantity": 3, "unit": "tbsp" },
-      { "id": "ing_fc2", "name": { "en": "Boiling Hot Water", "te": "మరుగుతున్న నీరు" }, "quantity": 0.75, "unit": "cup" },
-      { "id": "ing_fc3", "name": { "en": "Whole Milk", "te": "చిక్కని పాలు" }, "quantity": 1.5, "unit": "cups", "notes": "Boiled hot" },
-      { "id": "ing_fc4", "name": { "en": "Sugar", "te": "పంచదార" }, "quantity": 2, "unit": "tsp", "notes": "Adjust to taste" }
+      {
+        "id": "ing_fc1",
+        "name": {
+          "en": "Filter Coffee Powder (80:20 Coffee:Chicory)",
+          "te": "ఫిల్టర్ కాఫీ పొడి"
+        },
+        "quantity": 3,
+        "unit": "tbsp"
+      },
+      {
+        "id": "ing_fc2",
+        "name": {
+          "en": "Boiling Hot Water",
+          "te": "మరుగుతున్న నీరు"
+        },
+        "quantity": 0.75,
+        "unit": "cup"
+      },
+      {
+        "id": "ing_fc3",
+        "name": {
+          "en": "Whole Milk",
+          "te": "చిక్కని పాలు"
+        },
+        "quantity": 1.5,
+        "unit": "cups",
+        "notes": "Boiled hot"
+      },
+      {
+        "id": "ing_fc4",
+        "name": {
+          "en": "Sugar",
+          "te": "పంచదార"
+        },
+        "quantity": 2,
+        "unit": "tsp",
+        "notes": "Adjust to taste"
+      }
     ],
     "tips": [
       "Gently press the umbrella pressing disc without packing too tightly, allowing slow gravity dripping for rich thick decoction."
@@ -41,7 +85,10 @@
     "steps": [
       {
         "order": 1,
-        "title": { "en": "Brew the Decoction", "te": "డికాక్షన్ సిద్ధం చేయండి" },
+        "title": {
+          "en": "Brew the Decoction",
+          "te": "డికాక్షన్ సిద్ధం చేయండి"
+        },
         "instructions": [
           "Add coffee powder to the top chamber of your filter and level lightly with the pressing disc.",
           "Pour freshly boiled water, cover with the lid, and let it drip for 10-15 minutes undisturbed."
@@ -52,7 +99,10 @@
       },
       {
         "order": 2,
-        "title": { "en": "Froth and Serve (Meter Coffee)", "te": "నురుగు వచ్చేలా కలపండి" },
+        "title": {
+          "en": "Froth and Serve (Meter Coffee)",
+          "te": "నురుగు వచ్చేలా కలపండి"
+        },
         "instructions": [
           "Boil whole milk until steaming and creamy.",
           "Pour 2 tablespoons strong decoction into a tumbler, add sugar, and pour hot milk.",
@@ -61,6 +111,8 @@
         "imageUrl": "https://images.unsplash.com/photo-1517256064527-09c73fc73e38?w=800&auto=format&fit=crop&q=80",
         "estimatedMinutes": 3
       }
-    ]
+    ],
+    "cuisineId": "tamil",
+    "region": "Tamil Nadu"
   }
 ]

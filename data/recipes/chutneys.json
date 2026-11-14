@@ -27,16 +27,81 @@
     "reviewsCount": 115,
     "published": true,
     "createdAt": "2026-02-04T08:00:00.000Z",
-    "tags": ["chutney", "coconut", "south indian", "vegan", "side"],
-    "equipment": ["Blender jar", "Tadka pan"],
+    "tags": [
+      "chutney",
+      "coconut",
+      "south indian",
+      "vegan",
+      "side"
+    ],
+    "equipment": [
+      "Blender jar",
+      "Tadka pan"
+    ],
     "ingredients": [
-      { "id": "ing_ch1", "name": { "en": "Fresh Grated Coconut", "te": "తాజా కొబ్బరి తురుము" }, "quantity": 1, "unit": "cup" },
-      { "id": "ing_ch2", "name": { "en": "Roasted Gram (Dalia / Putnalu)", "te": "పుట్నాల పప్పు" }, "quantity": 2, "unit": "tbsp" },
-      { "id": "ing_ch3", "name": { "en": "Green Chillies", "te": "పచ్చిమిర్చి" }, "quantity": 2, "unit": "pieces" },
-      { "id": "ing_ch4", "name": { "en": "Ginger", "te": "అల్లం ముక్క" }, "quantity": 0.5, "unit": "inch" },
-      { "id": "ing_ch5", "name": { "en": "Salt", "te": "ఉప్పు" }, "quantity": 0.75, "unit": "tsp" },
-      { "id": "ing_ch6", "name": { "en": "Mustard Seeds & Urad Dal", "te": "ఆవాలు మరియు మినప్పప్పు" }, "quantity": 1, "unit": "tsp" },
-      { "id": "ing_ch7", "name": { "en": "Curry Leaves & Oil", "te": "కరివేపాకు & నూనె" }, "quantity": 1, "unit": "tbsp" }
+      {
+        "id": "ing_ch1",
+        "name": {
+          "en": "Fresh Grated Coconut",
+          "te": "తాజా కొబ్బరి తురుము"
+        },
+        "quantity": 1,
+        "unit": "cup"
+      },
+      {
+        "id": "ing_ch2",
+        "name": {
+          "en": "Roasted Gram (Dalia / Putnalu)",
+          "te": "పుట్నాల పప్పు"
+        },
+        "quantity": 2,
+        "unit": "tbsp"
+      },
+      {
+        "id": "ing_ch3",
+        "name": {
+          "en": "Green Chillies",
+          "te": "పచ్చిమిర్చి"
+        },
+        "quantity": 2,
+        "unit": "pieces"
+      },
+      {
+        "id": "ing_ch4",
+        "name": {
+          "en": "Ginger",
+          "te": "అల్లం ముక్క"
+        },
+        "quantity": 0.5,
+        "unit": "inch"
+      },
+      {
+        "id": "ing_ch5",
+        "name": {
+          "en": "Salt",
+          "te": "ఉప్పు"
+        },
+        "quantity": 0.75,
+        "unit": "tsp"
+      },
+      {
+        "id": "ing_ch6",
+        "name": {
+          "en": "Mustard Seeds & Urad Dal",
+          "te": "ఆవాలు మరియు మినప్పప్పు"
+        },
+        "quantity": 1,
+        "unit": "tsp"
+      },
+      {
+        "id": "ing_ch7",
+        "name": {
+          "en": "Curry Leaves & Oil",
+          "te": "కరివేపాకు & నూనె"
+        },
+        "quantity": 1,
+        "unit": "tbsp"
+      }
     ],
     "tips": [
       "Use fresh tender coconut white meat for the sweetest, creamiest restaurant-style texture."
@@ -44,7 +109,10 @@
     "steps": [
       {
         "order": 1,
-        "title": { "en": "Blend Chutney Base", "te": "చట్నీని మిక్సీ పట్టండి" },
+        "title": {
+          "en": "Blend Chutney Base",
+          "te": "చట్నీని మిక్సీ పట్టండి"
+        },
         "instructions": [
           "In a blender jar, combine grated coconut, roasted gram, green chillies, ginger, salt, and 1/3 cup cold water.",
           "Blend into a smooth paste. Transfer to serving bowl."
@@ -54,7 +122,10 @@
       },
       {
         "order": 2,
-        "title": { "en": "Aromatic Tadka", "te": "ఘుమఘుమలాడే పోపు వేయండి" },
+        "title": {
+          "en": "Aromatic Tadka",
+          "te": "ఘుమఘుమలాడే పోపు వేయండి"
+        },
         "instructions": [
           "Heat 1 tablespoon oil in a tadka pan.",
           "Add mustard seeds, urad dal, dry red chilli, and fresh curry leaves.",
@@ -64,6 +135,8 @@
         "estimatedMinutes": 2,
         "timerSeconds": 30
       }
-    ]
+    ],
+    "cuisineId": "south-indian",
+    "region": "Southern India"
   }
 ]

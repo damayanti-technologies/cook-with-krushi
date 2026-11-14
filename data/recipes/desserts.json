@@ -12,7 +12,7 @@
     },
     "categoryId": "cat_desserts",
     "subcategoryId": "Traditional Sweets",
-    "cuisine": "Indian",
+    "cuisine": "North Indian",
     "dietaryType": "vegetarian",
     "difficulty": "medium",
     "preparationTime": 15,
@@ -27,17 +27,93 @@
     "reviewsCount": 180,
     "published": true,
     "createdAt": "2026-01-25T14:00:00.000Z",
-    "tags": ["dessert", "sweet", "festival", "celebration", "diwali special"],
-    "equipment": ["Deep frying kadai", "Wide saucepan for syrup", "Slotted spoon"],
+    "tags": [
+      "dessert",
+      "sweet",
+      "festival",
+      "celebration",
+      "diwali special"
+    ],
+    "equipment": [
+      "Deep frying kadai",
+      "Wide saucepan for syrup",
+      "Slotted spoon"
+    ],
     "ingredients": [
-      { "id": "ing_g1", "name": { "en": "Khoya / Milk Powder Mix", "te": "కోవా లేదా మిల్క్ పౌడర్" }, "quantity": 1, "unit": "cup" },
-      { "id": "ing_g2", "name": { "en": "All-Purpose Flour (Maida)", "te": "మైదా పిండి" }, "quantity": 3, "unit": "tbsp" },
-      { "id": "ing_g3", "name": { "en": "Milk", "te": "పాలు" }, "quantity": 4, "unit": "tbsp", "notes": "Lukewarm, as needed" },
-      { "id": "ing_g4", "name": { "en": "Sugar", "te": "పంచదార" }, "quantity": 1.5, "unit": "cups" },
-      { "id": "ing_g5", "name": { "en": "Water", "te": "నీరు" }, "quantity": 1.5, "unit": "cups" },
-      { "id": "ing_g6", "name": { "en": "Green Cardamom Pods", "te": "యాలకులు" }, "quantity": 4, "unit": "pods", "notes": "Crushed" },
-      { "id": "ing_g7", "name": { "en": "Rose Water", "te": "గులాబీ నీరు" }, "quantity": 1, "unit": "tsp" },
-      { "id": "ing_g8", "name": { "en": "Ghee or Oil for deep frying", "te": "నెయ్యి లేదా నూనె" }, "quantity": 2, "unit": "cups" }
+      {
+        "id": "ing_g1",
+        "name": {
+          "en": "Khoya / Milk Powder Mix",
+          "te": "కోవా లేదా మిల్క్ పౌడర్"
+        },
+        "quantity": 1,
+        "unit": "cup"
+      },
+      {
+        "id": "ing_g2",
+        "name": {
+          "en": "All-Purpose Flour (Maida)",
+          "te": "మైదా పిండి"
+        },
+        "quantity": 3,
+        "unit": "tbsp"
+      },
+      {
+        "id": "ing_g3",
+        "name": {
+          "en": "Milk",
+          "te": "పాలు"
+        },
+        "quantity": 4,
+        "unit": "tbsp",
+        "notes": "Lukewarm, as needed"
+      },
+      {
+        "id": "ing_g4",
+        "name": {
+          "en": "Sugar",
+          "te": "పంచదార"
+        },
+        "quantity": 1.5,
+        "unit": "cups"
+      },
+      {
+        "id": "ing_g5",
+        "name": {
+          "en": "Water",
+          "te": "నీరు"
+        },
+        "quantity": 1.5,
+        "unit": "cups"
+      },
+      {
+        "id": "ing_g6",
+        "name": {
+          "en": "Green Cardamom Pods",
+          "te": "యాలకులు"
+        },
+        "quantity": 4,
+        "unit": "pods",
+        "notes": "Crushed"
+      },
+      {
+        "id": "ing_g7",
+        "name": {
+          "en": "Rose Water",
+          "te": "గులాబీ నీరు"
+        },
+        "quantity": 1,
+        "unit": "tsp"
+      },
+      {
+        "id": "ing_g8",
+        "name": {
+          "en": "Ghee or Oil for deep frying",
+          "te": "నెయ్యి లేదా నూనె"
+        },
+        "quantity": 2,
+        "unit": "cups"
+      }
     ],
     "tips": [
       "Do not knead the dough hard like chapati dough; gently bring together with finger tips to avoid rubbery jamuns.",
@@ -46,7 +122,10 @@
     "steps": [
       {
         "order": 1,
-        "title": { "en": "Prepare Cardamom Sugar Syrup", "te": "పంచదార పాకం తయారు చేయండి" },
+        "title": {
+          "en": "Prepare Cardamom Sugar Syrup",
+          "te": "పంచదార పాకం తయారు చేయండి"
+        },
         "instructions": [
           "In a wide saucepan, mix 1.5 cups sugar and 1.5 cups water.",
           "Bring to a boil on medium flame, stirring until sugar dissolves completely.",
@@ -59,7 +138,10 @@
       },
       {
         "order": 2,
-        "title": { "en": "Shape Crack-Free Jamuns", "te": "పగుళ్లు లేకుండా ఉండలు చేయండి" },
+        "title": {
+          "en": "Shape Crack-Free Jamuns",
+          "te": "పగుళ్లు లేకుండా ఉండలు చేయండి"
+        },
         "instructions": [
           "In a bowl, mix milk powder and flour.",
           "Sprinkle milk tablespoon by tablespoon to make a soft, smooth, pliable dough.",
@@ -70,7 +152,10 @@
       },
       {
         "order": 3,
-        "title": { "en": "Gentle Deep Frying", "te": "సన్నని మంటపై వేయించండి" },
+        "title": {
+          "en": "Gentle Deep Frying",
+          "te": "సన్నని మంటపై వేయించండి"
+        },
         "instructions": [
           "Heat ghee or oil in a kadai over gentle low flame.",
           "Slide jamuns into oil; gently swirl oil with ladle without touching jamuns directly.",
@@ -79,11 +164,16 @@
         "imageUrl": "https://images.unsplash.com/photo-1601050690597-df0568f70950?w=800&auto=format&fit=crop&q=80",
         "estimatedMinutes": 8,
         "timerSeconds": 420,
-        "warnings": ["Hot oil splashes: use a long slotted spoon and gently slide balls in."]
+        "warnings": [
+          "Hot oil splashes: use a long slotted spoon and gently slide balls in."
+        ]
       },
       {
         "order": 4,
-        "title": { "en": "Soak in Warm Syrup", "te": "వెచ్చని పాకంలో నానబెట్టండి" },
+        "title": {
+          "en": "Soak in Warm Syrup",
+          "te": "వెచ్చని పాకంలో నానబెట్టండి"
+        },
         "instructions": [
           "Drain fried jamuns on paper towel for 30 seconds, then transfer directly into warm sugar syrup.",
           "Allow them to soak for at least 30 minutes to expand and become spongy."
@@ -92,6 +182,8 @@
         "estimatedMinutes": 30,
         "timerSeconds": 1800
       }
-    ]
+    ],
+    "cuisineId": "north-indian",
+    "region": "Northern India"
   }
 ]

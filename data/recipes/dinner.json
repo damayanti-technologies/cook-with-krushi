@@ -27,26 +27,155 @@
     "reviewsCount": 142,
     "published": true,
     "createdAt": "2026-01-15T10:00:00.000Z",
-    "tags": ["paneer", "gravy", "restaurant-style", "dinner", "comfort food"],
-    "equipment": ["Heavy-bottom pan or Kadai", "Blender", "Spatula", "Measuring spoons", "Chef knife"],
+    "tags": [
+      "paneer",
+      "gravy",
+      "restaurant-style",
+      "dinner",
+      "comfort food"
+    ],
+    "equipment": [
+      "Heavy-bottom pan or Kadai",
+      "Blender",
+      "Spatula",
+      "Measuring spoons",
+      "Chef knife"
+    ],
     "ingredients": [
-      { "id": "ing_1", "name": { "en": "Paneer (Cottage Cheese)", "te": "పనీర్" }, "quantity": 200, "unit": "g", "notes": "Cut into bite-sized 1-inch cubes" },
-      { "id": "ing_2", "name": { "en": "Ripe Tomatoes", "te": "టమాటాలు" }, "quantity": 4, "unit": "medium", "notes": "Roughly chopped for puree" },
-      { "id": "ing_3", "name": { "en": "Onion", "te": "ఉల్లిపాయ" }, "quantity": 1, "unit": "large", "notes": "Finely sliced" },
-      { "id": "ing_4", "name": { "en": "Butter", "te": "వెన్న" }, "quantity": 2, "unit": "tbsp", "notes": "Salted or unsalted" },
-      { "id": "ing_5", "name": { "en": "Cooking Oil", "te": "వంట నూనె" }, "quantity": 1, "unit": "tbsp" },
-      { "id": "ing_6", "name": { "en": "Ginger-Garlic Paste", "te": "అల్లం-వెల్లుల్లి పేస్ట్" }, "quantity": 1, "unit": "tbsp", "notes": "Freshly ground preferred" },
-      { "id": "ing_7", "name": { "en": "Cashews", "te": "జీడిపప్పు" }, "quantity": 12, "unit": "whole", "notes": "Soaked in warm water for 10 mins" },
-      { "id": "ing_8", "name": { "en": "Kashmiri Red Chilli Powder", "te": "కశ్మీరీ కారం" }, "quantity": 1.5, "unit": "tsp", "notes": "Rich red color without high heat" },
-      { "id": "ing_9", "name": { "en": "Garam Masala", "te": "గరం మసాలా" }, "quantity": 0.5, "unit": "tsp" },
-      { "id": "ing_10", "name": { "en": "Kasuri Methi (Dried Fenugreek)", "te": "కసూరి మేథి" }, "quantity": 1, "unit": "tsp", "notes": "Crushed between palms" },
-      { "id": "ing_11", "name": { "en": "Fresh Cream", "te": "ఫ్రెష్ క్రీమ్" }, "quantity": 2, "unit": "tbsp" },
-      { "id": "ing_12", "name": { "en": "Salt", "te": "ఉప్పు" }, "quantity": 1, "unit": "tsp", "notes": "Adjust to taste" }
+      {
+        "id": "ing_1",
+        "name": {
+          "en": "Paneer (Cottage Cheese)",
+          "te": "పనీర్"
+        },
+        "quantity": 200,
+        "unit": "g",
+        "notes": "Cut into bite-sized 1-inch cubes"
+      },
+      {
+        "id": "ing_2",
+        "name": {
+          "en": "Ripe Tomatoes",
+          "te": "టమాటాలు"
+        },
+        "quantity": 4,
+        "unit": "medium",
+        "notes": "Roughly chopped for puree"
+      },
+      {
+        "id": "ing_3",
+        "name": {
+          "en": "Onion",
+          "te": "ఉల్లిపాయ"
+        },
+        "quantity": 1,
+        "unit": "large",
+        "notes": "Finely sliced"
+      },
+      {
+        "id": "ing_4",
+        "name": {
+          "en": "Butter",
+          "te": "వెన్న"
+        },
+        "quantity": 2,
+        "unit": "tbsp",
+        "notes": "Salted or unsalted"
+      },
+      {
+        "id": "ing_5",
+        "name": {
+          "en": "Cooking Oil",
+          "te": "వంట నూనె"
+        },
+        "quantity": 1,
+        "unit": "tbsp"
+      },
+      {
+        "id": "ing_6",
+        "name": {
+          "en": "Ginger-Garlic Paste",
+          "te": "అల్లం-వెల్లుల్లి పేస్ట్"
+        },
+        "quantity": 1,
+        "unit": "tbsp",
+        "notes": "Freshly ground preferred"
+      },
+      {
+        "id": "ing_7",
+        "name": {
+          "en": "Cashews",
+          "te": "జీడిపప్పు"
+        },
+        "quantity": 12,
+        "unit": "whole",
+        "notes": "Soaked in warm water for 10 mins"
+      },
+      {
+        "id": "ing_8",
+        "name": {
+          "en": "Kashmiri Red Chilli Powder",
+          "te": "కశ్మీరీ కారం"
+        },
+        "quantity": 1.5,
+        "unit": "tsp",
+        "notes": "Rich red color without high heat"
+      },
+      {
+        "id": "ing_9",
+        "name": {
+          "en": "Garam Masala",
+          "te": "గరం మసాలా"
+        },
+        "quantity": 0.5,
+        "unit": "tsp"
+      },
+      {
+        "id": "ing_10",
+        "name": {
+          "en": "Kasuri Methi (Dried Fenugreek)",
+          "te": "కసూరి మేథి"
+        },
+        "quantity": 1,
+        "unit": "tsp",
+        "notes": "Crushed between palms"
+      },
+      {
+        "id": "ing_11",
+        "name": {
+          "en": "Fresh Cream",
+          "te": "ఫ్రెష్ క్రీమ్"
+        },
+        "quantity": 2,
+        "unit": "tbsp"
+      },
+      {
+        "id": "ing_12",
+        "name": {
+          "en": "Salt",
+          "te": "ఉప్పు"
+        },
+        "quantity": 1,
+        "unit": "tsp",
+        "notes": "Adjust to taste"
+      }
     ],
     "alternatives": [
-      { "original": "Paneer", "substitute": "Firm Tofu", "note": "Makes the dish 100% vegan. Press tofu before cubing." },
-      { "original": "Cashews", "substitute": "Watermelon seeds (Magaz) or Almonds", "note": "Provides similar rich creaminess for nut-sensitive diets." },
-      { "original": "Fresh Cream", "substitute": "Coconut milk", "note": "Lends a subtle sweet undertone and dairy-free velvet finish." }
+      {
+        "original": "Paneer",
+        "substitute": "Firm Tofu",
+        "note": "Makes the dish 100% vegan. Press tofu before cubing."
+      },
+      {
+        "original": "Cashews",
+        "substitute": "Watermelon seeds (Magaz) or Almonds",
+        "note": "Provides similar rich creaminess for nut-sensitive diets."
+      },
+      {
+        "original": "Fresh Cream",
+        "substitute": "Coconut milk",
+        "note": "Lends a subtle sweet undertone and dairy-free velvet finish."
+      }
     ],
     "tips": [
       "Do not fry paneer cubes hard; soaking them in warm salted water for 5 minutes keeps them pillowy soft.",
@@ -56,7 +185,10 @@
     "steps": [
       {
         "order": 1,
-        "title": { "en": "Prepare Aromatics & Puree", "te": "టమాటా మరియు జీడిపప్పు పేస్ట్ సిద్ధం చేసుకోండి" },
+        "title": {
+          "en": "Prepare Aromatics & Puree",
+          "te": "టమాటా మరియు జీడిపప్పు పేస్ట్ సిద్ధం చేసుకోండి"
+        },
         "instructions": [
           "Soak 12 cashews in 1/4 cup warm water for 10 minutes.",
           "In a blender jar, combine roughly chopped tomatoes and soaked cashews.",
@@ -66,12 +198,19 @@
         "imageUrl": "https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=800&auto=format&fit=crop&q=80",
         "estimatedMinutes": 5,
         "timerSeconds": null,
-        "tips": ["If your blender is warm, wait 2 minutes before blending hot aromatics to prevent steam splatter."],
-        "warnings": ["Hold down blender lid securely with a kitchen towel while operating."]
+        "tips": [
+          "If your blender is warm, wait 2 minutes before blending hot aromatics to prevent steam splatter."
+        ],
+        "warnings": [
+          "Hold down blender lid securely with a kitchen towel while operating."
+        ]
       },
       {
         "order": 2,
-        "title": { "en": "Saute Aromatics & Onion Base", "te": "ఉల్లిపాయలు మరియు మసాలాలు వేయించండి" },
+        "title": {
+          "en": "Saute Aromatics & Onion Base",
+          "te": "ఉల్లిపాయలు మరియు మసాలాలు వేయించండి"
+        },
         "instructions": [
           "Place your heavy-bottom pan over medium heat.",
           "Add 1 tablespoon of butter and 1 tablespoon of cooking oil (oil prevents butter from scorching).",
@@ -81,12 +220,19 @@
         "imageUrl": "https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=800&auto=format&fit=crop&q=80",
         "estimatedMinutes": 6,
         "timerSeconds": 300,
-        "tips": ["A pinch of salt over onions draws out moisture and browns them evenly."],
-        "warnings": ["Keep heat on medium. Burnt ginger-garlic paste will turn the gravy bitter."]
+        "tips": [
+          "A pinch of salt over onions draws out moisture and browns them evenly."
+        ],
+        "warnings": [
+          "Keep heat on medium. Burnt ginger-garlic paste will turn the gravy bitter."
+        ]
       },
       {
         "order": 3,
-        "title": { "en": "Cook Tomato-Cashew Gravy", "te": "టమాటా గ్రేవీని ఉడికించండి" },
+        "title": {
+          "en": "Cook Tomato-Cashew Gravy",
+          "te": "టమాటా గ్రేవీని ఉడికించండి"
+        },
         "instructions": [
           "Pour the prepared tomato-cashew puree into the pan.",
           "Stir in Kashmiri red chilli powder, turmeric powder, and 1 tsp salt.",
@@ -95,12 +241,19 @@
         "imageUrl": "https://images.unsplash.com/photo-1631452180519-c014fe946bc7?w=800&auto=format&fit=crop&q=80",
         "estimatedMinutes": 8,
         "timerSeconds": 480,
-        "tips": ["Covering the pan is essential as bubbling cashew gravy spatters easily."],
-        "warnings": ["Hot steam will release when removing the lid; open tilting away from your face."]
+        "tips": [
+          "Covering the pan is essential as bubbling cashew gravy spatters easily."
+        ],
+        "warnings": [
+          "Hot steam will release when removing the lid; open tilting away from your face."
+        ]
       },
       {
         "order": 4,
-        "title": { "en": "Add Paneer & Seasonings", "te": "పనీర్ మరియు మసాలా కలపండి" },
+        "title": {
+          "en": "Add Paneer & Seasonings",
+          "te": "పనీర్ మరియు మసాలా కలపండి"
+        },
         "instructions": [
           "Stir in 1/2 cup of warm water to adjust gravy consistency to your liking.",
           "Gently slide in 200g paneer cubes so they do not break.",
@@ -110,11 +263,16 @@
         "imageUrl": "https://images.unsplash.com/photo-1631452180519-c014fe946bc7?w=800&auto=format&fit=crop&q=80",
         "estimatedMinutes": 4,
         "timerSeconds": 240,
-        "tips": ["Use a gentle folding motion with your spatula rather than vigorous stirring."]
+        "tips": [
+          "Use a gentle folding motion with your spatula rather than vigorous stirring."
+        ]
       },
       {
         "order": 5,
-        "title": { "en": "Finish with Cream & Kasuri Methi", "te": "క్రీమ్ మరియు కసూరి మేథితో పూర్తి చేయండి" },
+        "title": {
+          "en": "Finish with Cream & Kasuri Methi",
+          "te": "క్రీమ్ మరియు కసూరి మేథితో పూర్తి చేయండి"
+        },
         "instructions": [
           "Turn off the flame.",
           "Crush 1 teaspoon Kasuri Methi between your palms and scatter over the curry.",
@@ -124,7 +282,258 @@
         "imageUrl": "https://images.unsplash.com/photo-1631452180519-c014fe946bc7?w=800&auto=format&fit=crop&q=80",
         "estimatedMinutes": 2,
         "timerSeconds": 120,
-        "tips": ["Always turn off the stove before adding cream to prevent curdling."]
+        "tips": [
+          "Always turn off the stove before adding cream to prevent curdling."
+        ]
+      }
+    ],
+    "cuisineId": "north-indian",
+    "region": "Northern India"
+  },
+  {
+    "id": "rec_italian_penne_arrabbiata",
+    "slug": "italian-penne-arrabbiata",
+    "title": {
+      "en": "Classic Italian Penne Arrabbiata",
+      "te": "ఇటాలియన్ పెన్నె పాస్తా"
+    },
+    "description": {
+      "en": "Al dente tube pasta tossed in a fiery garlic, ripe tomato, red chilli flake, and fresh basil herb sauce with extra virgin olive oil.",
+      "te": "టమాటా, వెల్లుల్లి, చిల్లీ ఫ్లేక్స్ మరియు ఆలివ్ ఆయిల్‌తో తయారైన ఇటాలియన్ పాస్తా."
+    },
+    "categoryId": "cat_dinner",
+    "subcategoryId": "Pasta & Noodles",
+    "cuisineId": "italian",
+    "cuisine": "Italian",
+    "region": "Europe",
+    "dietaryType": "vegan",
+    "difficulty": "easy",
+    "preparationTime": 10,
+    "cookingTime": 15,
+    "totalTime": 25,
+    "defaultServings": 2,
+    "coverImage": "https://images.unsplash.com/photo-1551183053-bf91a1d81141?w=800&auto=format&fit=crop&q=80",
+    "caloriesPerServing": 350,
+    "rating": 4.85,
+    "published": true,
+    "tags": [
+      "italian",
+      "pasta",
+      "arrabbiata",
+      "vegan",
+      "dinner"
+    ],
+    "equipment": [
+      "Pasta Pot",
+      "Sauce Pan",
+      "Colander"
+    ],
+    "ingredients": [
+      {
+        "id": "ing_it1",
+        "name": {
+          "en": "Tomato",
+          "te": "టమాటాలు"
+        },
+        "quantity": 4,
+        "unit": "pieces"
+      },
+      {
+        "id": "ing_it2",
+        "name": {
+          "en": "Ginger & Garlic Paste",
+          "te": "వెల్లుల్లి"
+        },
+        "quantity": 1,
+        "unit": "tbsp"
+      },
+      {
+        "id": "ing_it3",
+        "name": {
+          "en": "Refined Cooking Oil",
+          "te": "ఆలివ్ ఆయిల్"
+        },
+        "quantity": 2,
+        "unit": "tbsp"
+      },
+      {
+        "id": "ing_it4",
+        "name": {
+          "en": "Kitchen Spices (Turmeric, Mustard, Cumin, Chilli)",
+          "te": "చిల్లీ ఫ్లేక్స్"
+        },
+        "quantity": 1,
+        "unit": "tsp"
+      },
+      {
+        "id": "ing_it5",
+        "name": {
+          "en": "Basmati Rice",
+          "te": "పాస్తా"
+        },
+        "quantity": 1.5,
+        "unit": "cups"
+      }
+    ],
+    "tips": [
+      "Reserve 1/2 cup pasta cooking water to emulsify with olive oil into a silky sauce."
+    ],
+    "steps": [
+      {
+        "order": 1,
+        "title": {
+          "en": "Boil Pasta",
+          "te": "పాస్తాను ఉడికించండి"
+        },
+        "instructions": [
+          "Boil pasta in salted water for 9 minutes until al dente. Drain and reserve 1/2 cup starchy pasta water."
+        ],
+        "timerSeconds": 540
+      },
+      {
+        "order": 2,
+        "title": {
+          "en": "Simmer Arrabbiata Sauce",
+          "te": "టమాటా సాస్ మరిగించండి"
+        },
+        "instructions": [
+          "In hot oil, gently sauté sliced garlic and red chilli flakes until fragrant. Add crushed tomatoes, salt, and simmer for 6 minutes."
+        ],
+        "timerSeconds": 360
+      },
+      {
+        "order": 3,
+        "title": {
+          "en": "Toss Together",
+          "te": "కలిపి సర్వ్ చేయండి"
+        },
+        "instructions": [
+          "Toss drained pasta into the simmering sauce. Stir vigorously for 1 minute until sauce coats every piece. Serve hot."
+        ],
+        "timerSeconds": 60
+      }
+    ]
+  },
+  {
+    "id": "rec_mexican_bean_tacos",
+    "slug": "mexican-black-bean-tacos",
+    "title": {
+      "en": "Fiesta Mexican Spiced Bean Tacos",
+      "te": "మెక్సికన్ బీన్ టాకోస్"
+    },
+    "description": {
+      "en": "Warm toasted tortillas filled with seasoned beans, fresh tomato salsa, crisp onions, sweet corn, and lime juice.",
+      "te": "స్పైసీ బీన్స్, ఫ్రెష్ సల్సా మరియు నిమ్మరసంతో మెక్సికన్ టాకోస్."
+    },
+    "categoryId": "cat_dinner",
+    "subcategoryId": "Wraps & Tacos",
+    "cuisineId": "mexican",
+    "cuisine": "Mexican",
+    "region": "Latin America",
+    "dietaryType": "vegan",
+    "difficulty": "easy",
+    "preparationTime": 12,
+    "cookingTime": 10,
+    "totalTime": 22,
+    "defaultServings": 2,
+    "coverImage": "https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=800&auto=format&fit=crop&q=80",
+    "caloriesPerServing": 310,
+    "rating": 4.8,
+    "published": true,
+    "tags": [
+      "mexican",
+      "tacos",
+      "beans",
+      "vegan",
+      "dinner"
+    ],
+    "equipment": [
+      "Tawa / Flat Skillet",
+      "Mixing Bowl"
+    ],
+    "ingredients": [
+      {
+        "id": "ing_mx1",
+        "name": {
+          "en": "Whole Wheat Flour (Atta)",
+          "te": "రొట్టెలు"
+        },
+        "quantity": 1,
+        "unit": "cup"
+      },
+      {
+        "id": "ing_mx2",
+        "name": {
+          "en": "Toor Dal (Pigeon Pea)",
+          "te": "ఉడికించిన బీన్స్"
+        },
+        "quantity": 1,
+        "unit": "cup"
+      },
+      {
+        "id": "ing_mx3",
+        "name": {
+          "en": "Onion",
+          "te": "ఉల్లిపాయ"
+        },
+        "quantity": 1,
+        "unit": "piece"
+      },
+      {
+        "id": "ing_mx4",
+        "name": {
+          "en": "Tomato",
+          "te": "టమాటా"
+        },
+        "quantity": 2,
+        "unit": "pieces"
+      },
+      {
+        "id": "ing_mx5",
+        "name": {
+          "en": "Refined Cooking Oil",
+          "te": "నూనె"
+        },
+        "quantity": 1,
+        "unit": "tbsp"
+      }
+    ],
+    "tips": [
+      "Warm your tortillas on a dry tawa for 20 seconds per side so they become pliable."
+    ],
+    "steps": [
+      {
+        "order": 1,
+        "title": {
+          "en": "Sauté Spiced Beans",
+          "te": "బీన్స్ వేయించండి"
+        },
+        "instructions": [
+          "Heat 1 tbsp oil in a skillet. Sauté chopped onions and spices. Add cooked beans, lightly mash, and simmer 5 minutes."
+        ],
+        "timerSeconds": 300
+      },
+      {
+        "order": 2,
+        "title": {
+          "en": "Toss Fresh Pico Salsa",
+          "te": "సల్సా కలపండి"
+        },
+        "instructions": [
+          "In a bowl, toss diced tomatoes, onions, green chillies, lemon juice, and coriander with a pinch of salt."
+        ],
+        "timerSeconds": 180
+      },
+      {
+        "order": 3,
+        "title": {
+          "en": "Assemble Tacos",
+          "te": "టాకోస్ అలంకరించండి"
+        },
+        "instructions": [
+          "Spoon warm beans into toasted tortillas, top generously with fresh tomato salsa, and serve with lime wedges."
+        ],
+        "timerSeconds": 120
       }
     ]
   }

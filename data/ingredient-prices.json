@@ -1,0 +1,265 @@
+{
+  "source": "Average South & Central Indian Retail Market Surveys (Hyderabad, Vijayawada, Bengaluru)",
+  "currency": "INR",
+  "symbol": "₹",
+  "lastUpdated": "2026-02",
+  "disclaimer": "Ingredient prices are approximate consumer estimates. Actual prices vary by location, store, brand, season, and retail packaging sizes.",
+  "items": [
+    {
+      "id": "price_rice",
+      "name": "Basmati Rice",
+      "aliases": ["rice", "basmati", "aged basmati rice", "raw rice", "chawal", "biyyam"],
+      "standardUnit": "kg",
+      "price": 95,
+      "pricePerGram": 0.095,
+      "packageUnit": "1 kg bag",
+      "regionNotes": "Premium aged basmati averages ₹90-120/kg. Regular Sona Masoori is ₹55/kg."
+    },
+    {
+      "id": "price_toor_dal",
+      "name": "Toor Dal (Pigeon Pea)",
+      "aliases": ["toor dal", "kandi pappu", "arhar dal", "yellow lentils", "dal", "pappu"],
+      "standardUnit": "kg",
+      "price": 160,
+      "pricePerGram": 0.16,
+      "packageUnit": "1 kg pack",
+      "regionNotes": "Standard desi toor dal."
+    },
+    {
+      "id": "price_moong_dal",
+      "name": "Moong Dal / Green Gram",
+      "aliases": ["moong dal", "pesara pappu", "split moong", "sprouted moong", "green gram"],
+      "standardUnit": "kg",
+      "price": 130,
+      "pricePerGram": 0.13,
+      "packageUnit": "500g / 1kg pack",
+      "regionNotes": "Yellow split moong dal."
+    },
+    {
+      "id": "price_urad_dal",
+      "name": "Urad Dal (White Lentils)",
+      "aliases": ["urad dal", "minapa pappu", "split black gram", "white lentils"],
+      "standardUnit": "kg",
+      "price": 140,
+      "pricePerGram": 0.14,
+      "packageUnit": "1 kg pack"
+    },
+    {
+      "id": "price_chana_dal",
+      "name": "Chana Dal (Bengal Gram)",
+      "aliases": ["chana dal", "senaga pappu", "split chickpeas", "chana"],
+      "standardUnit": "kg",
+      "price": 95,
+      "pricePerGram": 0.095,
+      "packageUnit": "1 kg pack"
+    },
+    {
+      "id": "price_atta",
+      "name": "Whole Wheat Flour (Atta)",
+      "aliases": ["wheat flour", "atta", "godhuma pindi", "flour"],
+      "standardUnit": "kg",
+      "price": 45,
+      "pricePerGram": 0.045,
+      "packageUnit": "5 kg / 1 kg bag"
+    },
+    {
+      "id": "price_paneer",
+      "name": "Fresh Paneer",
+      "aliases": ["paneer", "cottage cheese", "fresh paneer"],
+      "standardUnit": "kg",
+      "price": 420,
+      "pricePerGram": 0.42,
+      "packageUnit": "200g block (approx ₹85-90)"
+    },
+    {
+      "id": "price_onion",
+      "name": "Onion",
+      "aliases": ["onion", "onions", "ullipaya", "pyaz", "fried onions", "birista"],
+      "standardUnit": "kg",
+      "price": 35,
+      "pricePerGram": 0.035,
+      "packageUnit": "1 kg loose",
+      "regionNotes": "Seasonal fluctuations between ₹25 and ₹50/kg."
+    },
+    {
+      "id": "price_tomato",
+      "name": "Tomato",
+      "aliases": ["tomato", "tomatoes", "tamata", "tamatar"],
+      "standardUnit": "kg",
+      "price": 30,
+      "pricePerGram": 0.03,
+      "packageUnit": "1 kg loose"
+    },
+    {
+      "id": "price_potato",
+      "name": "Potato",
+      "aliases": ["potato", "potatoes", "bangaladumpa", "aloo"],
+      "standardUnit": "kg",
+      "price": 30,
+      "pricePerGram": 0.03,
+      "packageUnit": "1 kg loose"
+    },
+    {
+      "id": "price_cauliflower",
+      "name": "Cauliflower",
+      "aliases": ["cauliflower", "gobi", "cauliflower florets"],
+      "standardUnit": "piece",
+      "price": 30,
+      "pricePerGram": 0.06,
+      "packageUnit": "1 medium head (approx 500g)"
+    },
+    {
+      "id": "price_mixed_veggies",
+      "name": "Mixed Vegetables (Carrot, Beans, Peas)",
+      "aliases": ["mixed vegetables", "vegetables", "carrot", "peas", "beans"],
+      "standardUnit": "kg",
+      "price": 60,
+      "pricePerGram": 0.06,
+      "packageUnit": "500g mixed pack"
+    },
+    {
+      "id": "price_curd",
+      "name": "Curd / Plain Yogurt",
+      "aliases": ["curd", "yogurt", "perugu", "dahi", "plain yogurt"],
+      "standardUnit": "kg",
+      "price": 60,
+      "pricePerGram": 0.06,
+      "packageUnit": "500g pouch (₹30)"
+    },
+    {
+      "id": "price_milk",
+      "name": "Fresh Milk",
+      "aliases": ["milk", "paalu", "doodh", "warm milk"],
+      "standardUnit": "liter",
+      "price": 64,
+      "pricePerGram": 0.064,
+      "packageUnit": "500 ml pouch (₹32)"
+    },
+    {
+      "id": "price_ghee",
+      "name": "Pure Desi Ghee",
+      "aliases": ["ghee", "clarified butter", "neyyi", "desi ghee"],
+      "standardUnit": "kg",
+      "price": 650,
+      "pricePerGram": 0.65,
+      "packageUnit": "500ml jar"
+    },
+    {
+      "id": "price_oil",
+      "name": "Refined Cooking Oil",
+      "aliases": ["oil", "cooking oil", "sunflower oil", "groundnut oil", "nune", "tel"],
+      "standardUnit": "liter",
+      "price": 135,
+      "pricePerGram": 0.135,
+      "packageUnit": "1 liter pouch"
+    },
+    {
+      "id": "price_butter",
+      "name": "Butter",
+      "aliases": ["butter", "makhan", "venna"],
+      "standardUnit": "kg",
+      "price": 540,
+      "pricePerGram": 0.54,
+      "packageUnit": "100g pack (₹56)"
+    },
+    {
+      "id": "price_coconut",
+      "name": "Fresh Coconut",
+      "aliases": ["coconut", "grated coconut", "kobbari", "nariyal"],
+      "standardUnit": "piece",
+      "price": 30,
+      "pricePerGram": 0.12,
+      "packageUnit": "1 whole fresh coconut"
+    },
+    {
+      "id": "price_jaggery",
+      "name": "Pure Jaggery (Bellam)",
+      "aliases": ["jaggery", "bellam", "gud", "palm jaggery"],
+      "standardUnit": "kg",
+      "price": 65,
+      "pricePerGram": 0.065,
+      "packageUnit": "1 kg block"
+    },
+    {
+      "id": "price_sugar",
+      "name": "Refined Sugar",
+      "aliases": ["sugar", "panchadara", "chini"],
+      "standardUnit": "kg",
+      "price": 44,
+      "pricePerGram": 0.044,
+      "packageUnit": "1 kg pack"
+    },
+    {
+      "id": "price_cashews",
+      "name": "Cashews (Kaju)",
+      "aliases": ["cashews", "cashew nuts", "jeedipappu", "kaju"],
+      "standardUnit": "kg",
+      "price": 850,
+      "pricePerGram": 0.85,
+      "packageUnit": "100g pack (₹90)"
+    },
+    {
+      "id": "price_raisins",
+      "name": "Kishmish / Raisins",
+      "aliases": ["raisins", "kishmish", "kismis"],
+      "standardUnit": "kg",
+      "price": 320,
+      "pricePerGram": 0.32,
+      "packageUnit": "100g pack (₹35)"
+    },
+    {
+      "id": "price_green_chillies",
+      "name": "Green Chillies",
+      "aliases": ["green chillies", "green chilli", "pachi mirapa", "hari mirch"],
+      "standardUnit": "kg",
+      "price": 80,
+      "pricePerGram": 0.08,
+      "packageUnit": "100g loose (₹8)"
+    },
+    {
+      "id": "price_ginger_garlic",
+      "name": "Ginger & Garlic Paste",
+      "aliases": ["ginger garlic paste", "ginger", "garlic", "allam", "vellulli"],
+      "standardUnit": "kg",
+      "price": 180,
+      "pricePerGram": 0.18,
+      "packageUnit": "200g pouch (₹40)"
+    },
+    {
+      "id": "price_spices",
+      "name": "Kitchen Spices (Turmeric, Mustard, Cumin, Chilli)",
+      "aliases": ["spices", "mustard seeds", "cumin seeds", "turmeric", "red chilli powder", "masala", "biryani masala"],
+      "standardUnit": "kg",
+      "price": 280,
+      "pricePerGram": 0.28,
+      "packageUnit": "100g packet (₹28)"
+    },
+    {
+      "id": "price_coffee",
+      "name": "Traditional Filter Coffee Powder",
+      "aliases": ["coffee powder", "filter coffee powder", "coffee"],
+      "standardUnit": "kg",
+      "price": 750,
+      "pricePerGram": 0.75,
+      "packageUnit": "100g pack (₹75)"
+    },
+    {
+      "id": "price_saffron",
+      "name": "Kesar / Saffron",
+      "aliases": ["saffron", "saffron strands", "kumkuma puvvu", "kesar"],
+      "standardUnit": "portion",
+      "price": 30,
+      "pricePerGram": 30.0,
+      "packageUnit": "1 portion pinch"
+    },
+    {
+      "id": "price_salt",
+      "name": "Iodized Salt",
+      "aliases": ["salt", "uppu", "namak"],
+      "standardUnit": "kg",
+      "price": 24,
+      "pricePerGram": 0.024,
+      "packageUnit": "1 kg packet"
+    }
+  ]
+}

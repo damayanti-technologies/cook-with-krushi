@@ -12,7 +12,7 @@
     },
     "categoryId": "cat_snacks",
     "subcategoryId": "Pakoda",
-    "cuisine": "Indian",
+    "cuisine": "Telugu",
     "dietaryType": "vegan",
     "difficulty": "easy",
     "preparationTime": 10,
@@ -27,17 +27,96 @@
     "reviewsCount": 160,
     "published": true,
     "createdAt": "2026-02-01T16:00:00.000Z",
-    "tags": ["pakoda", "snacks", "rainy day", "tea time", "crispy", "vegan"],
-    "equipment": ["Frying Kadai", "Mixing bowl", "Slotted spider spoon"],
+    "tags": [
+      "pakoda",
+      "snacks",
+      "rainy day",
+      "tea time",
+      "crispy",
+      "vegan"
+    ],
+    "equipment": [
+      "Frying Kadai",
+      "Mixing bowl",
+      "Slotted spider spoon"
+    ],
     "ingredients": [
-      { "id": "ing_op1", "name": { "en": "Onions", "te": "ఉల్లిపాయలు" }, "quantity": 3, "unit": "large", "notes": "Thinly sliced lengthwise" },
-      { "id": "ing_op2", "name": { "en": "Besan (Gram Flour)", "te": "శనగపిండి" }, "quantity": 1, "unit": "cup" },
-      { "id": "ing_op3", "name": { "en": "Rice Flour", "te": "వరిపిండి" }, "quantity": 2, "unit": "tbsp", "notes": "Gives unbeatable crunch" },
-      { "id": "ing_op4", "name": { "en": "Green Chillies", "te": "పచ్చిమిర్చి" }, "quantity": 2, "unit": "pieces", "notes": "Finely chopped" },
-      { "id": "ing_op5", "name": { "en": "Ajwain (Carom seeds)", "te": "వాము" }, "quantity": 0.5, "unit": "tsp", "notes": "Crushed between palms" },
-      { "id": "ing_op6", "name": { "en": "Curry Leaves", "te": "కరివేపాకు" }, "quantity": 2, "unit": "sprigs" },
-      { "id": "ing_op7", "name": { "en": "Cooking Oil for frying", "te": "నూనె" }, "quantity": 2, "unit": "cups" },
-      { "id": "ing_op8", "name": { "en": "Salt", "te": "ఉప్పు" }, "quantity": 1, "unit": "tsp" }
+      {
+        "id": "ing_op1",
+        "name": {
+          "en": "Onions",
+          "te": "ఉల్లిపాయలు"
+        },
+        "quantity": 3,
+        "unit": "large",
+        "notes": "Thinly sliced lengthwise"
+      },
+      {
+        "id": "ing_op2",
+        "name": {
+          "en": "Besan (Gram Flour)",
+          "te": "శనగపిండి"
+        },
+        "quantity": 1,
+        "unit": "cup"
+      },
+      {
+        "id": "ing_op3",
+        "name": {
+          "en": "Rice Flour",
+          "te": "వరిపిండి"
+        },
+        "quantity": 2,
+        "unit": "tbsp",
+        "notes": "Gives unbeatable crunch"
+      },
+      {
+        "id": "ing_op4",
+        "name": {
+          "en": "Green Chillies",
+          "te": "పచ్చిమిర్చి"
+        },
+        "quantity": 2,
+        "unit": "pieces",
+        "notes": "Finely chopped"
+      },
+      {
+        "id": "ing_op5",
+        "name": {
+          "en": "Ajwain (Carom seeds)",
+          "te": "వాము"
+        },
+        "quantity": 0.5,
+        "unit": "tsp",
+        "notes": "Crushed between palms"
+      },
+      {
+        "id": "ing_op6",
+        "name": {
+          "en": "Curry Leaves",
+          "te": "కరివేపాకు"
+        },
+        "quantity": 2,
+        "unit": "sprigs"
+      },
+      {
+        "id": "ing_op7",
+        "name": {
+          "en": "Cooking Oil for frying",
+          "te": "నూనె"
+        },
+        "quantity": 2,
+        "unit": "cups"
+      },
+      {
+        "id": "ing_op8",
+        "name": {
+          "en": "Salt",
+          "te": "ఉప్పు"
+        },
+        "quantity": 1,
+        "unit": "tsp"
+      }
     ],
     "tips": [
       "Do not add extra water! The salt pulls moisture out of onions, which moistens the flour naturally for ultra-crisp results."
@@ -45,7 +124,10 @@
     "steps": [
       {
         "order": 1,
-        "title": { "en": "Toss Onions & Spices", "te": "ఉల్లిపాయ ముక్కలు మరియు మసాలా కలపండి" },
+        "title": {
+          "en": "Toss Onions & Spices",
+          "te": "ఉల్లిపాయ ముక్కలు మరియు మసాలా కలపండి"
+        },
         "instructions": [
           "In a mixing bowl, separate thinly sliced onions with your fingers.",
           "Add salt, green chillies, crushed ajwain, and curry leaves.",
@@ -56,7 +138,10 @@
       },
       {
         "order": 2,
-        "title": { "en": "Coat with Flours", "te": "పిండి కలపండి" },
+        "title": {
+          "en": "Coat with Flours",
+          "te": "పిండి కలపండి"
+        },
         "instructions": [
           "Sprinkle besan and rice flour gradually over the wet onions.",
           "Mix until onions are lightly coated in a dryish batter. Do not add water."
@@ -66,7 +151,10 @@
       },
       {
         "order": 3,
-        "title": { "en": "Fry to Crispy Perfection", "te": "నూనెలో కరకరలాడేలా వేయించండి" },
+        "title": {
+          "en": "Fry to Crispy Perfection",
+          "te": "నూనెలో కరకరలాడేలా వేయించండి"
+        },
         "instructions": [
           "Heat oil in kadai on medium-high.",
           "Drop loose clusters of onion mixture into hot oil.",
@@ -77,6 +165,8 @@
         "estimatedMinutes": 5,
         "timerSeconds": 240
       }
-    ]
+    ],
+    "cuisineId": "telugu",
+    "region": "Andhra Pradesh & Telangana"
   }
 ]
