@@ -2,7 +2,7 @@
   "name": "Cook With Krushi - Premium Cooking & Recipe Learning Platform",
   "short_name": "Cook With Krushi",
   "description": "Discover delicious recipes, organize ingredients, and master cooking step-by-step with interactive timers and guides.",
-  "start_url": "/index.html",
+  "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#FAF8F2",
   "theme_color": "#294B35",
@@ -10,13 +10,13 @@
   "categories": ["food", "lifestyle", "education"],
   "icons": [
     {
-      "src": "/assets/icons/icon-192.png",
+      "src": "assets/icons/icon-192.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "/assets/icons/icon-512.png",
+      "src": "assets/icons/icon-512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"

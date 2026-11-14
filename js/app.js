@@ -19,11 +19,11 @@ document.addEventListener('DOMContentLoaded', async () => {
     });
   });
 
-  // 3. Register Service Worker for PWA
+  // 3. Register Service Worker for PWA (Subpath and root friendly)
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
-      navigator.serviceWorker.register('/sw.js').catch((err) => {
-        // Fallback for subpaths if hosted in non-root
+      const swUrl = new URL('sw.js', window.location.href).href;
+      navigator.serviceWorker.register(swUrl).catch((err) => {
         navigator.serviceWorker.register('sw.js').catch((e) => console.log('SW registration note:', e));
       });
     });
